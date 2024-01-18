@@ -1,0 +1,10 @@
+.background {
+    width: 1200px;
+    height: 1200px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    line-height: 400px;
+}

@@ -1,0 +1,82 @@
+.background {
+    width: 1536px;
+    height: 735px;
+    display: flex;
+    position: relative;
+    background-color: #2d3a4b;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.container {
+    width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 470px;
+    display: block;
+    position: relative;
+    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 10px 40px rgba(0,0,0,0.3);
+}
+.top {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    position: relative;
+}
+.top-inner {
+    width: 480px;
+    height: 80px;
+    display: flex;
+    position: relative;
+}
+.inner-item {
+    width: 30%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.inner-item-2 {
+    width: 70%;
+    height: 100%;
+    font-size: 30px;
+    line-height: 80px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 微软雅黑, serif;
+    display: block;
+    position: relative;
+}
+.inner-item img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    position: relative;
+    float: right;
+}
+.main {
+    width: 400px;
+    height: 300px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+.el-form-item {
+    height: 50px;
+    margin-bottom: 40px;
+}
+.el-input {
+    height: 50px;
+    overflow: hidden;
+}
+.el-button-1 {
+    background: linear-gradient(84deg,#615ced,#3e2fa7 181%);
+    color: white;
+}
+.el-button {
+    width: 100%;
+    height: 40px;
+    margin-left: 0;
+}
