@@ -3,6 +3,9 @@ import { ref,h } from "vue";
 import {useCounterStore} from "@/stores/counter.js";
 import {ElNotification} from "element-plus";
 import {useRouter} from "vue-router";
+import QrcodeVue from "qrcode.vue";
+import { watchEffect } from "vue";
+import axios from "axios";
 const router = useRouter()
 const login = () => {
   router.push('/login')
@@ -35,34 +38,55 @@ const today_coin = () => {
     })
   }
 }
+//使用Qrcode-vue实现充值二维码弹出
+const Key = ref('')
+const qrUrl = ref('')
+const value = ref()
+const size = 200
+const getQR = () => {
+  axios.get('http://8.130.35.251:3000/login/qr/key').then((res) => {
+    Key.value = res.data.data.unikey
+    axios.get(`http://8.130.35.251:3000/login/qr/create?key=${Key.value}`).then((res) => {
+      qrUrl.value = res.data.data.qrurl
+    })
+  })
+}
+watchEffect(() => {
+  value.value = qrUrl.value
+})
+const pay = () => {
+  dialogVisible.value = !dialogVisible.value
+  getQR()
+}
 </script>
 
 <template>
   <div class="background">
     <div class="ad-item">
       <el-carousel
-          height="240px"
+          class="swiper"
+          height="100%"
           autoplay
       >
         <el-carousel-item v-for="item in img_url" :key="item">
-          <img :src="item.src" alt="">
+          <img :src="item.src" alt="" loading="lazy">
         </el-carousel-item>
       </el-carousel>
     </div>
     <div class="ad-item_2">
       <div class="advertise">
         <div class="item_1" style="margin-bottom: 20px">
-          <img src="https://jchd-chat.oss-cn-hangzhou.aliyuncs.com/png/banner1-ad79d35a.png" alt="">
+          <img src="https://jchd-chat.oss-cn-hangzhou.aliyuncs.com/png/banner1-ad79d35a.png" alt="" loading="lazy">
         </div>
         <div class="item_1">
-          <img src="https://jchd-chat.oss-cn-hangzhou.aliyuncs.com/png/banner2-bbac4bf9.png" alt="">
+          <img src="https://jchd-chat.oss-cn-hangzhou.aliyuncs.com/png/banner2-bbac4bf9.png" alt="" loading="lazy">
         </div>
       </div>
       <div class="advertise">
         <div class="login-entry">
           <div class="user_top">
             <div class="user_avater" @click="login">
-              <img src="../../assets/user.png" alt="">
+              <img src="../../assets/user.png" alt="" loading="lazy">
               <span>登录/注册</span>
             </div>
             <div class="user_logo"></div>
@@ -83,19 +107,22 @@ const today_coin = () => {
           </div>
           <div class="user_btns">
             <el-button class="btn user_btn_1" @click="today_coin">鸮币签到</el-button>
-            <el-button class="btn user_btn_2" @click="dialogVisible = true">立即充值</el-button>
+            <el-button class="btn user_btn_2" @click="pay">立即充值</el-button>
           </div>
         </div>
       </div>
     </div>
+    <!-- 充值入口弹窗 -->
     <el-dialog
         v-model="dialogVisible"
         title="快充值中心"
         width="30%"
-        style="height: 385px"
+        class="dialog"
     >
       <span>扫描二维码</span>
-      <img src="@/assets/logo.svg" alt="" class="QR-code">
+      <div class="QR-code">
+        <qrcode-vue :value="value" :size="size"></qrcode-vue>
+      </div>
       <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
@@ -104,6 +131,14 @@ const today_coin = () => {
         </el-button>
       </span>
       </template>
+    </el-dialog>
+    <!-- 升级会员页面 -->
+    <el-dialog
+        v-model="store.dialogVisiable"
+        width="500px"
+        title="会员升级"
+    >
+
     </el-dialog>
   </div>
 </template>

@@ -109,7 +109,7 @@ const isShow_2 = ref(false)
       <div class="top">
         <div class="top-inner">
           <div class="inner-item">
-            <img src="../../assets/img/logo_2.png" alt="">
+            <img src="../../assets/img/logo_2.png" alt="" loading="lazy">
           </div>
           <div class="inner-item-2">GOMAX AI</div>
         </div>
@@ -139,7 +139,7 @@ const isShow_2 = ref(false)
       <div class="top">
         <div class="top-inner">
           <div class="inner-item">
-            <img src="../../assets/img/logo_2.png" alt="">
+            <img src="../../assets/img/logo_2.png" alt="" loading="lazy">
           </div>
           <div class="inner-item-2">GOMAX AI</div>
         </div>
@@ -161,7 +161,7 @@ const isShow_2 = ref(false)
           <el-form-item prop="code" style="margin-bottom: 10px">
             <el-input clearable v-model="Register.code" placeholder="请输入验证码"/>
           </el-form-item>
-          <el-button style="width: 80px;margin-top: -98px;height: 49px" class="el-button-1">获取验证码</el-button>
+          <el-button style="width: 80px;" class="el-button-2">获取验证码</el-button>
           <el-button class="el-button-1" round @click="registerSubmit(registerFormRef)">注册</el-button>
         </el-form>
       </div>

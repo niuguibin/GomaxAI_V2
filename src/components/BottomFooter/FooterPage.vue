@@ -14,7 +14,7 @@
         工作时间 8:30-22:00
       </h5>
       <h5 class="h5">
-        <a href="#">网站备案</a>
+        <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">网站备案</a>
         <a href="https://ts.isc.org.cn/#/home" target="_blank">中国互联网举报中心</a>
         <a href="#">版权与免责申明</a>
         <a href="#">营业执照</a>

@@ -23,7 +23,6 @@
 }
 .el-carousel {
     overflow: hidden;
-    border-radius: 10px;
 }
 .advertise {
     width: 50%;
@@ -216,4 +215,12 @@
     height: 200px;
     display: block;
     position: relative;
+}
+.dialog {
+    height: 385px;
+}
+.swiper {
+    height: 240px;
+    border-radius: 10px;
+    overflow: hidden;
 }

@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import {useCounterStore} from "@/stores/counter.js";
 import {useRouter} from "vue-router";
 const store = useCounterStore()
@@ -8,6 +9,10 @@ const login = () => {
 }
 const goHome = () => {
   router.push('/')
+}
+//会员升级
+const update = () => {
+  store.dialogVisiable = !store.dialogVisiable
 }
 </script>
 
@@ -47,7 +52,7 @@ const goHome = () => {
             <img src="../../assets/doc.png" alt="">
             <span>创作管理</span>
           </div>
-          <div class="account">
+          <div class="account" @click="update">
             <span>升级会员</span>
           </div>
           <div class="note">

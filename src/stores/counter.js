@@ -6,7 +6,8 @@ export const useCounterStore = defineStore('counter',{
       follows: 233,
       coin: 1993,
       collection: 175,
-      like: 12321
+      like: 12321,
+      dialogVisiable: false
     }
   },
   persist: {

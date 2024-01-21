@@ -75,6 +75,12 @@
     background: linear-gradient(84deg,#615ced,#3e2fa7 181%);
     color: white;
 }
+.el-button-2 {
+    background: linear-gradient(84deg,#615ced,#3e2fa7 181%);
+    color: white;
+    margin-top: -98px;
+    height: 49px
+}
 .el-button {
     width: 100%;
     height: 40px;
