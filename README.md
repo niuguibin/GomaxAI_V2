@@ -1,6 +1,6 @@
 # GomaxAI_V2
 
-This template should help get you started developing with Vue 3 in Vite.
+基于 Element-plus 和 Vite 的 Vue3 项目.
 
 ## Recommended IDE Setup
 
