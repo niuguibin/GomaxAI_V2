@@ -1,6 +1,7 @@
 # GomaxAI_V2
 
 基于 Element-plus 和 Vite 的 Vue3 项目.
+NodeJS版本16.19.1
 
 ## Recommended IDE Setup
 
