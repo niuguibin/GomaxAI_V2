@@ -174,7 +174,6 @@
     margin-top: 60px;
     height: auto;
     justify-content: flex-end;
-    float: right;
 }
 .mes {
     width: 270px;
@@ -183,4 +182,12 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 270px;
+}
+.container {
+    width: 300px;
+    max-width: 300px;
+    display: block;
+    height: auto;
+    position: relative;
+    float: right;
 }

@@ -1,7 +1,7 @@
 <script setup>
 import {h, ref} from "vue";
-import { Position,PictureRounded } from "@element-plus/icons-vue";
-import {ElNotification} from "element-plus";
+
+import {ElMessage, ElNotification} from "element-plus";
 const ai_info = ref([
   {
     id: '爷爷',
@@ -29,13 +29,21 @@ const select_ai = (index) => {
   isShow.value = true
 }
 //该函数用于用户发送信息，发送信息前先判断是否选择角色，如果为否则通知用户先选角色
-const user_info = ref('')
+//每次发送信息，都将信息push到数组中，气泡通过v-for渲染出信息
+const list = ref([])
 const show = ref(false)
 const commit =  () => {
   //如果用户选择了角色，isShow为true
-  if (isShow.value && message.value !== ''){
-    user_info.value = message.value
-    show.value = true
+  if (isShow.value){
+    if (message.value !== ''){
+      list.value.push(message.value)
+      show.value = true
+    }else{
+      ElMessage({
+        message: '请输入您的问题!',
+        type: "warning"
+      })
+    }
   }else{
     ElNotification({
       title: '警告',
@@ -69,14 +77,16 @@ const commit =  () => {
               </div>
             </div>
           </div>
-          <div class="p-talking_2" v-show="show">
-            <div class="mes" style="justify-content: flex-end">
-              <div class="bubble_1" style="border-radius: 10px 10px 0 10px;margin-right: 20px;background-color: #22af22;">
-                {{user_info}}
+          <div class="container">
+            <div class="p-talking_2" v-show="show" v-for="item in list" :key="item">
+              <div class="mes" style="justify-content: flex-end">
+                <div class="bubble_1" style="border-radius: 10px 10px 0 10px;margin-right: 20px;background-color: #22af22;">
+                  {{item}}
+                </div>
               </div>
-            </div>
-            <div class="ai-dot">
-              <img src="../../assets/user.png" alt="" loading="lazy">
+              <div class="ai-dot">
+                <img src="../../assets/user.png" alt="" loading="lazy">
+              </div>
             </div>
           </div>
           <div class="input_2">
