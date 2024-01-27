@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import {useCounterStore} from "@/stores/counter.js";
 import {useRouter} from "vue-router";
 const store = useCounterStore()
@@ -25,7 +24,8 @@ const update = () => {
           <el-menu
               class="el-menu-demo"
               mode="horizontal"
-              active-text-color="#ffffff"
+              text-color="#ffffff"
+              active-text-color="#ff5"
               background-color="transparent"
               style="border-bottom: none"
               router

@@ -2,6 +2,7 @@
 import {h, ref} from "vue";
 
 import {ElMessage, ElNotification} from "element-plus";
+import FooterPage from "@/components/BottomFooter/FooterPage.vue";
 const ai_info = ref([
   {
     id: '爷爷',
@@ -82,7 +83,7 @@ const commit =  () => {
               <div class="mes" style="justify-content: flex-end">
                 <div class="bubble_1" style="border-radius: 10px 10px 0 10px;margin-right: 20px;background-color: #22af22;">
                   {{item}}
-                </div>
+                 </div>
               </div>
               <div class="ai-dot">
                 <img src="../../assets/user.png" alt="" loading="lazy">
@@ -108,6 +109,7 @@ const commit =  () => {
         <div class="digital-human"></div>
       </div>
     </div>
+    <FooterPage/>
   </div>
 </template>
 

@@ -10,7 +10,7 @@
 }
 .inner-box {
     width: 100%;
-    height: 644px;
+    height: 529px;
     display: flex;
     position: relative;
     margin-top: 56px;
@@ -31,7 +31,7 @@
 }
 .digital-human {
     width: 200px;
-    height: 594px;
+    height: 100%;
     margin-top: 50px;
     border-radius: 0 10px 0 0;
     display: block;
@@ -40,7 +40,7 @@
 }
 .message {
     width: 750px;
-    height: 594px;
+    height: 100%;
     margin-top: 50px;
     border-radius: 10px 0 0 0;
     padding: 10px;
