@@ -1,10 +1,143 @@
 .background {
-    width: 1200px;
+    width: auto;
     height: 1200px;
     display: block;
     position: relative;
-    margin: 0 auto;
+    margin-top: 56px;
     color: white;
     text-align: center;
     line-height: 400px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 22px;
+    line-height: 20px;
+    margin-top: 15px;
+    margin-bottom: 7px;
+
+}
+.card-header:hover{
+    olor: #673efc;
+
+
+}
+.card-footer{
+    /*background-color: aqua;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    line-height: 20px;
+    padding-right: 12px;
+;
+}
+.card-text{
+    /*font-family: 新宋体;*/
+    text-align: left;
+    font-size: 20px;
+    color: white;
+}
+/*.el-menu-demo:active{*/
+/*    color: rgba(61, 58, 58, 0.98);*/
+/*}*/
+/*.el-menu-demo:focus {*/
+/*    color:  rgba(61, 58, 58, 0.98);*/
+/*}*/
+.text {
+    font-size: 11px;
+    color: white;
+}
+.card-time{
+    text-align: left;
+    /*background-color: #01b2fe;*/
+    margin-bottom: 10px;
+}
+.address{
+    height: 50px; width: 100px;  margin-top: 20px; line-height: 20px; display: flex;align-items:center
+}
+.no-inherit{
+    width: 30px;
+    height: 30px;
+}
+.el-card ::v-deep .el-card__body {
+    padding-left: 25px;
+    padding-top: 10px;
+
+    /*background-color: powderblue;*/
+    height: 150px;
+
+}
+
+
+
+.item {
+    margin-bottom: 150px;
+    position: absolute;
+    /*background-color: #673efc;*/
+    line-height: 15px;
+    width: 335px;
+    height: 140px;
+
+}
+
+.box-card {
+    margin:20px 20px 20px 20px;
+    width: 370px;
+    height: 270px;
+    border: #673efc;
+    background-color:#3C3F41;
+    text-color: white;
+    transition: all 0.6s;
+
+}
+.box-card:hover{
+    box-shadow: 0 3px 10px 1px #999aaa;
+    transform: translate(0, -10px);
+}
+.big-text{
+    font-weight: bold;
+    color:#0099DF;
+}
+.hr_gradient{
+    border: 0;
+    height: 1px;
+    background-color: #5a5a5e;
+    background-image: linear-gradient(to right,#333, #8b8b8b, #333);
+}
+.my-divider{
+    margin-top:1px;
+    background-color: #01b2fe !important;
+    width: auto;
+}
+.el-menu-demo{
+
+}
+
+.price-text{
+    font-weight: bold;
+    color: #A952D7;
+    font-size: 20px;
+}
+
+.add-title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.add-button{
+    margin: 10px 15px 10px 12px;
+    width: 95px;
+    height: 40px;
+}
+
+.right-button{
+    width: 300px;
+    height: 45px;
+    background-color: #5a5a5e;
+    background-image: linear-gradient(to right, #445ED1, #A952D7);
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+
 }
