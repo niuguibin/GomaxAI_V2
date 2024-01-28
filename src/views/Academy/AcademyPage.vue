@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { ref,reactive, toRefs } from 'vue'
+const router = useRouter()
+import {useRouter} from 'vue-router'
 import { Search } from '@element-plus/icons-vue'
+
 const input1 = ref('')
 const activeIndex = ref('1')
 const input2 = ref('')
@@ -9,6 +12,9 @@ const dialogTableVisible = ref(false)
 const formLabelWidth = '1200px'
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
+}
+const jump = () => {
+  router.push('/AcademyChild')
 }
 const state = reactive({
   circleUrl:
@@ -35,9 +41,6 @@ const state = reactive({
             @select="handleSelect"
             style="height: 50px;padding-left: 130px"
         >
-
-
-
           <el-sub-menu index="2">
             <template #title>小学</template>
             <el-menu-item index="2-1">数学</el-menu-item>
@@ -125,8 +128,7 @@ const state = reactive({
               <div>
                 <el-row  :gutter="1"    style=" display: flex; justify-content: center;"  >
                   <el-col :span="8"  v-for="item in 12" :key="item" >
-                    <el-card class="box-card" >
-
+                    <el-card class="box-card"  @click="jump">
                       <div class="card-header">
                         <span class="card-text">精选文学作品赏析</span>
                       </div>
