@@ -7,6 +7,8 @@ import FamilyPage from "@/views/FamilyLife/FamilyPage.vue";
 import OfficePage from "@/views/AIOffice/OfficePage.vue";
 import AcademyPage from "@/views/Academy/AcademyPage.vue";
 import CreativePage from "@/views/CreativeSquare/CreativePage.vue";
+import AcademyChild from "@/views/Academy/AcademyChild.vue";
+
 
 
 const router = createRouter({
@@ -42,10 +44,16 @@ const router = createRouter({
           name: 'academy',
           component: AcademyPage
         },
+
         {
           path: '/creative',
           name: 'creative',
           component: CreativePage
+        },
+        {
+          path: '/academyChild',
+          name: 'academyChild',
+          component: AcademyChild
         }
       ]
     },
