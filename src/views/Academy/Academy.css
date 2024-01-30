@@ -1,5 +1,5 @@
 .background {
-    
+
     width: auto;
     height: 1200px;
     display: block;
@@ -40,12 +40,7 @@
     font-size: 20px;
     color: white;
 }
-/*.el-menu-demo:active{*/
-/*    color: rgba(61, 58, 58, 0.98);*/
-/*}*/
-/*.el-menu-demo:focus {*/
-/*    color:  rgba(61, 58, 58, 0.98);*/
-/*}*/
+
 .text {
     font-size: 11px;
     color: white;
@@ -118,7 +113,7 @@
 
 .price-text{
     font-weight: bold;
-    color: #A952D7;
+    color: #F5DB9D;
     font-size: 20px;
 }
 
@@ -142,3 +137,5 @@
     font-size: 20px;
 
 }
+
+
