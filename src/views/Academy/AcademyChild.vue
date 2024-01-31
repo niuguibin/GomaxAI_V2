@@ -191,24 +191,24 @@ const handleChange = (val: string[]) => {
 }
 const tableData = [
   {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: '2024.02.21 19:00 - 21:30',
+    name: '郭熙',
+    address: '方法精讲-言语1',
   },
   {
-    date: '2016-05-02',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: '2024.02.22 19:00 - 21:30',
+    name: '郭熙',
+    address: '方法精讲-言语2',
   },
   {
-    date: '2016-05-04',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: '2024.02.23 19:00 - 21:30',
+    name: '郭熙',
+    address: '方法精讲-言语3',
   },
   {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: '2024.02.24 19:00 - 21:30',
+    name: '郭熙',
+    address: '方法精讲-言语4',
   },
 ]
 let selectedRating = 0;

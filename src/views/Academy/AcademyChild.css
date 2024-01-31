@@ -102,12 +102,43 @@
     /*background-image: linear-gradient(to right,#333, #8b8b8b, #333);*/
 }
 
-/*.example-pagination-block + .example-pagination-block {*/
-/*    margin-top: 10px;*/
+>>> .el-table thead {
+    display: none;
+}
 
-/*}*/
-/*.example-pagination-block .example-demonstration {*/
-/*    margin-bottom: 16px;*/
-/*    */
-/*}*/
+/*折叠面板样式修改*/
 
+::v-deep .el-collapse-item__header{
+    color: #c0bfbf;
+    background-color: #18181A !important;
+    position: relative;
+    border: none;
+    margin: 7px 50px 7px 20px;
+    font-size: 19px;
+    font-weight: bold;
+    /*width: 1000px;*/
+}
+::v-deep .el-collapse-item__content{
+    text-align: left;
+    /*color: #a34949;*/
+    /*background-color: #313743;*/
+    padding-bottom: 0;
+
+}
+
+/*课程表格的样式修改*/
+/deep/ .el-table{
+    border: none;
+
+}
+/deep/ .el-table__row{
+    background-color: #18181A;
+    color: #c0bfbf;
+    height: 70px;
+}
+/deep/ .el-table td{
+    border-bottom: none;
+}
+/deep/ .el-table--enable-row-hover .el-table__body tr:hover>td{
+    background-color: #3C3F41 !important;
+}
