@@ -153,7 +153,7 @@ const captcha = () => {
           <div class="inner-item">
             <img src="../../assets/img/logo_2.png" alt="" loading="lazy">
           </div>
-          <div class="inner-item-2">GOMAX AI</div>
+          <div class="inner-item-2">GO-MAX AI</div>
         </div>
       </div>
       <el-divider/>
@@ -183,7 +183,7 @@ const captcha = () => {
           <div class="inner-item">
             <img src="../../assets/img/logo_2.png" alt="" loading="lazy">
           </div>
-          <div class="inner-item-2">GOMAX AI</div>
+          <div class="inner-item-2">GO-MAX AI</div>
         </div>
       </div>
       <el-divider/>

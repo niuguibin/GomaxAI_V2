@@ -137,13 +137,14 @@
     position: relative;
     line-height: 20px;
     word-wrap: break-word;
+    word-break: break-all;
     overflow-wrap: break-word;
     margin-left: 20px;
     height: fit-content;
     font-size: 12px;
     white-space: pre-wrap;
     max-width: 230px;
-    text-align: center;
+    text-align: left;
 }
 .ai-dot {
     width: 30px;
@@ -182,6 +183,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 270px;
+    white-space: pre-wrap;
 }
 .container {
     width: 300px;
@@ -189,5 +191,4 @@
     display: block;
     height: auto;
     position: relative;
-    float: right;
 }

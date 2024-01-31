@@ -5,6 +5,7 @@ footer {
     max-height: 150px;
     justify-content: center;
     position: relative;
+    margin: 0 auto;
     background-color: #18181a;
     bottom: 0;
     -webkit-user-select: none;

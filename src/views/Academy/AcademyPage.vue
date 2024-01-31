@@ -1,15 +1,17 @@
 <script lang="ts" setup>
-import { ref,reactive, toRefs } from 'vue'
+import { ref } from 'vue'
 import { Search } from '@element-plus/icons-vue'
-const input1 = ref('')
+import FooterPage from "../../components/BottomFooter/FooterPage.vue";
+//const input1 = ref('')
 const activeIndex = ref('1')
 const input2 = ref('')
-const input3 = ref('')
+//const input3 = ref('')
 const dialogTableVisible = ref(false)
-const formLabelWidth = '1200px'
+//const formLabelWidth = '1200px'
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
+/*
 const state = reactive({
   circleUrl:
       'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
@@ -17,7 +19,7 @@ const state = reactive({
       'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png',
   sizeList: ['small', '', 'large'] as const,
 })
-
+*/
 </script>
 
 <template>
@@ -30,8 +32,8 @@ const state = reactive({
             class="el-menu-demo"
             mode="horizontal"
             background-color="#2B2B2B"
-            text-color="#A8A8A8"
-            active-text-color="#0192D5"
+            text-color="#ffffff"
+            active-text-color="#ff5"
             @select="handleSelect"
             style="height: 50px;padding-left: 130px"
         >
@@ -110,20 +112,20 @@ const state = reactive({
                 <el-icon color="#409EFC" class="no-inherit">
                   <Location style="font-size: 20px" />
                 </el-icon>
-                <span style="margin-left: 5px;display: block;font-size: 16px">
-              辽宁
-         </span>
+                <span style="margin-left: 5px;display: block;font-size: 16px;cursor: pointer">
+                   辽宁
+                </span>
               </div>
             </el-row>
             <hr class="hr_gradient">
             <el-row>
-              <div style="height: 20px;line-height: 20px;float: left;margin: 20px 0px 5px 0">
+              <div style="height: 20px;line-height: 20px;float: left;margin: 20px 0 5px 0">
                 <h1 class="big-text">发现好课</h1>
               </div>
             </el-row>
             <el-row>
               <div>
-                <el-row  :gutter="1"    style=" display: flex; justify-content: center;"  >
+                <el-row  :gutter="1" style=" display: flex; justify-content: center;"  >
                   <el-col :span="8"  v-for="item in 12" :key="item" >
                     <el-card class="box-card" >
 
@@ -174,7 +176,7 @@ const state = reactive({
         </el-row>
       </el-scrollbar>
     </div>
-
+    <FooterPage/>
   </div>
 
 
