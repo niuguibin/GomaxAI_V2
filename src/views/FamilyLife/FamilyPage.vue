@@ -68,17 +68,19 @@ const commit =  () => {
       </div>
       <div class="right-box">
         <div class="message">
-          <div class="p-talking" v-show="isShow">
-            <div class="ai-dot">
-              <img src="../../assets/user.png" alt="" loading="lazy">
-            </div>
-            <div class="mes">
-              <div class="bubble_1" style="border-radius: 10px 10px 10px 0;background-color: #c0bfbf;">
-                {{info}}
+          <div class="container" style="float: left">
+            <div class="p-talking" v-show="isShow">
+              <div class="ai-dot">
+                <img src="../../assets/user.png" alt="" loading="lazy">
+              </div>
+              <div class="mes">
+                <div class="bubble_1" style="border-radius: 10px 10px 10px 0;background-color: #c0bfbf;">
+                  {{info}}
+                </div>
               </div>
             </div>
           </div>
-          <div class="container">
+          <div class="container" style="float: right">
             <div class="p-talking_2" v-show="show" v-for="item in list" :key="item">
               <div class="mes" style="justify-content: flex-end">
                 <div class="bubble_1" style="border-radius: 10px 10px 0 10px;margin-right: 20px;background-color: #22af22;">

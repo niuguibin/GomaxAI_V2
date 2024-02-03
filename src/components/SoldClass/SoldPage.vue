@@ -47,7 +47,7 @@ const show6 = ref(false)
           </div>
           <div class="ClassAD" @click="show3 = !show3">
             <div class="inner">
-              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="">
+              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="" loading="lazy">
             </div>
             <transition name="el-zoom-in-center">
               <div class="title" v-show="show3">
@@ -58,7 +58,7 @@ const show6 = ref(false)
           </div>
           <div class="ClassAD" @click="show4 = !show4">
             <div class="inner">
-              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="">
+              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="" loading="lazy">
             </div>
             <transition name="el-zoom-in-center">
               <div class="title" v-show="show4">
@@ -69,7 +69,7 @@ const show6 = ref(false)
           </div>
           <div class="ClassAD" @click="show1 = !show1">
             <div class="inner">
-              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="">
+              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="" loading="lazy">
             </div>
             <transition name="el-zoom-in-center">
               <div class="title" v-show="show1">
@@ -80,7 +80,7 @@ const show6 = ref(false)
           </div>
           <div class="ClassAD" @click="show5 = !show5">
             <div class="inner">
-              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="">
+              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="" loading="lazy">
             </div>
             <transition name="el-zoom-in-center">
               <div class="title" v-show="show5">
@@ -91,7 +91,7 @@ const show6 = ref(false)
           </div>
           <div class="ClassAD" @click="show6 = !show6">
             <div class="inner">
-              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="">
+              <img src="https://www.itheima.com/2020gw/images/indeximg/mapai4.png" alt="" loading="lazy">
             </div>
             <transition name="el-zoom-in-center">
               <div class="title" v-show="show6">
