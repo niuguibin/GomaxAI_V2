@@ -47,7 +47,8 @@
 }
 
 .demo-collapse{
-    margin: 10px 0px 10px 0px;
+    margin: 10px 40px 10px 0px;
+
 }
 .demo-tabs > .el-tabs__content {
     padding: 32px;
@@ -141,4 +142,21 @@
 }
 /deep/ .el-table--enable-row-hover .el-table__body tr:hover>td{
     background-color: #3C3F41 !important;
+}
+.foot-page{
+    display: flex;
+    justify-content: center;
+  text-align: center;
+    height: 70px;
+
+}
+.el-pagination{
+    --el-pagination-bg-color:#ffffff00;  /*    背景颜色*/
+
+    --el-pagination-button-disabled-bg-color: #ffffff00;/*    最边上的颜色*/
+    --el-pagination-font-size: 17px;     /*    分页字体大小*/
+    --el-text-color-primary: #c0bfbf;  /*    分页字体颜色*/
+
+
+
 }

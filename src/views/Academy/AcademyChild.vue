@@ -139,7 +139,7 @@
 
       <el-tab-pane label="课程评价" name="fourth">
         <el-main style="height: 700px">
-          <div v-for="item in 12" :key="item">
+          <div v-for="item in 5" :key="item">
             <el-row :gutter="20" style="display: flex;align-items: center;width: 100%;margin-top: 15px">
 
                 <el-col :span="2" style="text-align: center">
@@ -157,8 +157,19 @@
           <hr class="hr_gradient">
           </div>
 
-          <div>
-            <el-pagination style="background-color: #1e1e25" layout="prev, pager, next" :total="1000" />
+          <div class="foot-page" >
+            <el-pagination
+                v-model:current-page="currentPage1"
+                page-size="5"
+                :page-sizes="[5]"
+                :disabled="disabled"
+                :background="background"
+                layout=" prev, pager, next"
+                :total="1000"
+                pager-count="5"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+            />
           </div>
 
         </el-main>
@@ -179,8 +190,23 @@
 import { ref } from 'vue'
 import type { TabsPaneContext } from 'element-plus'
 const activeIndex = ref('1')
+const currentPage1 = ref(5)
 const activeIndex2 = ref('1')
 const activeName = ref('first')
+const background = ref(false)
+const disabled = ref(false)
+const pageNum = ref('10')
+const handleSizeChange = (val: number) => {
+
+  console.log(`${val} items per page`)
+}
+
+
+
+const handleCurrentChange = (val: number) => {
+  this.pageNum = pageNum
+  console.log(`current page: ${val}`)
+}
 const handleClick = (tab: TabsPaneContext, event: Event) => {
   console.log(tab, event)
 }
