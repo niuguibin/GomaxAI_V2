@@ -8,7 +8,9 @@ import OfficePage from "@/views/AIOffice/OfficePage.vue";
 import AcademyPage from "@/views/Academy/AcademyPage.vue";
 import CreativePage from "@/views/CreativeSquare/CreativePage.vue";
 import AcademyChild from "@/views/Academy/AcademyChild.vue";
-
+import Academypay from "@/views/Academy/Academypay.vue";
+import Academypay2 from "@/views/Academy/Academypay2.vue";
+import Academytable from "@/views/Academy/Academytable.vue";
 
 
 const router = createRouter({
@@ -54,7 +56,22 @@ const router = createRouter({
           path: '/academyChild',
           name: 'academyChild',
           component: AcademyChild
-        }
+        },
+        {
+          path: '/academypay',
+          name: 'academypay',
+          component: Academypay
+        },
+        {
+          path: '/academypay2',
+          name: 'academypay2',
+          component: Academypay2
+        },
+        {
+          path: '/academytable',
+          name: 'academytable',
+          component: Academytable
+        },
       ]
     },
     {

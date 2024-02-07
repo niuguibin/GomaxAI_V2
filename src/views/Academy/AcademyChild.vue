@@ -1,21 +1,20 @@
 <template>
-<div style="margin-top: 47px;padding: 0 150px 0 150px">
+<div style="margin-top: 47px;padding: 15px 150px 0 150px">
   <el-scrollbar height="auto">
   <el-row >
-
-      <div style="width: 100%" >
+        <div class="common-layout" style="width: 100%">
       <el-container style="background-color: #3C3F41">
         <el-aside style="width:60%;height: 300px">
-          <div class="common-layout">
+
           <el-container>
             <el-header class="ch-header-left">
               <el-row style="margin-bottom: 10px">
-              <span style="color: #D2D6DD;font-size: 26px;font-weight: bold">
+              <span style="color: #e1e5ec;font-size: 26px;font-weight: bold">
                 精选文学作品赏析
               </span>
               </el-row>
               <el-row >
-              <span style="color: #D2D6DD;">
+              <span style="color: #e1e5ec;">
               2023.05.22 - 2023.09.28
               12课时
               </span>
@@ -49,21 +48,22 @@
               </div>
             </el-main>
           </el-container>
-        </div>
+
         </el-aside>
         <el-main style="background-color: #2F3233">
           <el-row style="margin: 20px 0 0 90px;display: block;vertical-align: bottom">
             <span class="price-sign">$</span><span class="price-text">100</span>
           </el-row>
           <el-row>
-            <span style="color: #c9cdd4;margin: 0 0 10px 90px">2月5日开售</span>
+            <span style="color: #e1e5ec;margin: 0 0 10px 90px">2月5日开售</span>
           </el-row>
           <el-row>
-            <el-button round  class="buy-button">立即购买</el-button>
+            <el-button round  class="buy-button" @click="jump">立即购买</el-button>
           </el-row>
         </el-main>
       </el-container>
     </div>
+
   </el-row>
 
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
@@ -146,12 +146,12 @@
                   <el-avatar  :size="40" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
                 </el-col>
                 <el-col :span="2">
-                  <span style="font-size: 15px;color: #c9cdd4">珈瑶</span>
+                  <span style="font-size: 15px;color: #e1e5ec">珈瑶</span>
                 </el-col  >
-              <el-col :span="20" style="text-align: right"><span style="color: #c9cdd4">2022-08-26 14:57</span></el-col>
+              <el-col :span="20" style="text-align: right"><span style="color: #e1e5ec">2022-08-26 14:57</span></el-col>
             </el-row>
             <el-row  class="pl" style="margin-bottom: 15px">
-              <el-col  :span="22" :offset="2"><span style="color: #c9cdd4;font-size: 12px">好看爱看</span></el-col>
+              <el-col  :span="22" :offset="2"><span style="color: #e1e5ec;font-size: 12px">好看爱看</span></el-col>
             </el-row>
 
           <hr class="hr_gradient">
@@ -175,10 +175,6 @@
         </el-main>
       </el-tab-pane>
     </el-tabs>
-
-
-
-
   </el-scrollbar>
 
 </div>
@@ -189,6 +185,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { TabsPaneContext } from 'element-plus'
+import {useRouter} from "vue-router";
 const activeIndex = ref('1')
 const currentPage1 = ref(5)
 const activeIndex2 = ref('1')
@@ -259,6 +256,10 @@ function submitReview() {
     alert('请完成评价和评论');
   }
 }
+const jump = () => {
+  router.push('/Academypay')
+}
+const router = useRouter()
 </script>
 
 <style scoped>

@@ -1,34 +1,3 @@
-<script lang="ts" setup>
-import { Search } from '@element-plus/icons-vue'
-import FooterPage from "../../components/BottomFooter/FooterPage.vue";
-//const input1 = ref('')
-import { ref,reactive, toRefs } from 'vue'
-const router = useRouter()
-import {useRouter} from 'vue-router'
-
-const input1 = ref('')
-const activeIndex = ref('1')
-const input2 = ref('')
-//const input3 = ref('')
-const dialogTableVisible = ref(false)
-//const formLabelWidth = '1200px'
-const handleSelect = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-
-const jump = () => {
-  router.push('/AcademyChild')
-}
-const state = reactive({
-
-  circleUrl:
-      'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
-  squareUrl:
-      'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png',
-  sizeList: ['small', '', 'large'] as const,
-})
-
-</script>
 
 <template>
   <div class="background">
@@ -217,6 +186,38 @@ const state = reactive({
 
   </el-dialog>
 </template>
+
+<script lang="ts" setup>
+import { Search } from '@element-plus/icons-vue'
+import FooterPage from "../../components/BottomFooter/FooterPage.vue";
+//const input1 = ref('')
+import { ref,reactive, toRefs } from 'vue'
+const router = useRouter()
+import {useRouter} from 'vue-router'
+
+const input1 = ref('')
+const activeIndex = ref('1')
+const input2 = ref('')
+//const input3 = ref('')
+const dialogTableVisible = ref(false)
+//const formLabelWidth = '1200px'
+const handleSelect = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
+}
+
+const jump = () => {
+  router.push('/AcademyChild')
+}
+const state = reactive({
+
+  circleUrl:
+      'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+  squareUrl:
+      'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png',
+  sizeList: ['small', '', 'large'] as const,
+})
+
+</script>
 
 
 

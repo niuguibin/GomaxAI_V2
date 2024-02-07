@@ -1,0 +1,73 @@
+/*折叠面板样式修改*/
+::v-deep .el-collapse-item__header{
+    color: #e1e5ec;
+    background-color: #2F3233 !important;
+    position: relative;
+    border: none;
+    margin: 7px 50px 7px 20px;
+    font-size: 15px;
+}
+::v-deep .el-collapse-item__content{
+    text-align: left;
+    /*color: #a34949;*/
+    /*background-color: #313743;*/
+    padding-bottom: 0;
+
+}
+/*去除el-collapse折叠面板的默认边框*/
+.el-collapse,.el-collapse-item__wrap {
+    border: none;
+}
+
+/*课程表格的样式修改*/
+/deep/ .el-table{
+    border: none;
+
+}
+/deep/ .el-table__row{
+    background-color: #2F3233;
+    color: #e1e5ec;
+    height: 70px;
+}
+/deep/ .el-table td{
+    border-bottom: none;
+}
+/deep/ .el-table--enable-row-hover .el-table__body tr:hover>td{
+    background-color: #3C3F41 !important;
+}
+>>> .el-table thead {
+    display: none;
+}
+/deep/.el-table__inner-wrapper::before{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    z-index: 3;
+}
+
+.hr_gradient{
+    border: 0;
+    height: 1px;
+    background-color: #5a5a5e;
+    width: 100%;
+    /*background-image: linear-gradient(to right,#333, #8b8b8b, #333);*/
+}
+.right-button{
+    width: 120px;
+    height: 40px;
+    background-color: #F5DB9D;
+    background-image: linear-gradient(to right, #445ED1, #A952D7);
+    border: none;
+    font-size: 18px;
+
+}
+
+.pay-background{
+    background-color: #2F3233;
+}
+.pay-background:hover{
+    background-color: #343738;
+}
+
+

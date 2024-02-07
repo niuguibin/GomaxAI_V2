@@ -103,14 +103,12 @@
     /*background-image: linear-gradient(to right,#333, #8b8b8b, #333);*/
 }
 
->>> .el-table thead {
-    display: none;
-}
+
 
 /*折叠面板样式修改*/
 
 ::v-deep .el-collapse-item__header{
-    color: #c0bfbf;
+    color: #e1e5ec;
     background-color: #18181A !important;
     position: relative;
     border: none;
@@ -128,13 +126,16 @@
 }
 
 /*课程表格的样式修改*/
+>>> .el-table thead {
+    display: none;
+}
 /deep/ .el-table{
     border: none;
 
 }
 /deep/ .el-table__row{
     background-color: #18181A;
-    color: #c0bfbf;
+    color: #e1e5ec;
     height: 70px;
 }
 /deep/ .el-table td{
@@ -155,7 +156,7 @@
 
     --el-pagination-button-disabled-bg-color: #ffffff00;/*    最边上的颜色*/
     --el-pagination-font-size: 17px;     /*    分页字体大小*/
-    --el-text-color-primary: #c0bfbf;  /*    分页字体颜色*/
+    --el-text-color-primary: #e1e5ec;  /*    分页字体颜色*/
 
 
 
