@@ -1,0 +1,53 @@
+.demo {
+    display: inline-block;
+    width: 800px;
+    height: 600px;
+    text-align: center;
+    line-height: 100px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin: 30px 0 30px 10px;
+}
+.text{
+    color: #999aaa;
+    font-size: 10px;
+}
+
+
+.bottom {
+    width: 100%;
+    height: 77px;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    line-height: 77px;
+}
+.content {
+    width: 60%;
+    min-width: 200px;
+    height: 37px;
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 16px;
+    padding: 0 10px;
+    outline: none;
+}
+.send {
+    background-image: linear-gradient(to right, #445ED1, #A952D7);
+    color: #fff;
+    display: inline-block;
+    width: 100px;
+    height: 38px;
+    line-height: 37px;
+    text-align: center;
+    position: relative;
+
+    top: 2px;
+    border-radius: 0px 10px 10px 0px;
+    text-decoration: none;
+    font-family: "Microsoft YaHei"
+}

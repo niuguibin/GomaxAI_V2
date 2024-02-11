@@ -1,10 +1,47 @@
-.background {
-    width: 1200px;
-    height: 1200px;
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    color: white;
-    text-align: center;
-    line-height: 400px;
+
+.el-menu-vertical-demo{
+    background-color: #3C3F41;
+    border: none;
+
+}
+.demo-tabs > .el-tabs__content {
+    padding: 32px;
+    color: aliceblue;
+    font-size: 32px;
+    font-weight: 600;
+
+
+}
+
+.el-tabs--right .el-tabs__content,
+.el-tabs--left .el-tabs__content {
+    height: 100%;
+}
+/*标签页整体的样式调整*/
+/deep/.el-tabs{
+
+
+}
+/*每个标签单独的样式调整*/
+/deep/.el-tabs--left .el-tabs__item.is-left {
+    text-align: right;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+::v-deep .el-tabs__item {
+    color: #e1e5ec;
+}
+::v-deep .el-tabs__item.is-active {
+    color:#F5DB9D;
+    opacity: 1;
+}
+/* 去掉tabs标签栏下的下划线 */
+::v-deep .el-tabs__nav-wrap::after {
+    position: static !important;
+    /* background-color: #fff; */
+}
+/* 下划线切换高亮 */
+::v-deep .el-tabs__active-bar {
+    background-color:#F5DB9D;
 }

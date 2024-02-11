@@ -24,8 +24,8 @@ const update = () => {
           <el-menu
               class="el-menu-demo"
               mode="horizontal"
-              text-color="#ffffff"
-              active-text-color="#ff5"
+              text-color="#E3E3E3"
+              active-text-color="#F5DB9D"
               background-color="transparent"
               style="border-bottom: none"
               router

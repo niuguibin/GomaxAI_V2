@@ -30,7 +30,9 @@
         </el-table-column>
         <el-table-column>
           <el-button type="primary" round
-                     style="background-image: linear-gradient(to right, #445ED1, #A952D7);border: none;">
+                     @click="jump"
+                     style="background-image: linear-gradient(to right, #445ED1, #A952D7);border: none;
+                     ">
             观 看
           </el-button>
         </el-table-column>
@@ -47,7 +49,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Calendar, Search } from '@element-plus/icons-vue'
+import {useRouter} from "vue-router";
 const input1 = ref('')
+const jump = () =>{
+  router.push('/Academyvideo')
+}
+const router = useRouter()
 const tableData = [
   {
     date: '2024.02.21 19:00 - 21:30',
