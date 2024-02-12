@@ -15,11 +15,14 @@ const login = reactive<RuleForm>({
   username: '',
   password: '',
 })
+//因为没有后台校验token，临时使用localstorge存储字符的方式模拟token
 const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
     if (valid) {
       router.push('/')
+      let date = new Date()
+      localStorage.setItem('key',date.toString())
     } else {
       console.log('error submit!', fields)
     }
