@@ -56,7 +56,7 @@
 .right-button{
     width: 120px;
     height: 40px;
-    background-color: #F5DB9D;
+    color: #f1f5fc;
     background-image: linear-gradient(to right, #445ED1, #A952D7);
     border: none;
     font-size: 18px;
@@ -69,5 +69,10 @@
 .pay-background:hover{
     background-color: #343738;
 }
+.pay-title{
 
+    font-size: 20px;
+
+
+}
 
