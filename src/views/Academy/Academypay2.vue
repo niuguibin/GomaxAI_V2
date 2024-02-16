@@ -1,5 +1,5 @@
 <template>
-<div style="margin-top: 47px;padding: 1px 150px 0 150px">
+<div style="margin-top: 47px;padding: 15px 150px 0 150px">
   <div style="background-color: #2F3233;height: 150px;margin-bottom: 10px;display: flex;flex-direction: column;justify-content:center;">
     <el-row>
       <span  style="color: #e1e5ec;margin-left: 50px;margin-bottom: 10px;font-size: 25px;font-weight: bold">

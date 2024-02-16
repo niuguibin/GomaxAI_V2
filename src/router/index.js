@@ -13,6 +13,7 @@ import Academypay from "@/views/Academy/Academypay.vue";
 import Academypay2 from "@/views/Academy/Academypay2.vue";
 import Academytable from "@/views/Academy/Academytable.vue";
 import Academyvideo from "@/views/Academy/Academyvideo.vue";
+import UserInfo from "@/views/UserInfo/UserInfo.vue";
 
 
 const router = createRouter({
@@ -83,6 +84,11 @@ const router = createRouter({
           path: '/academyvideo',
           name: 'academyvideo',
           component: Academyvideo
+        },
+        {
+          path: '/userinfo',
+          name: 'userinfo',
+          component: UserInfo
         },
       ]
     },

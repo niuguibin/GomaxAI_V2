@@ -10,7 +10,7 @@
             mode="horizontal"
             background-color="#2B2B2B"
             text-color="#ffffff"
-            active-text-color="#ff5"
+            active-text-color="#F5DB9D"
             @select="handleSelect"
             style="height: 50px;padding-left: 130px"
         >

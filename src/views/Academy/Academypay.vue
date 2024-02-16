@@ -78,7 +78,9 @@
             </el-row>
           </el-radio-group>
           <el-row style="float: right">
-            <el-button class="right-button" type="primary" @click="jump">确认购买</el-button>
+            <el-button class="right-button" type="primary" plain @click="jump">
+              确认购买
+            </el-button>
           </el-row>
         </div>
       </el-row>
@@ -86,6 +88,8 @@
     </div>
   </el-scrollbar>
 </div>
+
+
 </template>
 
 <script lang="ts" setup>
