@@ -184,8 +184,8 @@
     width: 24px;
     height: 24px;
     display: block;
+    cursor: pointer;
     position: relative;
-    margin-left: 15px;
     top: 30%;
 }
 .note img {
@@ -212,4 +212,19 @@
 .login:hover {
     box-shadow: inset 1px 1px 5px rgba(0,0,0,0.7);
     transition: 0.4s ease-in-out;
+}
+.tooltip-base-box {
+    width: 600px;
+}
+.tooltip-base-box .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tooltip-base-box .center {
+    justify-content: center;
+}
+.tooltip-base-box .box-item {
+    width: 110px;
+    margin-top: 10px;
 }

@@ -23,9 +23,9 @@ const getToken = () => {
 const store = useCounterStore()
 const dialogVisible = ref(false)
 const img_url = ref([
-  {id:1,src: 'https://static.runoob.com/images/mix/img_fjords_wide.jpg'},
-  {id:2,src: 'https://static.runoob.com/images/mix/img_nature_wide.jpg'},
-  {id:3,src: 'https://static.runoob.com/images/mix/img_mountains_wide.jpg'}
+  {id:1,src: '/src/assets/img/swiper_1.jpg'},
+  {id:2,src: '/src/assets/img/swiper_2.jpg'},
+  {id:3,src: '/src/assets/img/swiper_3.jpg'}
 ])
 //签到判断
 //该方法用于实现在没有对接接口的情况下，模拟实现签到行为，
@@ -77,9 +77,10 @@ const pay = () => {
           class="swiper"
           height="100%"
           autoplay
+          pause-on-hover
       >
         <el-carousel-item v-for="item in img_url" :key="item">
-          <img :src="item.src" alt="" loading="lazy">
+          <img :src="item.src" alt="" loading="lazy" class="carousel-img">
         </el-carousel-item>
       </el-carousel>
     </div>

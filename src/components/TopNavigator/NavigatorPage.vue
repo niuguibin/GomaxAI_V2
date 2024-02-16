@@ -39,15 +39,29 @@ const update = () => {
         </div>
       </div>
       <div class="item">
+        <el-tooltip
+            class="box-item"
+            effect="dark"
+            content="我的鸮币"
+            placement="bottom"
+        >
           <div class="money">
             <div class="money_img"></div>
             <span>{{store.coin}}</span>
           </div>
+        </el-tooltip>
+        <el-tooltip
+            class="box-item"
+            effect="dark"
+            content="AI状态"
+            placement="bottom"
+        >
           <div class="web_info">
             <span>GPT4：0</span>
             <span>MJ：0</span>
             <span>SD：0</span>
           </div>
+        </el-tooltip>
           <div class="document_manage">
             <img src="../../assets/doc.png" alt="">
             <span>创作管理</span>
@@ -56,7 +70,14 @@ const update = () => {
             <span>升级会员</span>
           </div>
           <div class="note">
-            <img src="../../assets/lin.png" alt="">
+            <el-tooltip
+                class="box-item"
+                effect="dark"
+                content="消息通知"
+                placement="bottom"
+            >
+              <img src="../../assets/lin.png" alt="">
+            </el-tooltip>
           </div>
           <el-button class="login" @click="login">
             登录/注册

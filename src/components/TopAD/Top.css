@@ -224,3 +224,9 @@
     border-radius: 10px;
     overflow: hidden;
 }
+.carousel-img {
+    width: 460px;
+    height: 240px;
+    display: block;
+    position: relative;
+}
