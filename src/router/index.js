@@ -8,7 +8,6 @@ import OfficePage from "@/views/AIOffice/OfficePage.vue";
 import AcademyPage from "@/views/Academy/AcademyPage.vue";
 import CreativePage from "@/views/CreativeSquare/CreativePage.vue";
 import AcademyChild from "@/views/Academy/AcademyChild.vue";
-import UserInfo from "@/views/UserInfo/UserInfo.vue";
 import Academypay from "@/views/Academy/Academypay.vue";
 import Academypay2 from "@/views/Academy/Academypay2.vue";
 import Academytable from "@/views/Academy/Academytable.vue";

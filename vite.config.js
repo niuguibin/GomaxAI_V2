@@ -40,5 +40,14 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  proxy: {
+    '/abc': {    //1
+      target: 'http://localhost:9090',    //2
+      changOrigin: true,
+      pathRewrite: {    //3
+        '^/abc': ''
+      }
+    }
   }
 })

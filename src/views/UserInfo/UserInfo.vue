@@ -92,12 +92,45 @@ const openPay = () => {
     confirmButtonText: '确认',
     callback: () => {
       ElMessage({
-        type: 'info',
-        message: '单笔充值',
+        type: 'success',
+        message: '充值确认',
       })
     },
   })
 }
+//充值卡片选择
+const radio_1 = ref(false)
+const choice = ref()
+const tag = ref(true)
+const select = (index) => {
+  choice.value = renewal_list.value[index].msg
+}
+const Pay = () => {
+  if (choice.value !== null && radio_1.value == true && tag.value){
+    tag.value = false;
+    ElMessageBox.alert(`充值金额:${choice.value}`, '充值', {
+      confirmButtonText: '确认',
+      callback: () => {
+        ElMessage({
+          type: 'success',
+          message: '充值确认',
+        })
+      },
+    })
+  }else {
+    ElMessage({
+      type: 'warning',
+      message: '充值失败',
+    })
+  }
+}
+//我的发布
+const collection_list = ref([
+  {id: 1,title: '校园秋景',date: '2023年5月8日'},
+  {id: 2,title: '校园秋景',date: '2023年5月9日'},
+  {id: 3,title: '校园秋景',date: '2023年5月10日'},
+  {id: 4,title: '校园秋景',date: '2023年5月11日'},
+])
 </script>
 
 <template>
@@ -193,16 +226,52 @@ const openPay = () => {
             </div>
             <div class="renewal" v-show="renewal_flag">
               <div class="renewal-box">
-                  <div class="renewal-item" v-for="item in renewal_list" :key="item">
+                  <div class="renewal-item" v-for="(item,index) in renewal_list" :key="index" @click="select(index)">
                     <div class="renewal-top">{{item.msg}}</div>
                     <div class="renewal-bottom">
                     </div>
                   </div>
               </div>
-              <div></div>
+              <div class="renewal-box-2">
+                <div class="renewal_item-1">
+                  <el-checkbox size="large" v-model="radio_1">点击同意《会员自动续费条例》</el-checkbox>
+                </div>
+                <div class="renewal_item-1" style="margin-top: 10px">
+                  <el-button round plain @click="Pay">支付</el-button>
+                </div>
+              </div>
             </div>
           </el-tab-pane>
-          <el-tab-pane label="我的发布">Config</el-tab-pane>
+          <el-tab-pane label="我的发布">
+            <div class="collect">
+              <div class="collect-card">
+                <div class="collect-title">
+                  <h2>我的发布</h2>
+                </div>
+                <div class="collect-body">
+                  <div class="collections" v-for="item in collection_list" :key="item">
+                    <img src="../../assets/img/schooltest.jpg" :alt="item.title" loading="lazy">
+                    <h5 style="text-align: left">{{item.title}}</h5>
+                    <h5 style="text-align: right">{{item.date}}</h5>
+                  </div>
+                </div>
+                <div class="collect-title" style="justify-content: space-around">
+                  <el-pagination layout="prev, pager, next" :total="1000" />
+                </div>
+              </div>
+              <div class="collect-info">
+                <el-card class="quick-submit">
+                  <el-button-group style="display: block;width: 100%">
+                    <el-button size="small">一键投稿</el-button>
+                    <el-button size="small">内容管理</el-button>
+                  </el-button-group>
+                </el-card>
+                <el-card class="coll-info">
+                  <img src="../../assets/img/swiper_3.jpg" alt="">
+                </el-card>
+              </div>
+            </div>
+          </el-tab-pane>
           <el-tab-pane label="我的收藏">Role</el-tab-pane>
           <el-tab-pane label="我收到的赞">Task</el-tab-pane>
         </el-tabs>

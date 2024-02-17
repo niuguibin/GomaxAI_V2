@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { reactive,ref,h } from "vue";
 import {useRouter} from "vue-router";
+import registerUtil from '../../utils/RegisterUtil.js'
 import type { FormInstance, FormRules } from 'element-plus'
 import {ElMessage, ElNotification} from "element-plus";
-import axios from "axios";
+import loginUtil from "../../utils/LoginUtil";
 const ruleFormRef = ref<FormInstance>()
 const router = useRouter()
 interface RuleForm {
@@ -20,6 +21,9 @@ const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
     if (valid) {
+      loginUtil.username = login.username
+      loginUtil.password = login.password
+      loginUtil.submit()
       router.push('/')
       let date = new Date()
       localStorage.setItem('key',date.toString())
@@ -70,10 +74,9 @@ const login_statues = ref(100)
 const registerSubmit = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
-    axios.get(`http://8.130.35.251:3000/captcha/verify?phone=${Register.username}&captcha=${Register.code}`).then((res) => {
-      console.log(res)
-      login_statues.value = res.data.code
-    })
+    registerUtil.pass = Register.password
+    registerUtil.code = Register.code
+    registerUtil.submit()
     if (valid && login_statues.value !== 503) {
       //跳回登录页面
       isShow_1.value = !isShow_1.value
@@ -123,19 +126,22 @@ const isShow_2 = ref(false)
 
 
 //验证码获取和校验
+const disable = ref(false)
 const mes = ref('获取验证码')
 const number = ref(60)
 const captcha = () => {
   if (Register.username !== '' && Register.password !== ''){
-    axios.get(`http://8.130.35.251:3000/captcha/sent?phone=${Register.username}`).then((res) => {
-      console.log(res)
-    })
+    registerUtil.phone = Register.username
+    registerUtil.sendMes()
+    disable.value = true
     const timer = setInterval(() => {
       mes.value = `重新发送(${number.value})`
       number.value --
       if (number.value === 0){
         clearInterval(timer)
+        number.value = 60
         mes.value = '重新发送'
+        disable.value = false
       }
     },1000)
   }
@@ -206,7 +212,7 @@ const captcha = () => {
           <el-form-item prop="code" style="margin-bottom: 10px">
             <el-input clearable v-model="Register.code" placeholder="请输入验证码"/>
           </el-form-item>
-          <el-button style="width: 80px;" class="el-button-2" @click="captcha">{{mes}}</el-button>
+          <el-button style="width: 80px;" class="el-button-2" @click="captcha" :disabled="disable">{{mes}}</el-button>
           <el-button class="el-button-1" round @click="registerSubmit(registerFormRef)">注册</el-button>
         </el-form>
       </div>
