@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import {useCounterStore} from "../../stores/counter.js";
 import {Edit} from "@element-plus/icons-vue";
+import {useRouter} from "vue-router";
 import { ref } from "vue";
 import {watchEffect} from "vue";
 import {ElMessage, ElMessageBox,ElIcon } from "element-plus";
@@ -13,6 +14,7 @@ const MyWork = store.MyWork
 const like = store.like
 const userID = store.userID
 const username = ref()
+const router = useRouter()
 //编辑弹窗
 const isShow = ref(false)
 watchEffect(() => {
@@ -131,6 +133,10 @@ const collection_list = ref([
   {id: 3,title: '校园秋景',date: '2023年5月10日'},
   {id: 4,title: '校园秋景',date: '2023年5月11日'},
 ])
+//跳转作品管理页面
+const jumpToWork = () => {
+  router.replace('/workManage')
+}
 </script>
 
 <template>
@@ -183,7 +189,7 @@ const collection_list = ref([
       </el-card>
     </div>
     <div class="right-info">
-      <el-card style="width: 90%;height: 400px;margin: 130px auto">
+      <el-card style="width: 90%;height: auto;margin: 130px auto">
         <el-tabs>
           <el-tab-pane label="我的钱包">
             <div class="user_card">
@@ -262,7 +268,7 @@ const collection_list = ref([
               <div class="collect-info">
                 <el-card class="quick-submit">
                   <el-button-group style="display: block;width: 100%">
-                    <el-button size="small">一键投稿</el-button>
+                    <el-button size="small" @click="jumpToWork">一键投稿</el-button>
                     <el-button size="small">内容管理</el-button>
                   </el-button-group>
                 </el-card>
@@ -272,8 +278,23 @@ const collection_list = ref([
               </div>
             </div>
           </el-tab-pane>
-          <el-tab-pane label="我的收藏">Role</el-tab-pane>
-          <el-tab-pane label="我收到的赞">Task</el-tab-pane>
+          <el-tab-pane label="我的收藏">
+            <div class="favourites">
+              <div class="collect-title">
+                <h2>我的收藏</h2>
+              </div>
+              <div class="favourites-box">
+                <div class="collections" v-for="item in collection_list" :key="item" style="float: left;margin-right: 10px">
+                  <img src="../../assets/img/schooltest.jpg" :alt="item.title" loading="lazy">
+                  <h5 style="text-align: left">{{item.title}}</h5>
+                  <h5 style="text-align: right">{{item.date}}</h5>
+                </div>
+              </div>
+              <div class="collect-title" style="justify-content: space-around">
+                <el-pagination layout="prev, pager, next" :total="1000" />
+              </div>
+            </div>
+          </el-tab-pane>
         </el-tabs>
       </el-card>
     </div>

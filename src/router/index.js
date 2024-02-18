@@ -13,6 +13,10 @@ import Academypay2 from "@/views/Academy/Academypay2.vue";
 import Academytable from "@/views/Academy/Academytable.vue";
 import Academyvideo from "@/views/Academy/Academyvideo.vue";
 import UserInfo from "@/views/UserInfo/UserInfo.vue";
+import WorkManage from "@/views/WorkManage/WorkManage.vue";
+import ContributeCom from "@/components/Contribute/ContributeCom.vue";
+import ContentManage from "@/components/ContentManange/ContentManage.vue";
+import DataManage from "@/components/DataManage/DataManage.vue";
 
 
 const router = createRouter({
@@ -88,6 +92,28 @@ const router = createRouter({
           path: '/userinfo',
           name: 'userinfo',
           component: UserInfo
+        },
+        {
+          path: '/workManage',
+          name: 'workManage',
+          component: WorkManage,
+          children: [
+            {
+              path: '',
+              name: 'contribute',
+              component: ContributeCom
+            },
+            {
+              path: '/content',
+              name: 'content',
+              component: ContentManage
+            },
+            {
+              path: '/data',
+              name: 'data',
+              component: DataManage
+            }
+          ]
         },
       ]
     },

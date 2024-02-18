@@ -1,0 +1,8 @@
+.content {
+    width: 960px;
+    display: block;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    background-color: #ff5;
+}

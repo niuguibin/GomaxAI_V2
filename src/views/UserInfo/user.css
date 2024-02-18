@@ -342,3 +342,16 @@
     object-fit: cover;
     position: relative;
 }
+.favourites {
+    width: 100%;
+    height: 400px;
+    display: block;
+    position: relative;
+}
+.favourites-box {
+    display: block;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
