@@ -13,7 +13,12 @@ class LoginUtil {
     public username = ''
     public password = ''
     submit = () => {
-        axios.post(`http://localhost:9090/user/login?phone=${this.username}&password=${this.password}`).then((res) => {
+        axios.post(`http://localhost:9090/user/login`,{
+            phone: `${this.username}`,
+            password: `${this.password}`
+        },{
+            headers: {"Content-Type": "application/json"}
+        }).then((res) => {
             console.log(res)
         }).catch((err) => {
             console.log('成功登录',err)

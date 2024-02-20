@@ -26,7 +26,13 @@ class RegisterUtil {
     }
     //注册
     submit = () => {
-        axios.post(`http://localhost:9090/user/register?username=${this.phone}&password=${this.pass}&code=${this.code}`).then((res) => {
+        axios.post(`http://localhost:9090/user/register`,{
+            phone: `${this.phone}`,
+            password: `${this.pass}`,
+            code: `${this.code}`
+        },{
+            headers: {"Content-Type": "application/json"}
+        }).then((res) => {
             console.log('注册成功',res)
         }).catch((err) => {
             console.log('错误',err)

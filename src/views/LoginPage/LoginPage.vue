@@ -16,7 +16,7 @@ const login = reactive<RuleForm>({
   username: '',
   password: '',
 })
-//因为没有后台校验token，临时使用localstorge存储字符的方式模拟token
+//登录函数
 const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
@@ -25,8 +25,6 @@ const submitForm = async (formEl: FormInstance | undefined) => {
       loginUtil.password = login.password
       loginUtil.submit()
       router.push('/')
-      let date = new Date()
-      localStorage.setItem('key',date.toString())
     } else {
       console.log('error submit!', fields)
     }
@@ -46,7 +44,7 @@ const login_rules = reactive<FormRules<RuleForm>>({
       required: true,message: '请输入密码',trigger: 'blur'
     },
     {
-      min: 8,max: 16,message: '密码的长度是8到16',trigger: 'blur'
+      min: 4,max: 6,message: '密码的长度是4到6',trigger: 'blur'
     }
   ],
 })
@@ -109,7 +107,7 @@ const register_rules = reactive<FormRules<registerForm>>({
       required: true,message: '请输入密码',trigger: 'blur'
     },
     {
-      min: 8,max: 16,message: '密码的长度是8到16',trigger: 'blur'
+      min: 4,max: 6,message: '密码的长度是4到6',trigger: 'blur'
     }
   ],
   code: [
