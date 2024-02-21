@@ -1,23 +1,18 @@
-import axios from 'axios'
-import router from "@/router";
+import { ElMessage } from 'element-plus'
+import router from '../router'
+import axios from "axios";
 
-// 创建可一个新的axios对象
 const request = axios.create({
-    baseURL: process.env.VUE_APP_BASEURL,   // 后端的接口地址  ip:port
-    timeout: 30000                          // 30s请求超时
+    baseURL: import.meta.env.VITE_BASE_URL,
+    timeout: 30000  // 后台接口超时时间设置
 })
 
 // request 拦截器
 // 可以自请求发送前对请求做一些处理
-// 比如统一加token，对请求参数统一加密
 request.interceptors.request.use(config => {
-    config.headers['Content-Type'] = 'application/json;charset=utf-8';        // 设置请求头格式
-    let user = JSON.parse(localStorage.getItem("xm-user") || '{}')  // 获取缓存的用户信息
-    config.headers['token'] = user.token  // 设置请求头
-
+    config.headers['Content-Type'] = 'application/json;charset=utf-8';
     return config
 }, error => {
-    console.error('request error: ' + error) // for debug
     return Promise.reject(error)
 });
 
@@ -26,18 +21,23 @@ request.interceptors.request.use(config => {
 request.interceptors.response.use(
     response => {
         let res = response.data;
-
+        // 如果是返回的文件
+        if (response.config.responseType === 'blob') {
+            return res
+        }
         // 兼容服务端返回的字符串数据
         if (typeof res === 'string') {
             res = res ? JSON.parse(res) : res
         }
+        // 当权限验证不通过的时候给出提示
         if (res.code === '401') {
-            router.push('/login')
+            ElMessage.error(res.msg);
+            router.push("/login")
         }
         return res;
     },
     error => {
-        console.error('response error: ' + error) // for debug
+        console.log('err' + error)
         return Promise.reject(error)
     }
 )
