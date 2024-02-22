@@ -4,7 +4,9 @@
 
 <template>
   <div class="contribute">
-    我是一键投稿
+    <div class="content">
+      一键投稿
+    </div>
   </div>
 </template>
 

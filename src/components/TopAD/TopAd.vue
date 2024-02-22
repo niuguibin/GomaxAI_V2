@@ -7,20 +7,13 @@ import QrcodeVue from "qrcode.vue";
 import { watchEffect } from "vue";
 import axios from "axios";
 const router = useRouter()
+const store = useCounterStore()
 //先校验是否登录，如归登录则跳转个人页，否则跳转登录页
 const login = () => {
-  if (getToken()){
-    router.push('/user')
-  }else {
-    router.push('/login')
-  }
+  router.push('/user')
 }
 //校验token
-const getToken = () => {
-  let token = localStorage.getItem('key')
-  return !!token;
-}
-const store = useCounterStore()
+
 const dialogVisible = ref(false)
 const img_url = ref([
   {id:1,src: '/src/assets/img/swiper_1.jpg'},

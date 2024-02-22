@@ -1,7 +1,8 @@
 //用于注册的工具类
 import axios from "axios";
 import {reactive } from "vue";
-
+import {req} from '../utils/request'
+const requestInstance = req
 interface registerForm {
     phone: string,
     pass: string,
@@ -26,7 +27,7 @@ class RegisterUtil {
     }
     //注册
     submit = () => {
-        axios.post(`http://localhost:9090/user/register`,{
+        requestInstance.post(`/user/register`,{
             phone: `${this.phone}`,
             password: `${this.pass}`,
             code: `${this.code}`

@@ -1,8 +1,15 @@
 .content {
     width: 960px;
-    display: block;
+    display: flex;
+    justify-content: space-around;
     height: 100%;
     position: relative;
     text-align: center;
-    background-color: #ff5;
+}
+.content-box {
+    width: 80%;
+    height: 100%;
+    display: block;
+    position: relative;
+    background-color: #262626
 }

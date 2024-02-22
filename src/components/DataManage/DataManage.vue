@@ -4,7 +4,9 @@
 
 <template>
   <div class="data">
-    我是数据管理
+    <div class="content">
+      我是数据管理
+    </div>
   </div>
 </template>
 

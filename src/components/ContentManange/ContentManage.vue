@@ -4,7 +4,9 @@
 
 <template>
   <div class="content">
-    我是内容管理
+    <div class="content-box">
+      我是内容管理
+    </div>
   </div>
 </template>
 
