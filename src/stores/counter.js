@@ -12,5 +12,8 @@ export const useCounterStore = defineStore('counter',() => {
    const dialogVisiable = ref(false)
    const username = ref('手机尾号8888的用户')
    const userID = ref('xxxxx-11322-pp')
-  return { count,follows,coin,collection,like,dialogVisiable,MyWork,username,userID,token }
+   const workPass = ref(119)
+   const wait2Pass = ref(6)
+   const workNoPass = ref(MyWork.value - workPass.value - wait2Pass.value)
+  return { count,follows,coin,collection,like,dialogVisiable,MyWork,username,userID,token,workPass,workNoPass,wait2Pass }
 })

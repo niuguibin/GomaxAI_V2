@@ -6,17 +6,21 @@ const requestInstance = req
 interface registerForm {
     phone: string,
     pass: string,
-    code: string
+    code: string,
+    statue: boolean
 }
 const Reg = reactive<registerForm>({
     phone: '',
     pass: '',
-    code: ''
+    code: '',
+    statue: false
 })
 class RegisterUtil {
     public phone = ''
     public pass = ''
     public code = ''
+    //这是一个标志位，如果注册成功就置为true
+    public statue = false
     //验证码发送
     sendMes = () => {
         axios.get(`http://localhost:9090/user/register/sendMs?phoneNumber=${this.phone}`).then((res) => {
@@ -27,14 +31,17 @@ class RegisterUtil {
     }
     //注册
     submit = () => {
-        requestInstance.post(`/user/register`,{
+        requestInstance.post(`http://localhost:9090/user/register`, {
             phone: `${this.phone}`,
             password: `${this.pass}`,
             code: `${this.code}`
         },{
-            headers: {"Content-Type": "application/json"}
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }).then((res) => {
             console.log('注册成功',res)
+            this.statue = true
         }).catch((err) => {
             console.log('错误',err)
         })

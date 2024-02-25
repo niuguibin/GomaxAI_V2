@@ -11,10 +11,10 @@ import {RouterView} from "vue-router";
         <div class="left-menu">
           <el-menu
               default-active="2"
-              background-color="#545c64"
+              background-color="#fff"
               router
-              text-color="#E3E3E3"
-              active-text-color="#F5DB9D"
+              text-color="#000000"
+              active-text-color="#409EFF"
               class="el-menu-vertical-demo"
               style="width: 240px;min-height: 545px;margin-top: 85px;border: none"
           >

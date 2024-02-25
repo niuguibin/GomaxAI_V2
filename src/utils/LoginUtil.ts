@@ -16,15 +16,11 @@ class LoginUtil {
     public username = ''
     public password = ''
     submit = () => {
-        //const store = useCounterStore();
-        requestInstance.post(`/user/login`,{
+        requestInstance.post(`http://localhost:9090/user/login`,{
             phone: `${this.username}`,
             password: `${this.password}`
-        },{
-            headers: {"Content-Type": "application/json;charset=utf-8"}
         }).then((res) => {
             console.log('登陆成功',res)
-            //store.token = res.data.data.token
         }).catch((err) => {
             console.log('登录错误',err)
         })

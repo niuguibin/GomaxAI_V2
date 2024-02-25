@@ -67,7 +67,6 @@ const Register = reactive<registerForm>({
   password: '',
   code: ''
 })
-const login_statues = ref(100)
 //注册函数
 const registerSubmit = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
@@ -75,7 +74,7 @@ const registerSubmit = async (formEl: FormInstance | undefined) => {
     registerUtil.pass = Register.password
     registerUtil.code = Register.code
     registerUtil.submit()
-    if (valid && login_statues.value !== 503) {
+    if (valid && registerUtil.statue) {
       //跳回登录页面
       isShow_1.value = !isShow_1.value
       isShow_2.value = !isShow_2.value

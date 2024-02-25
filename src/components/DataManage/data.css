@@ -1,7 +1,7 @@
 .data {
     width: 960px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
     height: 100%;
     position: relative;
@@ -11,5 +11,83 @@
     height: 100%;
     display: block;
     position: relative;
-    background-color: #262626
+}
+.data-title {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    background-color: #fff;
+    z-index: 899;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,0.1);
+}
+.data-stage {
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+    padding: 10px;
+    scrollbar-width: thin;
+    display: block;
+    position: relative;
+}
+.title-1 {
+    width: 75%;
+    height: 100%;
+    display: block;
+    position: relative;
+    line-height: 50px;
+}
+.title-2 {
+    width: 25%;
+    height: 100%;
+    display: block;
+    position: relative;
+    font-size: 15px;
+    color: #9499a0;
+    line-height: 50px;
+}
+.title-div {
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+.data-block {
+    width: 100%;
+    height: 218px;
+    padding: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.data-card {
+    width: 190px;
+    height: 88px;
+    display: block;
+    box-sizing: border-box;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.1);
+    position: relative;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.data-card-item {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+.data-chart {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
