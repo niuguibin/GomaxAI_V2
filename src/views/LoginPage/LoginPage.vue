@@ -7,15 +7,13 @@ import {ElMessage, ElNotification} from "element-plus";
 import loginUtil from "../../utils/LoginUtil";
 const ruleFormRef = ref<FormInstance>()
 const router = useRouter()
-import request from "../../utils/request";
-
 interface RuleForm {
-  phone: string,
+  username: string,
   password: string,
 }
 
 const login = reactive<RuleForm>({
-  phone: '',
+  username: '',
   password: '',
 })
 //登录函数
@@ -23,30 +21,31 @@ const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
     if (valid) {
-      request.post('/user/login', login).then(res => {
-        console.log(res,"我是接收的数据")
-        if (res.code === '200') {
-          localStorage.setItem('xm-user', JSON.stringify(res.data))
-          ElMessage.success('登录成功')
-          console.log(res.data)
-          router.push('/') // 跳转到主页
-        } else {
-          ElMessage.error(res.msg)
-        }
-      })
+      loginUtil.username = login.username
+      loginUtil.password = login.password
+      loginUtil.submit()
+      router.push('/')
     } else {
       console.log('error submit!', fields)
     }
   })
 }
-
-
-const rules = reactive({
-  phone: [
-    { required: true, message: '请输入账号', trigger: 'blur' },
+const login_rules = reactive<FormRules<RuleForm>>({
+  username: [
+    {
+      required: true,message: '请输入用户名',trigger: 'blur'
+    },
+    {
+      min: 5,max: 15,message: '用户名长度是5到15',trigger: 'blur'
+    }
   ],
   password: [
-    { required: true, message: '请输入密码', trigger: 'blur' },
+    {
+      required: true,message: '请输入密码',trigger: 'blur'
+    },
+    {
+      min: 4,max: 6,message: '密码的长度是4到6',trigger: 'blur'
+    }
   ],
 })
 
@@ -59,37 +58,23 @@ const register = () => {
   isShow_2.value = !isShow_2.value
 }
 interface registerForm {
-  phone: string,
+  username: string,
   password: string,
   code: string
 }
 const Register = reactive<registerForm>({
-  phone: '',
+  username: '',
   password: '',
   code: ''
 })
-
-// 将数据对象转换为 JSON 字符串
-const RegisterData = JSON.stringify(Register);
-const login_statues = ref(100)
 //注册函数
 const registerSubmit = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
-    if (valid && login_statues.value !== 503) {
-      request.post('/user/register', RegisterData
-      ).then(res => {
-        console.log(res,"我是接收的数据")
-        // if (res.code === '200') {
-        //   localStorage.setItem('xm-user', JSON.stringify(res.data))
-        //   ElMessage.success('登录成功')
-        //   console.log(res.data)
-        //   router.push('/') // 跳转到主页
-        // } else {
-        //   ElMessage.error(res.msg)
-        // }
-      })
-
+    registerUtil.pass = Register.password
+    registerUtil.code = Register.code
+    registerUtil.submit()
+    if (valid && registerUtil.statue) {
       //跳回登录页面
       isShow_1.value = !isShow_1.value
       isShow_2.value = !isShow_2.value
@@ -108,7 +93,7 @@ const registerSubmit = async (formEl: FormInstance | undefined) => {
   })
 }
 const register_rules = reactive<FormRules<registerForm>>({
-  phone: [
+  username: [
     {
       required: true,message: '请输入用户名',trigger: 'blur'
     },
@@ -141,22 +126,10 @@ const isShow_2 = ref(false)
 const disable = ref(false)
 const mes = ref('获取验证码')
 const number = ref(60)
-
 const captcha = () => {
-  if (Register.phone !== null && Register.password !== null){
-    request.get('/user/register/sendMs',
-        {
-          params: {
-            phone : Register.phone
-          }
-        }).then(res => {
-      console.log(res,"验证码接受成功")
-      if (res.code === '200') {
-        ElMessage.success('获取成功')
-      } else {
-        ElMessage.error(res.msg)
-      }
-    })
+  if (Register.username !== '' && Register.password !== ''){
+    registerUtil.phone = Register.username
+    registerUtil.sendMes()
     disable.value = true
     const timer = setInterval(() => {
       mes.value = `重新发送(${number.value})`
@@ -194,13 +167,13 @@ const captcha = () => {
         <el-form
             ref="ruleFormRef"
             label-width="80px"
-            :rules="rules"
+            :rules="login_rules"
             :model="login"
             status-icon
             label-position="left"
         >
-          <el-form-item label="手机号:" prop="phone">
-            <el-input clearable placeholder="请输入手机号" v-model="login.phone"/>
+          <el-form-item label="手机号:" prop="username">
+            <el-input clearable placeholder="请输入手机号" v-model="login.username"/>
           </el-form-item>
           <el-form-item label="密码:" prop="password">
             <el-input type="password" clearable show-password v-model="login.password" placeholder="请输入密码"/>
@@ -227,8 +200,8 @@ const captcha = () => {
             :model="Register"
             :rules="register_rules"
         >
-          <el-form-item label="手机号:" prop="phone">
-            <el-input clearable placeholder="请输入手机号" v-model="Register.phone"/>
+          <el-form-item label="手机号:" prop="username">
+            <el-input clearable placeholder="请输入手机号" v-model="Register.username"/>
           </el-form-item>
           <el-form-item label="密码:" prop="password">
             <el-input clearable placeholder="请输入密码" type="password" v-model="Register.password" show-password/>
@@ -236,7 +209,7 @@ const captcha = () => {
           <el-form-item prop="code" style="margin-bottom: 10px">
             <el-input clearable v-model="Register.code" placeholder="请输入验证码"/>
           </el-form-item>
-          <el-button style="width: 80px;" class="el-button-2" @click="captcha(Register)" :disabled="disable">{{mes}}</el-button>
+          <el-button style="width: 80px;" class="el-button-2" @click="captcha" :disabled="disable">{{mes}}</el-button>
           <el-button class="el-button-1" round @click="registerSubmit(registerFormRef)">注册</el-button>
         </el-form>
       </div>

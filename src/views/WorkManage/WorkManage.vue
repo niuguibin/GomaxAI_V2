@@ -1,21 +1,20 @@
 <script setup>
 
 import FooterPage from "@/components/BottomFooter/FooterPage.vue";
-import {Bell, Edit, Location, Plus, Setting} from "@element-plus/icons-vue";
-import ContributeCom from "@/components/Contribute/ContributeCom.vue";
+import {Bell, Plus, Setting} from "@element-plus/icons-vue";
 import {RouterView} from "vue-router";
 </script>
 
 <template>
   <div class="background_4">
-    <div style="width: 100%;height: 635px">
-      <div class="box">
+    <div style="width: 100%;height: 635px;display: flex">
         <div class="left-menu">
           <el-menu
               default-active="2"
-              background-color="#545c64"
+              background-color="#fff"
               router
-              text-color="#ffffff"
+              text-color="#000000"
+              active-text-color="#409EFF"
               class="el-menu-vertical-demo"
               style="width: 240px;min-height: 545px;margin-top: 85px;border: none"
           >
@@ -36,7 +35,6 @@ import {RouterView} from "vue-router";
         <div class="right-box">
           <RouterView />
         </div>
-      </div>
     </div>
     <FooterPage />
   </div>

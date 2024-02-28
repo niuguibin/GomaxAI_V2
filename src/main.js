@@ -7,13 +7,13 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import {icons} from "@element-plus/icons-vue/global";
-
+const pinia = createPinia()
 
 
 const app = createApp(App)
 
 
-app.use(createPinia())
+app.use(pinia)
 app.use(router)
 Object.keys(icons).forEach(key => {
     app.component(key,icons[key])

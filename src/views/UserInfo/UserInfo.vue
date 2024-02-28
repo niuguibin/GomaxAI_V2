@@ -74,7 +74,7 @@ const vip_element = ref([
   {id: 1,msg: '积分',num: 21},
   {id: 2,msg: '续期',num: 1},
   {id: 3,msg: '开通',num: 12},
-  {id: 4,msg: '鸮币',num: 1993}
+  {id: 4,msg: '鸮币',num:` ${coin}`}
 ])
 //续费模块
 const renewal_flag = ref(false)

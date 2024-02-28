@@ -2,14 +2,14 @@ import { ElMessage } from 'element-plus'
 import router from '../router'
 import axios from "axios";
 
-const request = axios.create({
+export const req = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 30000  // 后台接口超时时间设置
 })
 
 // request 拦截器
-// 可以自请求发送前对请求做一些处理
-request.interceptors.request.use(config => {
+// 可以在请求发送前对请求做一些处理
+req.interceptors.request.use(config => {
     config.headers['Content-Type'] = 'application/json;charset=utf-8';
     return config
 }, error => {
@@ -18,7 +18,7 @@ request.interceptors.request.use(config => {
 
 // response 拦截器
 // 可以在接口响应后统一处理结果
-request.interceptors.response.use(
+req.interceptors.response.use(
     response => {
         let res = response.data;
         // 如果是返回的文件
@@ -43,4 +43,4 @@ request.interceptors.response.use(
 )
 
 
-export default request
+

@@ -1,0 +1,53 @@
+.work {
+    width: 720px;
+    height: 200px;
+    display: flex;
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+    max-height: 1400px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+}
+.work-img {
+    width: 200px;
+    height: 180px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.work-img img {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+}
+.work-message {
+    width: 420px;
+    padding: 10px;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.work-message p {
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    display: block;
+    position: relative;
+    color: #000;
+    line-height: 30px;
+}
+.work-button {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
