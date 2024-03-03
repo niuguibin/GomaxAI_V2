@@ -1,0 +1,30 @@
+.empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+}
+.emptyCon {
+    width: 150px;
+    height: 250px;
+    display: block;
+    position: relative;
+}
+.empty img {
+    width: 100%;
+    height: 150px;
+    display: block;
+    position: relative;
+    object-fit: cover;
+}
+.empty p {
+    width: 100%;
+    height: 100px;
+    line-height: 50px;
+    color: #bbbbbb;
+    font-size: 30px;
+    text-align: center;
+}

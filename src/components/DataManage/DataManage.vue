@@ -2,7 +2,7 @@
 import * as echarts from 'echarts';
 import { ref } from "vue";
 import { onMounted } from "vue";
-import { useCounterStore} from "@/stores/counter.js";
+import { useCounterStore} from "../../stores/counter.js";
 import {CaretBottom, CaretTop, DCaret} from "@element-plus/icons-vue";
 const store = useCounterStore()
 const value = ref('')
@@ -65,6 +65,22 @@ const onOrDown = (num) => {
     return DCaret
   }
 }
+
+//根据change的值去除符号的函数
+const removeSign = (change) => {
+  let num = Number(change)
+  if (num > 0) {
+    let rem = new RegExp('\\+','g')
+    return change.replace(rem,'')
+  }
+  if (num < 0) {
+    let rem = new RegExp('-','g')
+    return change.replace(rem,'')
+  }else {
+    return change
+  }
+}
+
 //echarts图表
 onMounted(() => {
   const infoChart = echarts.init(document.getElementById('chart'))
@@ -113,8 +129,8 @@ onMounted(() => {
           <div class="data-card" v-for="item in data_list" :key="item">
             <div class="data-card-item" style="display: flex;justify-content: space-between;margin-bottom: 8px">
               <div style="color: #000;display: block">{{item.name}}</div>
-              <div style="color: #ff4684">
-                <el-button style="width: 30px;height: 30px;outline: none;border: none;color: #ff4684" :icon="onOrDown(item.change)"/>{{item.change}}
+              <div style="color: #ff4684;display: flex">
+                <el-icon style="width: 30px;height: 30px"><component :is="onOrDown(item.change)" /></el-icon>{{removeSign(item.change)}}
               </div>
             </div>
             <div class="data-card-item" style="display: block;color: #000;font-size: 20px;text-align: left">

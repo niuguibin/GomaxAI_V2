@@ -4,6 +4,7 @@ import {useCounterStore} from "@/stores/counter.js";
 import {ElNotification} from "element-plus";
 import {useRouter} from "vue-router";
 import QrcodeVue from "qrcode.vue";
+import { onMounted } from "vue";
 import { watchEffect } from "vue";
 import axios from "axios";
 const router = useRouter()
@@ -61,6 +62,29 @@ const pay = () => {
   dialogVisible.value = !dialogVisible.value
   getQR()
 }
+//这个函数用于改变登陆后的头像和用户名
+//这个函数用于校验是否取得token
+const getToken = () => {
+  if (store.token !== 'empty'){
+    return true
+  }else {
+    return  false
+  }
+}
+let userName = ref('')
+let userImg = ref('')
+const ifIsLogin = () => {
+  if (getToken()){
+    userName.value = store.username
+    userImg.value = 'src/assets/img/placeholder.png'
+  }else {
+    userName.value = '登录/注册'
+    userImg.value = 'src/assets/user.png'
+  }
+}
+onMounted(() => {
+  ifIsLogin()
+})
 </script>
 
 <template>
@@ -90,8 +114,8 @@ const pay = () => {
         <div class="login-entry">
           <div class="user_top">
             <div class="user_avater" @click="login">
-              <img src="../../assets/user.png" alt="" loading="lazy">
-              <span>登录/注册</span>
+              <img :src="userImg" alt="" loading="lazy">
+              <span>{{userName}}</span>
             </div>
             <div class="user_logo"></div>
           </div>
@@ -135,14 +159,6 @@ const pay = () => {
         </el-button>
       </span>
       </template>
-    </el-dialog>
-    <!-- 升级会员页面 -->
-    <el-dialog
-        v-model="store.dialogVisiable"
-        width="500px"
-        title="会员升级"
-    >
-
     </el-dialog>
   </div>
 </template>

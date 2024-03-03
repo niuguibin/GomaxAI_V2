@@ -13,6 +13,13 @@ const goHome = () => {
 const update = () => {
   store.dialogVisiable = !store.dialogVisiable
 }
+const openDrawer = () => {
+  store.drawer = !store.drawer
+}
+//创作管理
+const workManage = () => {
+  router.push('/workManage')
+}
 </script>
 
 <template>
@@ -62,14 +69,14 @@ const update = () => {
             <span>SD：0</span>
           </div>
         </el-tooltip>
-          <div class="document_manage">
+          <div class="document_manage" @click="workManage">
             <img src="../../assets/doc.png" alt="">
             <span>创作管理</span>
           </div>
           <div class="account" @click="update">
             <span>升级会员</span>
           </div>
-          <div class="note">
+          <div class="note" @click="openDrawer">
             <el-tooltip
                 class="box-item"
                 effect="dark"

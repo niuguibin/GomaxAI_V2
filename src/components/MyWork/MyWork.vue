@@ -31,7 +31,7 @@ collect.value = inject('col')
 <template>
   <div class="work">
     <div class="work-img">
-      <img :src="url.value" :alt="img_info">
+      <img :src="url.value" :alt="img_info" loading="lazy">
     </div>
     <div class="work-message">
       <p style="font-weight: bold;font-size: 20px">{{title}}</p>

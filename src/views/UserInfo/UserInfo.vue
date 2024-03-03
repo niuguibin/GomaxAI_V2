@@ -137,6 +137,10 @@ const collection_list = ref([
 const jumpToWork = () => {
   router.replace('/workManage')
 }
+//跳转内容管理页面
+const jumpToContent = () => {
+  router.replace('/content')
+}
 </script>
 
 <template>
@@ -269,7 +273,7 @@ const jumpToWork = () => {
                 <el-card class="quick-submit">
                   <el-button-group style="display: block;width: 100%">
                     <el-button size="small" @click="jumpToWork">一键投稿</el-button>
-                    <el-button size="small">内容管理</el-button>
+                    <el-button size="small" @click="jumpToContent">内容管理</el-button>
                   </el-button-group>
                 </el-card>
                 <el-card class="coll-info">

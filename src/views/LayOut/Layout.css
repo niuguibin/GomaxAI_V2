@@ -12,3 +12,15 @@
 .background::-webkit-scrollbar {
     display: none;
 }
+.drawerCon {
+    width: 420px;
+    height: 100%;
+    display: block;
+    padding: 10px;
+    position: relative;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.drawerCon::-webkit-scrollbar {
+    display: none;
+}

@@ -1,7 +1,7 @@
 //用于注册的工具类
 import axios from "axios";
 import {reactive } from "vue";
-import {req} from '../utils/request'
+import req from '../utils/request'
 const requestInstance = req
 interface registerForm {
     phone: string,
@@ -31,17 +31,13 @@ class RegisterUtil {
     }
     //注册
     submit = () => {
-        requestInstance.post(`http://localhost:9090/user/register`, {
-            phone: `${this.phone}`,
-            password: `${this.pass}`,
-            code: `${this.code}`
-        },{
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        requestInstance.post(`http://localhost:9090/user/register`,{
+            phone: this.phone,
+            password: this.pass,
+            code: this.code
         }).then((res) => {
-            console.log('注册成功',res)
             this.statue = true
+            console.log(res)
         }).catch((err) => {
             console.log('错误',err)
         })
