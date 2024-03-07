@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from "vue";
+import { onMounted } from "vue";
+
 //https://picsum.photos是一个免费图床
 const waterFall = ref([
   {
@@ -75,13 +77,29 @@ const waterFall = ref([
     src: 'https://picsum.photos/200/300?12'
   },
 ])
+//是否加载
+//如果所有图片加载完成，那么将loading置为false
+//将从页面挂载完成开始计算
+const loading = ref(true)
+const loadImg = ref(-1)
+function isFinishLoad() {
+  ++ loadImg.value;
+  loadImg.value === waterFall.value.length ? loading.value = false : loading.value = true;
+}
+onMounted(() => {
+  isFinishLoad()
+})
 </script>
 
 <template>
-  <div class="background">
+  <div
+      class="background"
+      v-loading="loading"
+      element-loading-background="#0000004D"
+  >
     <div class="painting" v-for="item in waterFall" :key="item">
       <div class="picture">
-        <img :src="item.src" alt="" loading="lazy">
+        <img :src="item.src" alt="" loading="lazy" @load="isFinishLoad">
       </div>
       <el-divider style="margin-bottom: 5px;margin-top: 10px" />
       <div class="title" style="color: #000;font-size: 15px;font-weight: bold">

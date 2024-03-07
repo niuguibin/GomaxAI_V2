@@ -37,6 +37,11 @@ collect.value = inject('col')
       <p style="font-weight: bold;font-size: 20px">{{title}}</p>
       <p style="font-size: 15px;font-weight: normal">{{username}}</p>
       <p style="font-size: 15px;font-weight: normal">{{year.value + '年' + month.value + '月' + day.value + '日'}}</p>
+      <p style="font-size: 15px;display: flex;justify-content: space-between">
+        <el-tag round>
+          二次元
+        </el-tag>
+      </p>
       <p style="position: absolute;bottom: 0;font-size: 10px">
         {{'浏览量:' + view.value}}
         <el-divider direction="vertical"/>

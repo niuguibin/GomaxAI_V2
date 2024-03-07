@@ -26,7 +26,14 @@ const workManage = () => {
   <div class="background_2">
     <div class="background-item">
       <div class="item">
-        <div class="left-logo" @click="goHome"></div>
+        <el-tooltip
+            class="box-item"
+            effect="dark"
+            content="返回首页"
+            placement="bottom"
+        >
+          <div class="left-logo" @click="goHome"></div>
+        </el-tooltip>
         <div class="menu-part">
           <el-menu
               class="el-menu-demo"
