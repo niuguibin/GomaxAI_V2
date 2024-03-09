@@ -1,7 +1,5 @@
 //登录用的工具类
-import axios from "axios";
-import {req} from '../utils/request'
-import { useCounterStore } from '../stores/counter'
+import req from '../utils/request'
 import { reactive } from "vue";
 interface LoginForm{
     username: string,
@@ -17,8 +15,8 @@ class LoginUtil {
     public password = ''
     submit = () => {
         requestInstance.post(`http://localhost:9090/user/login`,{
-            phone: `${this.username}`,
-            password: `${this.password}`
+            phone: this.username,
+            password: this.password
         }).then((res) => {
             console.log('登陆成功',res)
         }).catch((err) => {

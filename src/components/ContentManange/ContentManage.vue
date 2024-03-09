@@ -106,7 +106,7 @@ provide('col',collect)
         <MyWork v-for="item in 6" :key="item" />
       </div>
       <div class="content-page">
-        <el-pagination layout="prev, pager, next" :total="50" />
+        <el-pagination layout="prev, pager, next" :total="50" style="background-color: whitesmoke" />
       </div>
     </div>
   </div>

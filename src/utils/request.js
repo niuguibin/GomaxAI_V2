@@ -2,7 +2,7 @@ import { ElMessage } from 'element-plus'
 import router from '../router'
 import axios from "axios";
 
-export const req = axios.create({
+const req = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 30000  // 后台接口超时时间设置
 })
@@ -41,6 +41,7 @@ req.interceptors.response.use(
         return Promise.reject(error)
     }
 )
+export default req
 
 
 

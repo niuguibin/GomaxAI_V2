@@ -13,13 +13,27 @@ const goHome = () => {
 const update = () => {
   store.dialogVisiable = !store.dialogVisiable
 }
+const openDrawer = () => {
+  store.drawer = !store.drawer
+}
+//创作管理
+const workManage = () => {
+  router.push('/workManage')
+}
 </script>
 
 <template>
   <div class="background_2">
     <div class="background-item">
       <div class="item">
-        <div class="left-logo" @click="goHome"></div>
+        <el-tooltip
+            class="box-item"
+            effect="dark"
+            content="返回首页"
+            placement="bottom"
+        >
+          <div class="left-logo" @click="goHome"></div>
+        </el-tooltip>
         <div class="menu-part">
           <el-menu
               class="el-menu-demo"
@@ -62,14 +76,14 @@ const update = () => {
             <span>SD：0</span>
           </div>
         </el-tooltip>
-          <div class="document_manage">
+          <div class="document_manage" @click="workManage">
             <img src="../../assets/doc.png" alt="">
             <span>创作管理</span>
           </div>
           <div class="account" @click="update">
             <span>升级会员</span>
           </div>
-          <div class="note">
+          <div class="note" @click="openDrawer">
             <el-tooltip
                 class="box-item"
                 effect="dark"

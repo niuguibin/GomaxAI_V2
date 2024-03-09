@@ -40,6 +40,7 @@
     height: 30px;
     text-align: left;
     display: block;
+    overflow: hidden;
     position: relative;
     color: #000;
     line-height: 30px;
