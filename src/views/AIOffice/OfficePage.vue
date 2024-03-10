@@ -1,10 +1,7 @@
 <template>
   <div style="margin-top: 50px;padding: 0px 150px 0 150px">
     <el-container>
-
       <el-tabs tab-position="left" style="height: 800px;width: 100%" class="demo-tabs">
-
-
         <el-tab-pane >
           <template #label >
             <div style="display: flex;flex-direction: column;align-items: center">
@@ -45,9 +42,6 @@
 
 
       </el-tabs>
-
-
-
     </el-container>
   </div>
 </template>
