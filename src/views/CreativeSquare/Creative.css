@@ -11,9 +11,16 @@
 
 .info-text{
     font-size: 19px;
-    height: 45px;
+    line-height: 40px;
 }
-
+.ad-item {
+    width: 90%;
+    height: 240px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
 /*图片滚动样式*/
 .swiper {
     height:100%;
@@ -31,22 +38,47 @@
     position: relative;
 }
 
+
+.el-menu-vertical-demo{
+    background-color: #3C3F41;
+    border: none;
+
+}
 .demo-tabs > .el-tabs__content {
     padding: 32px;
-    color: #6b778c;
+    color: aliceblue;
     font-size: 32px;
     font-weight: 600;
-    height: 50px;
+
+
+}
+.demo-tabs > .el-tabs__content {
+    padding: 40px;
+    color: aliceblue;
+    font-size: 32px;
+    font-weight: 600;
+}
+.tapInfo{
+  height: 200px;
+}
+/deep/.el-tabs__item { /* 修改为您想要的文字大小 */
+    font-size: 20px!important;
 }
 
+
+.el-tabs--right .el-tabs__content,
+.el-tabs--left .el-tabs__content {
+    height: 100%;
+}
 /*标签页整体的样式调整*/
 /deep/.el-tabs{
-    height: 50px;
+
+
 }
 /*每个标签单独的样式调整*/
 /deep/.el-tabs--left .el-tabs__item.is-left {
     text-align: right;
-    /*height: 30px;*/
+    height: 100px;
     display: flex;
     justify-content: center;
 }
@@ -66,3 +98,16 @@
 ::v-deep .el-tabs__active-bar {
     background-color:#F5DB9D;
 }
+/*.el-tabs__nav-wrap #is-top {*/
+/*    height: 60px !important;*/
+
+/*}*/
+
+/*.el-tabs__header .el-tabs__item{*/
+/*height: 105px;*/
+/*}*/
+
+/*.tabStyle{*/
+/*    display: block;*/
+/*    height: 65px;*/
+/*}*/
