@@ -1,7 +1,6 @@
 <template>
-  <div class="background" style="margin-top: 47px">
-<!--      走马灯-->
-    <el-row :gutter="50" justify="space-between">
+  <div style="margin-top: 100px;padding: 0px 150px 0 150px">
+    <el-row >
       <el-col  :span="15" >
         <div style="height: 300px;">
           <el-carousel
@@ -9,7 +8,7 @@
               indicator-position="none"
               autoplay
               pause-on-hover
-              style="width: 100%"
+              style="width: 100%;"
           >
             <el-carousel-item v-for="item in img_url" :key="item">
               <img :src="item.src" alt="" loading="lazy" class="carousel-img">
@@ -17,61 +16,65 @@
           </el-carousel>
         </div>
       </el-col>
-      <el-col :span="9">
-     <div>
-     <el-row v-for="item in 3" :key="item" class="info-text">
-      <span>GoMax第二届AI创作大赛时间确认</span>
-     </el-row>
-      </div>
-      </el-col>
-    </el-row>
-  <el-row>
-    <el-tabs v-model="activeName"  style="width: 780px;" stretch>
-      <el-tab-pane name="1">
-  <span slot="label">
-    <span class="tabStyle">
-      111111
-                  <svg style="width: 50px; height: 50px;">
-
-              <use href="#icon-ChatGPT"></use>
-            </svg>
-    </span>
-    <span style="display: block">基础信息</span>
-  </span>
-
+      <el-col :span="9" style="background-color: #2F3233;padding-top: 10px;padding-left: 20px">
         <div>
-
+          <el-row v-for="item in 3" :key="item" class="info-text" >
+            <span>GoMax第二届AI创作大赛时间确认</span>
+          </el-row>
         </div>
-      </el-tab-pane>
+      </el-col>
+    </el-row >
 
-    </el-tabs>
-  </el-row>
+    <el-container class="header-main">
+      <el-tabs tab-position="top" style="height: 800px;width: 100%;display: flex;justify-content: center;margin-top: 20px" class="demo-tabs">
+        <el-tab-pane>
+          <template #label >
+            <div style="display: flex;flex-direction: column;align-items: center">
+              <svg style="width: 50px; height: 50px;">
+                <use href="#icon-xingnengjisuan-copy"></use>
+              </svg>
+              <span>AI创作</span>
+            </div>
+          </template>
+          <el-main style="background-color: #067194;width: 100%">
+            Main
+          </el-main>
+        </el-tab-pane>
 
-        <FooterPage/>
+
+        <el-tab-pane style="margin-bottom: 50px">
+          <template #label>
+            <div style="display: flex;flex-direction: column;align-items: center">
+              <svg style="width: 50px; height: 50px;">
+                <use href="#icon-quanlingyuguimo-copy"></use>
+              </svg>
+              <span>手绘创作</span>
+            </div>
+          </template>
+          Config
+        </el-tab-pane>
+
+        <el-tab-pane>
+          <template #label>
+            <div style="display: flex;flex-direction: column;align-items: center">
+              <svg style="width: 50px; height: 50px;">
+                <use href="#icon-shangyehuaquanqiu-copy"></use>
+              </svg>
+              <span>大赛精选</span>
+            </div>
+          </template>
+          Role
+        </el-tab-pane>
 
 
-
-
-
-
+      </el-tabs>
+    </el-container>
   </div>
 </template>
 
-<script lang="ts" setup>
-import {ref} from "vue";
 
-const img_url = ref([
-  {id:1,src: '/src/assets/img/swiper_1.jpg'},
-  {id:2,src: '/src/assets/img/swiper_2.jpg'},
-  {id:3,src: '/src/assets/img/swiper_3.jpg'}
-])
-
+<script lang="ts"  setup>
 import { reactive, toRefs } from 'vue'
-import type { TabsPaneContext } from 'element-plus'
-const activeName = ref('first')
-// const handleClick = (tab: TabsPaneContext, event: Event) => {
-//   console.log(tab, event)
-// }
 
 const state = reactive({
   circleUrl:
@@ -81,6 +84,12 @@ const state = reactive({
   sizeList: ['small', '', 'large'] as const,
 })
 
+const img_url = ref([
+  {id:1,src: '/src/assets/img/swiper_1.jpg'},
+  {id:2,src: '/src/assets/img/swiper_2.jpg'},
+  {id:3,src: '/src/assets/img/swiper_3.jpg'}
+])
+
 const { circleUrl, squareUrl, sizeList } = toRefs(state)
 
 const handleOpen = (key: string, keyPath: string[]) => {
@@ -89,16 +98,13 @@ const handleOpen = (key: string, keyPath: string[]) => {
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
-const handleClick = (tab: TabsPaneContext, event: Event) => {
-  console.log(tab, event)
-}
 import { ref } from 'vue'
 
 const tabPosition = ref('left')
-import FooterPage from "@/components/BottomFooter/FooterPage.vue";
+
 </script>
+
 
 <style scoped>
 @import "Creative.css";
-
 </style>
