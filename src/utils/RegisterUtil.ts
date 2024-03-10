@@ -1,7 +1,7 @@
 //用于注册的工具类
 import axios from "axios";
-import {reactive } from "vue";
-import {req} from '../utils/request'
+import {reactive, ref} from "vue";
+import req from '../utils/request'
 const requestInstance = req
 interface registerForm {
     phone: string,
@@ -21,6 +21,7 @@ class RegisterUtil {
     public code = ''
     //这是一个标志位，如果注册成功就置为true
     public statue = false
+    private res_code = ref()
     //验证码发送
     sendMes = () => {
         axios.get(`http://localhost:9090/user/register/sendMs?phoneNumber=${this.phone}`).then((res) => {
@@ -31,17 +32,17 @@ class RegisterUtil {
     }
     //注册
     submit = () => {
-        requestInstance.post(`http://localhost:9090/user/register`, {
-            phone: `${this.phone}`,
-            password: `${this.pass}`,
-            code: `${this.code}`
-        },{
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        requestInstance.post(`http://localhost:9090/user/register`,{
+            phone: this.phone,
+            password: this.pass,
+            code: this.code
         }).then((res) => {
-            console.log('注册成功',res)
-            this.statue = true
+            this.res_code.value = res.data.code
+            if (this.res_code.value === '200'){
+                this.statue = true
+            }else {
+                this.statue = false
+            }
         }).catch((err) => {
             console.log('错误',err)
         })

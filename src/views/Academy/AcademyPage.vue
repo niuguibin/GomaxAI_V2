@@ -1,4 +1,3 @@
-
 <template>
   <div class="background">
 
@@ -12,7 +11,7 @@
             text-color="#ffffff"
             active-text-color="#F5DB9D"
             @select="handleSelect"
-            style="height: 50px;padding-left: 130px"
+            style="height: 50px;padding-left: 130px;"
         >
           <el-sub-menu index="2">
             <template #title>小学</template>
@@ -67,7 +66,7 @@
               class="w-50 m-2"
               placeholder="输入课程或老师名称"
               :suffix-icon="Search"
-              style="margin: 10px 150px 10px 230px;"
+              style="margin: 10px 150px 10px 0px;"
           />
         </el-menu>
       </el-col>
@@ -133,7 +132,7 @@
                             <p style="margin-top: 4px; width: 40px;text-align:center">牛老师</p>
                           </div>
                         </div>
-                        <div class="card-footer" style="float: right;margin-top: 5px" >
+                        <div class="card-footer" style="float: right;flex: 1" >
                           <span class="price-text">$100</span>
                         </div>
                       </div>

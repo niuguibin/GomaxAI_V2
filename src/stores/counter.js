@@ -14,6 +14,8 @@ export const useCounterStore = defineStore('counter',() => {
    const userID = ref('xxxxx-11322-pp')
    const workPass = ref(119)
    const wait2Pass = ref(6)
+   const requestion = ref()
+   const drawer = ref(false)
    const workNoPass = ref(MyWork.value - workPass.value - wait2Pass.value)
-  return { count,follows,coin,collection,like,dialogVisiable,MyWork,username,userID,token,workPass,workNoPass,wait2Pass }
+  return { count,follows,coin,collection,like,dialogVisiable,requestion,drawer,MyWork,username,userID,token,workPass,workNoPass,wait2Pass }
 })

@@ -6,7 +6,7 @@
     backdrop-filter: blur(10px);
     position: fixed;
     background: linear-gradient(200deg, rgba(1, 178, 254, 0.8) 0%, rgba(176, 113, 253, 0.8) 47%, rgba(35, 110, 255, 0.8) 100%);
-    z-index: 999;
+    z-index: 2010;
 }
 .background-item {
     width: 1400px;

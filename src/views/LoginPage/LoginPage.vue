@@ -67,6 +67,7 @@ const Register = reactive<registerForm>({
   password: '',
   code: ''
 })
+const notice = ref('验证码错误')
 //注册函数
 const registerSubmit = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
@@ -86,7 +87,7 @@ const registerSubmit = async (formEl: FormInstance | undefined) => {
     } else {
       console.log('error submit!', fields)
       ElMessage({
-        message: '验证码错误!',
+        message: `${notice.value}!`,
         type: 'warning',
       })
     }
@@ -139,6 +140,7 @@ const captcha = () => {
         number.value = 60
         mes.value = '重新发送'
         disable.value = false
+        notice.value = '验证码过期'
       }
     },1000)
   }
