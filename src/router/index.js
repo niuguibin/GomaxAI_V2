@@ -17,6 +17,7 @@ import WorkManage from "@/views/WorkManage/WorkManage.vue";
 import ContributeCom from "@/components/Contribute/ContributeCom.vue";
 import ContentManage from "@/components/ContentManange/ContentManage.vue";
 import DataManage from "@/components/DataManage/DataManage.vue";
+import CreativeTwo from "@/views/CreativeSquare/CreativeTwo.vue";
 
 
 const router = createRouter({
@@ -57,6 +58,11 @@ const router = createRouter({
           path: '/creative',
           name: 'creative',
           component: CreativePage
+        },
+        {
+          path: '/creativeTwo',
+          name: 'creativeTwo',
+          component: CreativeTwo
         },
         {
           path: '/academyChild',

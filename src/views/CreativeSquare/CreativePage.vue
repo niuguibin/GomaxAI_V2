@@ -26,19 +26,38 @@
     </el-row >
 
     <el-container class="header-main">
-      <el-tabs tab-position="top" style="height: 800px;width: 100%;display: flex;justify-content: center;margin-top: 20px" class="demo-tabs">
-        <el-tab-pane>
-          <template #label >
-            <div style="display: flex;flex-direction: column;align-items: center">
-              <svg style="width: 50px; height: 50px;">
-                <use href="#icon-xingnengjisuan-copy"></use>
-              </svg>
-              <span>AI创作</span>
-            </div>
-          </template>
-          <el-main style="background-color: #067194;width: 100%">
-            Main
-          </el-main>
+      <el-tabs tab-position="top"  class="demo-tabs"  style="width: 100%;flex: 1"    stretch>
+        <el-tab-pane style="width: 100%">
+                     <template #label >
+              <div style="display: flex;flex-direction: column;align-items: center">
+                <svg style="width: 50px; height: 50px;">
+                  <use href="#icon-xingnengjisuan-copy"></use>
+                </svg>
+                <span>AI创作</span>
+              </div>
+            </template>
+
+            <el-main style="width: 100%">
+              <el-row  :gutter="15" style=" display: flex; justify-content: center;"  >
+                <el-col :span="8"  v-for="item in 12" :key="item" >
+                  <el-card class="pic-card"  @click="jump">
+                    <img
+                        src="/src/assets/img/AICard.jpg"
+                        style="width: 100%;height: 100%"
+                    />
+                    <template #footer>
+                      <div style="display: flex;align-items: center;justify-content: space-between">
+                      <span>喜鼎-奇妙虾球</span>
+                      <div style="display: flex;align-items: center">
+                        <el-avatar :size="26" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+                        <span style="margin-left: 5px">牛老师</span>
+                      </div>
+                      </div>
+                    </template>
+                  </el-card>
+                </el-col>
+              </el-row>
+            </el-main>
         </el-tab-pane>
 
 
@@ -51,7 +70,29 @@
               <span>手绘创作</span>
             </div>
           </template>
-          Config
+
+          <el-main style="width: 100%">
+            <el-row  :gutter="15" style=" display: flex; justify-content: center;"  >
+              <el-col :span="8"  v-for="item in 12" :key="item" >
+                <el-card class="pic-card" @click="jump">
+                  <img
+                      src="/src/assets/img/AICard.jpg"
+                      style="width: 100%;height: 100%"
+                  />
+                  <template #footer>
+                    <div style="display: flex;align-items: center;justify-content: space-between">
+                      <span>喜鼎-奇妙虾球</span>
+                      <div style="display: flex;align-items: center">
+                        <el-avatar :size="26" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+                        <span style="margin-left: 5px">牛老师</span>
+                      </div>
+                    </div>
+                  </template>
+                </el-card>
+              </el-col>
+            </el-row>
+
+          </el-main>
         </el-tab-pane>
 
         <el-tab-pane>
@@ -63,7 +104,29 @@
               <span>大赛精选</span>
             </div>
           </template>
-          Role
+
+          <el-main style="width: 100%">
+            <el-row  :gutter="15" style=" display: flex; justify-content: center;"  >
+              <el-col :span="8"  v-for="item in 12" :key="item" >
+                <el-card class="pic-card" @click="jump">
+                  <img
+                      src="/src/assets/img/AICard.jpg"
+                      style="width: 100%;height: 100%"
+                  />
+                  <template #footer>
+                    <div style="display: flex;align-items: center;justify-content: space-between">
+                      <span>喜鼎-奇妙虾球</span>
+                      <div style="display: flex;align-items: center">
+                        <el-avatar :size="26" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+                        <span style="margin-left: 5px">牛老师</span>
+                      </div>
+                    </div>
+                  </template>
+                </el-card>
+              </el-col>
+            </el-row>
+
+          </el-main>
         </el-tab-pane>
 
 
@@ -75,7 +138,7 @@
 
 <script lang="ts"  setup>
 import { reactive, toRefs } from 'vue'
-
+import {useRouter} from 'vue-router'
 const state = reactive({
   circleUrl:
       'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
@@ -99,8 +162,13 @@ const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
 import { ref } from 'vue'
+import * as https from "https";
 
 const tabPosition = ref('left')
+const router = useRouter()
+const jump = () => {
+  router.push('/CreativeTwo')
+}
 
 </script>
 
