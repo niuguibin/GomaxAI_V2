@@ -9,9 +9,10 @@
           <el-container>
             <el-header class="ch-header-left">
               <el-row style="margin-bottom: 10px">
-              <span style="color: #e1e5ec;font-size: 26px;font-weight: bold">
-                精选文学作品赏析
+              <span style="color: #e1e5ec;font-size: 26px;font-weight: bold;display: flex;align-items: center">
+                精选文学作品赏析<el-icon style="margin-left: 10px"><Star /></el-icon>
               </span>
+
               </el-row>
               <el-row >
               <span style="color: #e1e5ec;">
@@ -186,6 +187,7 @@
 import { ref } from 'vue'
 import type { TabsPaneContext } from 'element-plus'
 import {useRouter} from "vue-router";
+import {Star} from "@element-plus/icons-vue";
 const activeIndex = ref('1')
 const currentPage1 = ref(5)
 const activeIndex2 = ref('1')
