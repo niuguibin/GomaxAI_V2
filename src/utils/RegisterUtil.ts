@@ -24,7 +24,7 @@ class RegisterUtil {
     private res_code = ref()
     //验证码发送
     sendMes = () => {
-        axios.get(`http://localhost:9090/user/register/sendMs?phoneNumber=${this.phone}`).then((res) => {
+        axios.get(`http://localhost:9090/user/register/sendMs?phone=${this.phone}`).then((res) => {
             console.log(res)
         }).catch((err) => {
             console.log(err,'错误')
