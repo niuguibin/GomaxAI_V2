@@ -6,7 +6,6 @@ import UniversityPage from "@/views/UniversityFamily/UniversityPage.vue";
 import FamilyPage from "@/views/FamilyLife/FamilyPage.vue";
 import OfficePage from "@/views/AIOffice/OfficePage.vue";
 import AcademyPage from "@/views/Academy/AcademyPage.vue";
-import CreativePage from "@/views/CreativeSquare/CreativePage.vue";
 import AcademyChild from "@/views/Academy/AcademyChild.vue";
 import Academypay from "@/views/Academy/Academypay.vue";
 import Academypay2 from "@/views/Academy/Academypay2.vue";
@@ -18,6 +17,7 @@ import ContributeCom from "@/components/Contribute/ContributeCom.vue";
 import ContentManage from "@/components/ContentManange/ContentManage.vue";
 import DataManage from "@/components/DataManage/DataManage.vue";
 import CreativeTwo from "@/views/CreativeSquare/CreativeTwo.vue";
+import CreativePage from "@/views/CreativeSquare/CreativePage.vue";
 
 
 const router = createRouter({

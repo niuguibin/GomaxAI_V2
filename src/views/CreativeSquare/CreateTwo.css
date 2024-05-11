@@ -1,0 +1,38 @@
+.user-name{
+    color: #e1e5ec;
+    font-size: 17px;
+    font-weight: bolder;
+    margin-left: 18px;
+
+
+}
+.user-name-two{
+    color: #e1e5ec;
+    font-size: 10px;
+    font-weight: bolder;
+
+    margin-left: 18px;
+    margin-top: 5px;
+}
+.button{
+    height: 30px;
+}
+.demonstration {
+    color: var(--el-text-color-secondary);
+}
+
+.el-carousel__item h3 {
+    color: #475669;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
+    text-align: center;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+    background-color: #d3dce6;
+}
