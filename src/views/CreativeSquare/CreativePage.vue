@@ -118,7 +118,7 @@
                       <span>喜鼎-奇妙虾球</span>
                       <div style="display: flex;align-items: center">
                         <el-avatar :size="26" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
-                        <span style="margin-left: 5px">牛老师</span>
+                        <span style="margin-left: 5px">牛老师111</span>
                       </div>
                     </div>
                   </template>

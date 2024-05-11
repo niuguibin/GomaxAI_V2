@@ -147,7 +147,7 @@
                   <el-avatar  :size="40" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
                 </el-col>
                 <el-col :span="2">
-                  <span style="font-size: 15px;color: #e1e5ec">珈瑶11111</span>
+                  <span style="font-size: 15px;color: #e1e5ec">珈瑶</span>
                 </el-col  >
               <el-col :span="20" style="text-align: right"><span style="color: #e1e5ec">2022-08-26 14:57</span></el-col>
             </el-row>

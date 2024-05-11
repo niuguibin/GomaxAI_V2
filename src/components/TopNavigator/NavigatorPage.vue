@@ -44,10 +44,10 @@ const workManage = () => {
               style="border-bottom: none"
               router
           >
-            <el-menu-item index="/university">宇宙家庭</el-menu-item>
+            <el-menu-item index="/university">启蒙学院</el-menu-item>
             <el-menu-item index="/family">家族人生</el-menu-item>
             <el-menu-item index="/office">AI办公</el-menu-item>
-            <el-menu-item index="/academy">启蒙学院</el-menu-item>
+            <el-menu-item index="/academy">宇宙家庭</el-menu-item>
             <el-menu-item index="/creative">创作广场</el-menu-item>
           </el-menu>
         </div>

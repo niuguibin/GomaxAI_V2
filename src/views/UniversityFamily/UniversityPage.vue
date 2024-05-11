@@ -5,7 +5,7 @@ import FooterPage from "@/components/BottomFooter/FooterPage.vue";
 
 <template>
   <div class="background">
-    我是宇宙家庭页面
+    我是启蒙学院页面，用来放ai的新手指导教程
     <FooterPage/>
   </div>
 </template>

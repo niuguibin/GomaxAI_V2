@@ -18,7 +18,7 @@
                   <span style="color: #bec0c5"> 粉丝：  </span>
                   <span> 1000万 </span>
                   <span style="margin-left: 8px;color: #bec0c5"> 关注：</span>
-                  <span>1000</span>
+                  <span>10000</span>
                 </div>
               </div>
             </el-col>
