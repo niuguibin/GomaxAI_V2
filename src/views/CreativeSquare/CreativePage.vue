@@ -1,72 +1,29 @@
 <template>
-  <div style="margin-top: 100px;padding: 0px 150px 0 150px" class="body-box">
-    <!--    <el-row :gutter="50" justify="space-between">-->
-    <!--      <el-col  :span="15" >-->
-    <!--        <div style="height: 300px;">-->
-    <!--          <el-carousel-->
-    <!--              class="swiper"-->
-    <!--              indicator-position="none"-->
-    <!--              autoplay-->
-    <!--              pause-on-hover-->
-    <!--              style="width: 100%;"-->
-    <!--          >-->
-    <!--            <el-carousel-item v-for="item in img_url" :key="item">-->
-    <!--              <img :src="item.src" alt="" loading="lazy" class="carousel-img">-->
-    <!--            </el-carousel-item>-->
-    <!--          </el-carousel>-->
-    <!--        </div>-->
-    <!--      </el-col>-->
-    <!--      <el-col :span="9">-->
-    <!--        <div>-->
-    <!--          <el-row v-for="item in 3" :key="item" class="info-text">-->
-    <!--            <span>GoMax第二届AI创作大赛时间确认</span>-->
-    <!--          </el-row>-->
-    <!--        </div>-->
-    <!--      </el-col>-->
-    <!--    </el-row >-->
-    <!--    <el-container>-->
-    <!--      <el-tabs tab-position="top" style="height: 800px;width: 100%" class="demo-tabs">-->
-    <!--        <el-tab-pane >-->
-    <!--          <template #label >-->
-    <!--            <div style="display: flex;flex-direction: column;align-items: center">-->
-    <!--              <svg style="width: 50px; height: 50px;">-->
-    <!--                <use href="#icon-ChatGPT"></use>-->
-    <!--              </svg>-->
-    <!--              <span>ChatGPT</span>-->
-    <!--            </div>-->
-    <!--          </template>-->
-    <!--          <el-main style="background-color: #2F3233;width: 100%">-->
-    <!--            Main-->
-    <!--          </el-main>-->
-    <!--        </el-tab-pane>-->
-
-    <!--        <el-tab-pane style="margin-bottom: 50px">-->
-    <!--          <template #label>-->
-    <!--            <div style="display: flex;flex-direction: column;align-items: center">-->
-    <!--              <svg style="width: 50px; height: 50px;">-->
-    <!--                <use href="#icon-Midjourney"></use>-->
-    <!--              </svg>-->
-    <!--              <span>MidJourney</span>-->
-    <!--            </div>-->
-    <!--          </template>-->
-    <!--          Config-->
-    <!--        </el-tab-pane>-->
-
-    <!--        <el-tab-pane>-->
-    <!--          <template #label>-->
-    <!--            <div style="display: flex;flex-direction: column;align-items: center">-->
-    <!--              <svg style="width: 70px; height: 70px;">-->
-    <!--                <use href="#icon-a-stablediffusion4848"></use>-->
-    <!--              </svg>-->
-    <!--              <span>StableDiffusion</span>-->
-    <!--            </div>-->
-    <!--          </template>-->
-    <!--          Role-->
-    <!--        </el-tab-pane>-->
-
-
-    <!--      </el-tabs>-->
-    <!--    </el-container>-->
+  <div style="margin-top: 60px;padding: 0px 150px 0 150px" class="body-box">
+        <el-row :gutter="50" justify="space-between" style="margin-bottom: 20px">
+          <el-col  :span="15" >
+            <div style="height: 300px;">
+              <el-carousel
+                  class="swiper"
+                  indicator-position="none"
+                  autoplay
+                  pause-on-hover
+                  style="width: 100%;"
+              >
+                <el-carousel-item v-for="item in img_url" :key="item">
+                  <img :src="item.src" alt="" loading="lazy" class="carousel-img">
+                </el-carousel-item>
+              </el-carousel>
+            </div>
+          </el-col>
+          <el-col :span="9">
+            <div>
+              <el-row v-for="item in 3" :key="item" class="info-text">
+                <span>GoMax第二届AI创作大赛时间确认</span>
+              </el-row>
+            </div>
+          </el-col>
+        </el-row >
 
     <section class="section">
       <div class="container">
@@ -85,8 +42,9 @@
           <!--end /div-->
         </div>
         <!--end /div-->
-        <div id="grid" class="md:flex justify-center">
-          <div class="md:w-1/3 p-3 picture-item" data-groups='["mockup"]'>
+        <div  class="md:grid justify-center" id="grid">
+
+          <div class="md:w-1/3 p-3 picture-item " data-groups='["mockup"]' @click="jump">
             <div class="relative block overflow-hidden rounded group transition-all duration-500">
               <img src="@/assets/img/img1.jpg" class="rounded transition-all duration-500 group-hover:scale-105"
                    alt="work-image">
@@ -101,7 +59,7 @@
             </div>
           </div>
 
-          <div class="md:w-1/3 p-3 picture-item" data-groups='["android"]'>
+          <div class="md:w-1/3 p-3 picture-item " data-groups='["android"]'>
             <div class="relative block overflow-hidden rounded group transition-all duration-500">
               <img src="@/assets/img/img2.jpg" class="rounded transition-all duration-500 group-hover:scale-105"
                    alt="work-image">
@@ -115,7 +73,7 @@
             </div>
           </div>
 
-          <div class="md:w-1/3 p-3 picture-item" data-groups='["mockup"]'>
+          <div class="md:w-1/3 p-3 picture-item " data-groups='["mockup"]'>
             <div class="relative block overflow-hidden rounded group transition-all duration-500">
               <img src="@/assets/img/img3.jpg" class="rounded transition-all duration-500 group-hover:scale-105"
                    alt="work-image">
@@ -271,10 +229,6 @@
           </div>
         </div>
         <!--end /div-->
-        <div class="flex justify-center mt-8">
-          <a class='py-4 px-7 rounded text-sm font-medium bg-blue-500 text-white' href='work.html'>More Works <i
-              class="mdi mdi-arrow-right ms-1"></i></a>
-        </div>
       </div>
     </section>
   </div>
@@ -284,33 +238,91 @@
 
 
 <script lang="ts" setup>
-// import { reactive, toRefs } from 'vue'
+import {useRouter} from "vue-router";
+
+const img_url = ref([
+  {id:1,src: '/src/assets/img/swiper_1.jpg'},
+  {id:2,src: '/src/assets/img/swiper_2.jpg'},
+  {id:3,src: '/src/assets/img/swiper_3.jpg'}
+])
+const router = useRouter()
+const jump = () => {
+  router.push('/CreativeTwo')
+}
+
+import { ref } from 'vue'
+
+
+/**
+ * Theme: Zova - Portfolio Template
+ * Author: MyraStudio
+ * Gallery Js
+ */
+
+
+// var Shuffle = window.Shuffle;
 //
-// const state = reactive({
-//   circleUrl:
-//       'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
-//   squareUrl:
-//       'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png',
-//   sizeList: ['small', '', 'large'] as const,
-// })
+// class Demo {
+//   constructor(element) {
+//     this.element = element;
+//     this.shuffle = new Shuffle(element, {
+//       itemSelector: '.picture-item'
+//     });
 //
-// const img_url = ref([
-//   {id:1,src: '/src/assets/img/swiper_1.jpg'},
-//   {id:2,src: '/src/assets/img/swiper_2.jpg'},
-//   {id:3,src: '/src/assets/img/swiper_3.jpg'}
-// ])
+//     // Log events.
 //
-// const { circleUrl, squareUrl, sizeList } = toRefs(state)
+//     this.addFilterButtons();
+//   }
 //
-// const handleOpen = (key: string, keyPath: string[]) => {
-//   console.log(key, keyPath)
+//   /**
+//    * Shuffle uses the CustomEvent constructor to dispatch events. You can listen
+//    * for them like you normally would (with jQuery for example).
+//    */
+//
+//
+//   addFilterButtons() {
+//     const options = document.querySelector('.filter-options');
+//     if (!options) {
+//       return;
+//     }
+//
+//     const filterButtons = Array.from(options.children);
+//     const onClick = this._handleFilterClick.bind(this);
+//     filterButtons.forEach((button) => {
+//       button.addEventListener('click', onClick, false);
+//     });
+//   }
+//
+//   _handleFilterClick(evt) {
+//     const btn = evt.currentTarget;
+//     const isActive = btn.classList.contains('active');
+//     const btnGroup = btn.getAttribute('data-group');
+//
+//     this._removeActiveClassFromChildren(btn.parentNode);
+//
+//     let filterGroup;
+//     if (isActive) {
+//       btn.classList.remove('active');
+//       filterGroup = Shuffle.ALL_ITEMS;
+//     } else {
+//       btn.classList.add('active');
+//       filterGroup = btnGroup;
+//     }
+//
+//     this.shuffle.filter(filterGroup);
+//   }
+//
+//   _removeActiveClassFromChildren(parent) {
+//     const { children } = parent;
+//     for (let i = children.length - 1; i >= 0; i--) {
+//       children[i].classList.remove('active');
+//     }
+//   }
 // }
-// const handleClose = (key: string, keyPath: string[]) => {
-//   console.log(key, keyPath)
-// }
-// import { ref } from 'vue'
 //
-// const tabPosition = ref('left')
+// document.addEventListener('DOMContentLoaded', () => {
+//   window.demo = new Demo(document.getElementById('grid'));
+// });
 
 
 

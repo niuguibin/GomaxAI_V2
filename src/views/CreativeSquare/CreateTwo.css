@@ -1,17 +1,12 @@
 .user-name{
     color: #e1e5ec;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: bolder;
-    margin-left: 18px;
-
-
 }
 .user-name-two{
     color: #e1e5ec;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bolder;
-
-    margin-left: 18px;
     margin-top: 5px;
 }
 .button{
@@ -21,18 +16,141 @@
     color: var(--el-text-color-secondary);
 }
 
-.el-carousel__item h3 {
-    color: #475669;
-    opacity: 0.75;
-    line-height: 150px;
-    margin: 0;
+
+/* ====== general ====== */
+.clearfix {
+    overflow: hidden;
+}
+.clearfix:after {
+    content: "020";
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+.body-width {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* ====== public ====== */
+.body-box {
+    padding-top: 65px;
+}
+
+/* ====== main ====== */
+.main {
+    position: relative;
+    padding-bottom: 80px;
+
+}
+.main-inner  {
+    padding-top: 40px;
+}
+
+/*轮播图*/
+
+.slider-wrapper {
+    overflow: hidden;
+    float: left;
+    width: 640px;
+    height: 400px;
+}
+.carousel-img {
+    max-height: 400px;
+    width: auto;
+}
+
+/*用户详情*/
+.banner {
+    position: relative;
+    height: 400px;
+}
+
+.banner-info {
+    position: relative;
+    float: right;
+    height: 400px;
+    background-color: #2F3233;
+    border-radius: 10px;
+}
+.banner-info a {
+    display: inline-block;
+}
+.banner-info .news {
+    width: 466px;
+    height: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* ====== 更多列表 ====== */
+
+.main-cont__title {
+    position: relative;
+    height: 88px;
+    margin-top: 40px;
+    border-top: 1px solid #939393;
+    color: white;
+}
+.main-cont__title h3 {
+    font-size: 22px;
+    line-height: 88px;
+}
+.main-cont__title .more {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
     text-align: center;
+    color: #fff;
+    background-color: #22b4f6;
+    text-decoration: none;
+    font-size: 12px;
+}
+.main-cont__title .more:hover {
+    background-color: #1e9ed8;
 }
 
-.el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
+.main-cont__list .item {
+    position: relative;
+    top: 0;
+    float: left;
+    width: 224px;
+    margin-right: 20px;
+    border: 1px solid #dedfe0;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    transition: top 0.2s;
+}
+.main-cont__list .item:hover {
+    top: -3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+/* main-album */
+.main-album .main-cont__list .item {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    margin: 20px;
+}
+.main-album .pic,
+.main-album .pic img {
+    max-height: 400px;
+    max-width: 350px;
+}
+.main-album .info {
+    padding-left: 5px;
 }
 
-.el-carousel__item:nth-child(2n + 1) {
-    background-color: #d3dce6;
+.main-album .info p {
+    line-height: 18px;
+    color: #888;
+}
+.main-album .info .author {
+    display: inline;
+    color: #888;
 }
