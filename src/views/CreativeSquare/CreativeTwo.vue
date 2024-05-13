@@ -2,12 +2,16 @@
   <div class="body-box" style="margin-top: 60px;padding: 0 150px 0 150px">
     <div class="main">
       <div class="main-inner body-width">
+        <div class="head-title">
+          <span class="head-text">东方之美</span>
+          <span class="head-page">共 5 页</span>
+        </div>
         <div class="banner">
 
-            <div class="slider-wrapper">
-              <el-carousel arrow="always" :autoplay="false">
-                <el-carousel-item v-for="item in img_url" :key="item">
-                  <img :src="item.src" loading="lazy" alt="" class="carousel-img">
+            <div class="slider-wrapper" id="car">
+              <el-carousel arrow="always" :autoplay="false" class="carousel">
+                <el-carousel-item v-for="item in img_url" :key="item" class="carousel-item">
+                  <img :src="item.src"  alt="" class="carousel-img ">
                 </el-carousel-item>
               </el-carousel>
             </div>
@@ -129,7 +133,6 @@
 <script lang="ts" setup>
 import {ref} from "vue";
 
-// const fit = ['contain']
 const img_url = ref([
   {id: 1, src: '/src/assets/img/img1.jpg'},
   {id: 2, src: '/src/assets/img/img2.jpg'},
@@ -137,6 +140,9 @@ const img_url = ref([
   {id: 4, src: '/src/assets/img/img4.jpg'},
   {id: 5, src: '/src/assets/img/img5.jpg'},
 ])
+
+
+
 
 
 </script>

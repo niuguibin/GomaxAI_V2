@@ -1,116 +1,52 @@
+<template>
+<!--  非tailwind写法，参考css文件（屎山，懒的改）-->
+  <div class="background">
+    <div class="main-cont__list" v-for="image in images" :key="image.id">
+      <div class="w-80 p-3 picture-item ">
+        <div class="relative block overflow-hidden rounded group transition-all duration-500">
+          <img :src="image.src" alt="Image" class="w-full rounded transition-all duration-500 group-hover:scale-105">
+          <a href="javascript:void(0)"
+             class="absolute inset-3 flex items-end cursor-pointer rounded bg-white p-3 opacity-0 transition-all duration-500 group-hover:opacity-80">
+            <div>
+              <p class="text-sm text-gray-400">牛老师</p>
+              <h6 class="text-base text-black font-medium">东方之美</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</template>
+
 <script setup>
-import { ref } from "vue";
-import { onMounted } from "vue";
+import {ref} from "vue";
+
 
 //https://picsum.photos是一个免费图床
-const waterFall = ref([
-  {
-    id: '1',
-    title: '静谧',
-    description: 'poweredBy: stable diffusion 4.0',
-    src: 'https://picsum.photos/200/300?1'
-  },
-  {
-    id: '2',
-    title: '雨夜校园',
-    description: 'poweredBy: stable diffusion 4.0',
-    src: 'https://picsum.photos/200/300?2'
-  },
-  {
-    id: '3',
-    title: '静静的夜',
-    description: 'poweredBy: stable diffusion 4.0',
-    src: 'https://picsum.photos/200/300?3'
-  },
-  {
-    id: '4',
-    title: '黄灯',
-    description: 'poweredBy: midJourney 2.0',
-    src: 'https://picsum.photos/200/300?4'
-  },
-  {
-    id: '5',
-    title: '梦幻',
-    description: 'poweredBy: stable diffusion 4.0',
-    src: 'https://picsum.photos/200/300?5'
-  },
-  {
-    id: '6',
-    title: '静悄悄',
-    description: 'poweredBy: stable diffusion 3.5',
-    src: 'https://picsum.photos/200/300?6'
-  },
-  {
-    id: '7',
-    title: '秋雨',
-    description: 'poweredBy: midJourney 2.0',
-    src: 'https://picsum.photos/200/300?7'
-  },
-  {
-    id: '8',
-    title: '大雨将至',
-    description: 'poweredBy: midJourney 2.0',
-    src: 'https://picsum.photos/200/300?8'
-  },
-  {
-    id: '9',
-    title: '昨天',
-    description: 'poweredBy: midJourney 2.0',
-    src: 'https://picsum.photos/200/300?9'
-  },
-  {
-    id: '10',
-    title: '亦真亦幻',
-    description: 'poweredBy: stable diffusion 4.0',
-    src: 'https://picsum.photos/200/300?10'
-  },
-  {
-    id: '11',
-    title: '一场大雨',
-    description: 'poweredBy: stable diffusion 4.0',
-    src: 'https://picsum.photos/200/300?11'
-  },
-  {
-    id: '12',
-    title: '冷冽',
-    description: 'poweredBy: stable diffusion 4.0',
-    src: 'https://picsum.photos/200/300?12'
-  },
-])
+
 //是否加载
 //如果所有图片加载完成，那么将loading置为false
 //将从页面挂载完成开始计算
-const loading = ref(true)
-const loadImg = ref(-1)
-function isFinishLoad() {
-  ++ loadImg.value;
-  loadImg.value === waterFall.value.length ? loading.value = false : loading.value = true;
-}
-onMounted(() => {
-  isFinishLoad()
-})
-</script>
 
-<template>
-  <div
-      class="background"
-      v-loading="loading"
-      element-loading-background="#0000004D"
-  >
-    <div class="painting" v-for="item in waterFall" :key="item">
-      <div class="picture">
-        <img :src="item.src" alt="" loading="lazy" @load="isFinishLoad">
-      </div>
-      <el-divider style="margin-bottom: 5px;margin-top: 10px" />
-      <div class="title" style="color: #000;font-size: 15px;font-weight: bold">
-        {{item.title}}
-      </div>
-      <div class="title" style="font-size: 10px;color: #2c2c31">
-        {{item.description}}
-      </div>
-    </div>
-  </div>
-</template>
+const images = ref([
+  {id: 1, src: '/src/assets/img/img1.jpg'},
+  {id: 2, src: '/src/assets/img/img2.jpg'},
+  {id: 3, src: '/src/assets/img/img3.jpg'},
+  {id: 4, src: '/src/assets/img/img4.jpg'},
+  {id: 5, src: '/src/assets/img/img5.jpg'},
+  {id: 6, src: '/src/assets/img/img6.jpg'},
+  {id: 7, src: '/src/assets/img/img7.jpg'},
+  {id: 8, src: '/src/assets/img/img8.jpg',},
+  {id: 9, src: '/src/assets/img/img9.jpg',},
+  {id: 10, src: '/src/assets/img/img10.jpg',},
+  {id: 11, src: '/src/assets/img/img11.jpg',},
+  {id: 12, src: '/src/assets/img/img12.jpg',},
+  // 更多图片对象...
+]);
+
+</script>
 
 <style scoped>
 @import "Drawing.css";

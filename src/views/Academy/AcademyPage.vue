@@ -98,7 +98,7 @@
             </el-row>
             <el-row>
               <div>
-                <el-row  :gutter="1" style=" display: flex; justify-content: center;"  >
+                <el-row  :gutter="10" style=" display: flex; justify-content: center;"  >
                   <el-col :span="8"  v-for="item in 12" :key="item" >
                     <el-card class="box-card"  @click="jump">
                       <div class="card-header">
@@ -118,7 +118,7 @@
 
                         </div>
 
-                        <div style="display: flex;justify-content: flex-start;margin-top:80px;">
+                        <div style="display: flex;justify-content: flex-start;margin-top:80px;" class="avatar-box">
                           <div style="width:40px;height:60px;display: flex;flex-direction: column;justify-content: center;align-items: center;margin-right: 10px">
                             <el-avatar :size="40" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
                             <p style="margin-top: 4px; width: 40px;text-align:center">牛老师</p>

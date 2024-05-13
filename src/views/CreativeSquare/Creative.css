@@ -8,96 +8,30 @@
     text-align: center;
     line-height: 400px;
 }
+.main-cont__list .picture-item {
+    position: relative;
+    top: 0;
+    float: left;
 
+    margin-right: 20px;
+    box-sizing: border-box;
+    transition: top 0.2s;
+}
 .info-text{
     font-size: 19px;
     line-height: 40px;
     color: #cccccc;
 }
-.ad-item {
-    width: 90%;
-    height: 240px;
-    display: block;
-    padding-left: 10px;
-    padding-right: 10px;
-    position: relative;
-}
+
 /*图片滚动样式*/
 .swiper {
     height:100%;
-    /*display: flex;*/
-    /*align-items: end;*/
-
-    /*border-radius: 10px;*/
-    /*overflow: hidden;*/
-
 }
 .carousel-img {
     width: 100%;
     height: 100%;
     display: block;
     position: relative;
-}
-
-
-.el-menu-vertical-demo{
-    background-color: #3C3F41;
-    border: none;
-
-}
-.demo-tabs > .el-tabs__content {
-    padding: 32px;
-    color: aliceblue;
-    font-size: 32px;
-    font-weight: 600;
-
-
-}
-.demo-tabs > .el-tabs__content {
-    padding: 40px;
-    color: aliceblue;
-    font-size: 32px;
-    font-weight: 600;
-}
-.tapInfo{
-  height: 200px;
-}
-/deep/.el-tabs__item { /* 修改为您想要的文字大小 */
-    font-size: 20px!important;
-}
-
-
-.el-tabs--right .el-tabs__content,
-.el-tabs--left .el-tabs__content {
-    height: 100%;
-}
-/*标签页整体的样式调整*/
-/deep/.el-tabs{
-
-
-}
-/*每个标签单独的样式调整*/
-/deep/.el-tabs--left .el-tabs__item.is-left {
-    text-align: right;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-}
-::v-deep .el-tabs__item {
-    color: #e1e5ec;
-}
-::v-deep .el-tabs__item.is-active {
-    color:#F5DB9D;
-    opacity: 1;
-}
-/* 去掉tabs标签栏下的下划线 */
-::v-deep .el-tabs__nav-wrap::after {
-    position: static !important;
-    /* background-color: #fff; */
-}
-/* 下划线切换高亮 */
-::v-deep .el-tabs__active-bar {
-    background-color:#F5DB9D;
 }
 
 
@@ -119,19 +53,7 @@
     --tw-skew-y: 0;
     --tw-scale-x: 1;
     --tw-scale-y: 1;
-    --tw-pan-x: ;
-    --tw-pan-y: ;
-    --tw-pinch-zoom: ;
-    --tw-scroll-snap-strictness: proximity;
-    --tw-gradient-from-position: ;
-    --tw-gradient-via-position: ;
-    --tw-gradient-to-position: ;
-    --tw-ordinal: ;
-    --tw-slashed-zero: ;
-    --tw-numeric-figure: ;
-    --tw-numeric-spacing: ;
-    --tw-numeric-fraction: ;
-    --tw-ring-inset: ;
+
     --tw-ring-offset-width: 0px;
     --tw-ring-offset-color: #fff;
     --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -139,29 +61,9 @@
     --tw-ring-shadow: 0 0 #0000;
     --tw-shadow: 0 0 #0000;
     --tw-shadow-colored: 0 0 #0000;
-    --tw-blur: ;
-    --tw-brightness: ;
-    --tw-contrast: ;
-    --tw-grayscale: ;
-    --tw-hue-rotate: ;
-    --tw-invert: ;
-    --tw-saturate: ;
-    --tw-sepia: ;
-    --tw-drop-shadow: ;
-    --tw-backdrop-blur: ;
-    --tw-backdrop-brightness: ;
-    --tw-backdrop-contrast: ;
-    --tw-backdrop-grayscale: ;
-    --tw-backdrop-hue-rotate: ;
-    --tw-backdrop-invert: ;
-    --tw-backdrop-opacity: ;
-    --tw-backdrop-saturate: ;
-    --tw-backdrop-sepia: ;
+
 }
 
-::after, ::before {
-    --tw-content: ''
-}
 
 html {
     line-height: 1.5;
@@ -187,10 +89,7 @@ hr {
     border-top-width: 1px
 }
 
-abbr:where([title]) {
-    -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted
-}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-size: inherit
@@ -214,31 +113,6 @@ b, strong {
 code, kbd, pre, samp {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 1em
-}
-
-small {
-    font-size: 80%
-}
-
-sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline
-}
-
-sub {
-    bottom: -.25em
-}
-
-sup {
-    top: -.5em
-}
-
-table {
-    text-indent: 0;
-    border-color: inherit;
-    border-collapse: collapse
 }
 
 button, input, optgroup, select, textarea {
@@ -378,9 +252,6 @@ h4 {
     font-size: 17px
 }
 
-section {
-    position: relative
-}
 
 a, button, input, select, textarea {
     -webkit-tap-highlight-color: transparent
@@ -389,41 +260,14 @@ a, button, input, select, textarea {
 
 .container {
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 1.125rem;
-    padding-left: 1.125rem
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    /*padding-right: 1.125rem;*/
+    /*padding-left: 1.125rem*/
+
 }
 
-@media (min-width: 576px) {
-    .container {
-        max-width: 576px;
-        padding-right: 2.5rem;
-        padding-left: 2.5rem
-    }
-}
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 768px
-    }
-}
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 992px;
-        padding-right: 2rem;
-        padding-left: 2rem
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-        padding-right: 2rem;
-        padding-left: 2rem
-    }
-}
 
 
 .visible {
@@ -479,6 +323,10 @@ a, button, input, select, textarea {
 .mx-auto {
     margin-left: auto;
     margin-right: auto
+}
+
+.w-80 {
+    width: 360px;
 }
 
 .my-3 {
@@ -833,10 +681,6 @@ a, button, input, select, textarea {
 
 
 
-.to-blue-600 {
-    --tw-gradient-to: #2563eb var(--tw-gradient-to-position)
-}
-
 
 
 .p-1 {
@@ -1092,10 +936,6 @@ a, button, input, select, textarea {
     opacity: .7
 }
 
-.filter {
-    -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
-}
 
 .transition {
     -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
@@ -1144,12 +984,13 @@ a, button, input, select, textarea {
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1)
 }
 
-.filter-options li a {
+.filter-options button a {
     display: inline-block;
     cursor: pointer;
     border-radius: .25rem;
     padding: 7px .75rem;
-    font-size: 13px;
+    margin-top: 10px;
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     --tw-text-opacity: 1;
@@ -1162,7 +1003,7 @@ a, button, input, select, textarea {
     transition-duration: .3s
 }
 
-.filter-options li.active a, .filter-options li:active a, .filter-options li:focus a, .filter-options li:hover a {
+.filter-options button.active a, .filter-options button:active a, .filter-options button:focus a, .filter-options button:hover a {
     background-color: rgb(59 130 246 / .25);
     --tw-text-opacity: 1;
     color: rgb(59 130 246 / var(--tw-text-opacity))
@@ -1350,5 +1191,7 @@ a, button, input, select, textarea {
         text-align: left
     }
 }
+
+
 
 
