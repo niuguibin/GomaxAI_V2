@@ -28,6 +28,7 @@
 
 
       <div class="container">
+<!--        button-->
         <div class="flex justify-center">
           <div class="w-full filters-group-wrap mb-3">
             <div class="flex justify-center mb-5">
@@ -39,9 +40,8 @@
               </div>
             </div>
           </div>
-          <!--end /div-->
         </div>
-        <!--end /div-->
+<!--        picture-->
         <div  class="main-cont__list "  v-for="image in filteredImages" :key="image.id" :data-groups="image.groups">
           <div class="w-80 p-3 picture-item "  @click="jump">
             <div class="relative block overflow-hidden rounded group transition-all duration-500">

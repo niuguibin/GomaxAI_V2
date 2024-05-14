@@ -3,7 +3,7 @@
   <el-scrollbar height="auto">
   <el-row >
         <div class="common-layout" style="width: 100%">
-      <el-container style="background-color: #3C3F41">
+      <el-container style="background-color: #282828">
         <el-aside style="width:60%;height: 300px">
 
           <el-container>
@@ -51,7 +51,7 @@
           </el-container>
 
         </el-aside>
-        <el-main style="background-color: #2F3233">
+        <el-main style="background-color: #222222">
           <el-row style="margin: 20px 0 0 90px;display: block;vertical-align: bottom">
             <span class="price-sign">$</span><span class="price-text">100</span>
           </el-row>

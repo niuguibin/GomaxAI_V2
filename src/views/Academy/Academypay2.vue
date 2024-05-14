@@ -1,6 +1,6 @@
 <template>
 <div style="margin-top: 47px;padding: 15px 150px 0 150px">
-  <div style="background-color: #2F3233;height: 150px;margin-bottom: 10px;display: flex;flex-direction: column;justify-content:center;">
+  <div style="background-color: #282828;height: 150px;margin-bottom: 10px;display: flex;flex-direction: column;justify-content:center;">
     <el-row>
       <span  style="color: #e1e5ec;margin-left: 50px;margin-bottom: 10px;font-size: 25px;font-weight: bold">
       已支付
@@ -13,7 +13,7 @@
 
     </el-row>
   </div>
-  <div style="background-color: #2F3233;height: 400px;margin-bottom: 10px;">
+  <div style="background-color: #282828;height: 400px;margin-bottom: 10px;">
     <el-row>
       <span  style="color: #e1e5ec;margin:30px 0 10px 50px;font-size: 20px">精选文学作品赏析</span>
     </el-row>

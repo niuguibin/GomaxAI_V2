@@ -3,9 +3,7 @@ import {useCounterStore} from "@/stores/counter.js";
 import {useRouter} from "vue-router";
 const store = useCounterStore()
 const router = useRouter()
-const login = () => {
-  router.push('/login')
-}
+
 const goHome = () => {
   router.push('/')
 }
@@ -93,9 +91,7 @@ const workManage = () => {
               <img src="../../assets/lin.png" alt="">
             </el-tooltip>
           </div>
-          <el-button class="login" @click="login">
-            登录/注册
-          </el-button>
+
         </div>
       </div>
     </div>

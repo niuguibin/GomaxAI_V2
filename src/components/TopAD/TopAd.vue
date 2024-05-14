@@ -10,8 +10,12 @@ import axios from "axios";
 const router = useRouter()
 const store = useCounterStore()
 //先校验是否登录，如归登录则跳转个人页，否则跳转登录页
-const login = () => {
-  router.push('/user')
+const user = () => {
+  if (ifIsLogin()){
+    router.push('/user')
+  }else {
+    router.push('/login')
+  }
 }
 //校验token
 
@@ -76,10 +80,11 @@ let userImg = ref('')
 const ifIsLogin = () => {
   if (getToken()){
     userName.value = store.username
-    userImg.value = 'src/assets/img/placeholder.png'
+    userImg.value = 'src/assets/user.png'
+
   }else {
     userName.value = '登录/注册'
-    userImg.value = 'src/assets/user.png'
+    userImg.value = 'src/assets/img/placeholder.png'
   }
 }
 onMounted(() => {
@@ -104,16 +109,16 @@ onMounted(() => {
     <div class="ad-item_2">
       <div class="advertise">
         <div class="item_1" style="margin-bottom: 20px">
-          <img src="https://jchd-chat.oss-cn-hangzhou.aliyuncs.com/png/banner1-ad79d35a.png" alt="" loading="lazy">
+          <img src="@/assets/img/schooltest.jpg" alt="" loading="lazy">
         </div>
         <div class="item_1">
-          <img src="https://jchd-chat.oss-cn-hangzhou.aliyuncs.com/png/banner2-bbac4bf9.png" alt="" loading="lazy">
+          <img src="@/assets/img/schooltest.jpg" alt="" loading="lazy">
         </div>
       </div>
       <div class="advertise">
         <div class="login-entry">
           <div class="user_top">
-            <div class="user_avater" @click="login">
+            <div class="user_avater" @click="user">
               <img :src="userImg" alt="" loading="lazy">
               <span>{{userName}}</span>
             </div>

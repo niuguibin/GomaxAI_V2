@@ -4,7 +4,7 @@
 
 
       <div class="common-layout" style="width: 100%" >
-        <el-container style="background-color: #2F3233;height: 180px;margin-bottom: 10px">
+        <el-container style="background-color: #282828;height: 180px;margin-bottom: 10px">
           <el-aside style="width: 60%;display: flex;flex-direction: column;justify-content:center;">
             <el-container style="display: flex;flex-direction: column;justify-content:center;">
             <el-row>
@@ -30,7 +30,7 @@
         </el-container>
       </div>
 
-        <el-container style="background-color: #2F3233;height: auto">
+        <el-container style="background-color: #282828;height: auto">
           <el-row style="display: flex;align-items: center;justify-content: space-between;width: 100%">
             <div><span style="color: #e1e5ec;margin-left: 50px;font-size: 18px;font-weight: bold">优惠券</span></div>
             <div class="demo-collapse">
@@ -46,7 +46,7 @@
 
         </el-container>
 
-    <div style="background-color: #2F3233;height: 300px;margin-top: 10px">
+    <div style="background-color: #282828;height: 300px;margin-top: 10px">
       <el-row>
         <span style="color:#e1e5ec;margin-left: 50px;margin-top:15px;font-size: 18px;font-weight: bold">支付方式</span>
       </el-row>

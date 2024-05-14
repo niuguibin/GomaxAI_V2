@@ -1,7 +1,7 @@
 /*折叠面板样式修改*/
 ::v-deep .el-collapse-item__header{
     color: #e1e5ec;
-    background-color: #2F3233 !important;
+    background:none !important;
     position: relative;
     border: none;
     margin: 7px 50px 7px 20px;
@@ -25,7 +25,7 @@
 
 }
 /deep/ .el-table__row{
-    background-color: #2F3233;
+    background-color: #282828;
     color: #e1e5ec;
     height: 70px;
 }
@@ -33,7 +33,7 @@
     border-bottom: none;
 }
 /deep/ .el-table--enable-row-hover .el-table__body tr:hover>td{
-    background-color: #3C3F41 !important;
+    background-color: #282828 !important;
 }
 >>> .el-table thead {
     display: none;
@@ -64,10 +64,10 @@
 }
 
 .pay-background{
-    background-color: #2F3233;
+    background-color: #282828;
 }
 .pay-background:hover{
-    background-color: #343738;
+    background-color: #282828;
 }
 .pay-title{
 

@@ -1,6 +1,6 @@
 <template>
 <div style="margin-top: 47px;padding: 15px 150px 0 150px">
-  <div style="background-color: #2F3233;height:auto;margin-bottom: 10px;">
+  <div style="background-color: #282828;height:auto;margin-bottom: 10px;">
     <el-row>
       <span style="color: #e1e5ec;margin:20px 0 0px 50px;font-size: 20px;font-weight: bold">
         课程信息
@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Calendar, Search } from '@element-plus/icons-vue'
+import {Search } from '@element-plus/icons-vue'
 import {useRouter} from "vue-router";
 const input1 = ref('')
 const jump = () =>{
@@ -106,12 +106,12 @@ const tableData = [
 
 }
 /deep/ .el-table__row{
-  background-color: #2F3233;
+  background-color: #282828;
   color: #e1e5ec;
   height: 70px;
 }
 ::v-deep .el-table--striped .el-table__body tr.el-table__row--striped td {
-  background:#3C3F41 ;
+  background:#222222 ;
 }
 
 

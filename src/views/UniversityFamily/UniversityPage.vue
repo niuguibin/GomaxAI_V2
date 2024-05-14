@@ -9,7 +9,6 @@
               <div class="flex justify-center mb-5">
                 <div class="filter-options flex gap-4 ">
                   <button @click="clearFilter" :class="{ active: activeFilter === null }"><a href="javascript:void(0)">ALL</a></button>
-
                   <button v-for="group in groups" :key="group" @click="handleFilter(group)" :class="{ active: activeFilter === group }">
                     <a href="javascript:void(0)">{{ group }}</a>
                   </button>
@@ -20,13 +19,15 @@
           <div class="main-cont__list clearfix">
 
             <div class="item"  v-for="image in filteredImages" :key="image.id" :data-groups="image.groups">
-              <a href="#" class="pic"><img :src="image.src" alt="Image"></a>
-              <p class="video-data">
-                <el-icon style="margin: 0 3px 0 7px"><View /></el-icon>
-                68
-                <el-icon style="margin: 0 3px 0 7px"><ChatLineSquare /></el-icon>
-                2255
-              </p>
+              <a href="#" class="pic">
+                <img :src="image.src" alt="Image" >
+                <p class="video-data">
+                  <el-icon style="margin: 0 3px 0 7px"><View /></el-icon>
+                  68
+                  <el-icon style="margin: 0 3px 0 7px"><ChatLineSquare /></el-icon>
+                  2255
+                </p>
+              </a>
               <div class="info">
                 <a href="#" class="title">你的书写工具需要一个庇护所</a>
                 <a href="#" class="author" :key="image.groups">{{ image.groups }}</a>

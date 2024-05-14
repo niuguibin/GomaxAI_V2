@@ -22,11 +22,7 @@
 }
 
 /* ====== main ====== */
-.main {
-    position: relative;
 
-
-}
 
 
 /* ====== 更多列表 ====== */
@@ -70,9 +66,7 @@ a, .green {
     /*justify-content: space-between;*/
 }
 
-.main-cont__list .item {
-    position: relative;
-    top: 0;
+.item {
     float: left;
     width: 200px;
     /*margin-right: 20px;*/
@@ -105,12 +99,16 @@ a, .green {
     padding-left: 5px;
 }
 
+
+.pic {
+    position: relative;
+}
 .video-data {
     line-height: 18px;
     color: white;
     position: absolute;
-    top: 170px;
-    right: 145px;
+    top: -5px;
+    right: 140px;
     display: flex;
     align-items: center;
 }
@@ -120,10 +118,7 @@ a, .green {
     color: #888;
 }
 
-/*button*/
-/*.filter-options button {*/
-/*    background: none;*/
-/*}*/
+
 .filter-options button a {
     display: inline-block;
     cursor: pointer;
@@ -227,3 +222,21 @@ html {
     font-variation-settings: normal;
     scroll-behavior: smooth
 }
+[hidden] {
+    display: none
+}
+
+
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none
+}
+
+
+
+
+
+
+
+

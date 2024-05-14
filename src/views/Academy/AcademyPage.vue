@@ -7,11 +7,11 @@
             :default-active="activeIndex"
             class="el-menu-demo"
             mode="horizontal"
-            background-color="#2B2B2B"
+            background-color="rgba(24, 25, 28)"
             text-color="#ffffff"
             active-text-color="#F5DB9D"
             @select="handleSelect"
-            style="height: 50px;padding-left: 130px;"
+            style="height: 50px;padding-left: 130px;border-bottom: none"
         >
           <el-sub-menu index="2">
             <template #title>小学</template>
@@ -85,7 +85,7 @@
                 <el-icon color="#409EFC" class="no-inherit">
                   <Location style="font-size: 20px" />
                 </el-icon>
-                <span style="margin-left: 5px;display: block;font-size: 16px;cursor: pointer">
+                <span style="margin-left: 5px;display: block;font-size: 16px;cursor: pointer;color: white">
                    辽宁
                 </span>
               </div>
@@ -100,7 +100,7 @@
               <div>
                 <el-row  :gutter="10" style=" display: flex; justify-content: center;"  >
                   <el-col :span="8"  v-for="item in 12" :key="item" >
-                    <el-card class="box-card"  @click="jump">
+                    <el-card class="box-card"  @click="jump" style="background-color: #282828;">
                       <div class="card-header">
                         <span class="card-text">精选文学作品赏析</span>
                       </div>
@@ -187,7 +187,8 @@
 </template>
 
 <script lang="ts" setup>
-import { Search } from '@element-plus/icons-vue'
+import {Search} from '@element-plus/icons-vue'
+
 import FooterPage from "../../components/BottomFooter/FooterPage.vue";
 //const input1 = ref('')
 import { ref,reactive, toRefs } from 'vue'
