@@ -73,8 +73,8 @@
     </el-row>
 
 
-    <div style="margin-bottom: 500px">
-      <el-scrollbar height="500px">
+    <div>
+
         <el-row>
           <div style="padding-left: 150px;padding-right: 150px">
             <el-row>
@@ -99,7 +99,7 @@
             <el-row>
               <div>
                 <el-row  :gutter="10" style=" display: flex; justify-content: center;"  >
-                  <el-col :span="8"  v-for="item in 12" :key="item" >
+                  <el-col :span="8"  v-for="item in 32" :key="item" >
                     <el-card class="box-card"  @click="jump" style="background-color: #282828;">
                       <div class="card-header">
                         <span class="card-text">精选文学作品赏析</span>
@@ -136,9 +136,6 @@
                           <span class="price-text">$100</span>
                         </div>
                       </div>
-
-
-
                     </el-card>
                   </el-col>
                 </el-row>
@@ -146,9 +143,8 @@
             </el-row>
           </div>
         </el-row>
-      </el-scrollbar>
     </div>
-    <FooterPage/>
+
   </div>
 
 
