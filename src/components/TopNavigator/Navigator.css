@@ -291,11 +291,15 @@
 }
 .btn-row {
     width: 100%;
-    display: flex;
-    margin: 20px 0;
+    height: 60px;
+    display: flex block;
     justify-content: space-between;
-    /*border-bottom: 1px black;*/
+    align-items: center;
+    padding: 0 10px;
     cursor: pointer;
+}
+.btn-row:hover {
+    background-color: rgba(0,0,0,0.1);
 }
 .btn {
     width: 90px;

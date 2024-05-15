@@ -1,172 +1,258 @@
 <template>
-  <div class="background">
-    <div class="left-info">
-      <div class="left-img">
-        <el-upload
-            :show-file-list="false"
-            :on-success="handleAvatarSuccess"
-            :before-upload="beforeAvatarUpload"
-            style="width: 80px;height: 80px;z-index: 999"
-        >
-          <img :src="imageUrl" alt="">
-          <el-icon class="avatar-uploader-icon"><User /></el-icon>
-        </el-upload>
-      </div>
-      <el-card style="width: 250px;height: 70%;margin: 130px auto;">
-        <div class="left-word" style=";height: 50px!important;">
-          <el-tooltip
-              class="box-item"
-              effect="dark"
-              content="修改用户名"
-              placement="bottom"
-          >
-            <el-button style="width: 50px;height: 50px;float: right;border: none;font-size: 20px" :icon="Edit" @click="open" />
-          </el-tooltip>
-        </div>
-        <div class="left-word" style="margin-top: 40px">
-          用户名: <span class="important">{{username}}</span>
-        </div>
-        <div class="left-word" style="margin-top: 20px">
-          用户ID: <span class="important">{{userID}}</span>
-        </div>
-        <el-divider />
-        <div class="left-word" style="margin-top: 20px">
-          我的鸮币: <span class="important">{{coin}}</span>
-        </div>
-        <div class="left-word" style="margin-top: 20px">
-          我的关注: <span class="important">{{follow}}</span>
-        </div>
-        <div class="left-word" style="margin-top: 20px">
-          我的收藏: <span class="important">{{collection}}</span>
-        </div>
-        <div class="left-word" style="margin-top: 20px">
-          我的作品: <span class="important">{{MyWork}}</span>
-        </div>
-        <div class="left-word" style="margin-top: 20px">
-          我的点赞: <span class="important">{{like}}</span>
-        </div>
-      </el-card>
-    </div>
-    <div class="right-info">
-      <el-card style="width: 90%;height: auto;margin: 130px auto">
-        <el-tabs>
-          <el-tab-pane label="我的钱包">
-            <div class="user_card">
-              <div class="card">
-                <img src="https://s1.hdslb.com/bfs/static/jinkela/big/assets/vip_card_bg_3.png" alt="" class="img_1">
-                <div class="user-layer" style="padding-left: 10px">
-                  <div class="user-layer_top">
-                    <div class="user-avatar"><img src="../../assets/user.png" alt=""></div>
-                    <div class="user-name">
-                      <p>{{username}}</p>
-                      <el-tag
-                          type="info"
-                          effect="dark"
-                          round
-                          size="small"
-                          style="background-color: rgb(251, 114, 153)"
-                      >
-                        会员
-                      </el-tag>
+  <div style="margin-top: 56px;padding: 0px 170px 0 170px">
+    <!--    <div class="left-info">-->
+    <!--      <div class="left-img">-->
+    <!--        <el-upload-->
+    <!--            :show-file-list="false"-->
+    <!--            :on-success="handleAvatarSuccess"-->
+    <!--            :before-upload="beforeAvatarUpload"-->
+    <!--            style="width: 80px;height: 80px;z-index: 999"-->
+    <!--        >-->
+    <!--          <img :src="imageUrl" alt="">-->
+    <!--          <el-icon class="avatar-uploader-icon"><User /></el-icon>-->
+    <!--        </el-upload>-->
+    <!--      </div>-->
+    <!--      <el-card style="width: 250px;height: 70%;margin: 130px auto;">-->
+    <!--        <div class="left-word" style=";height: 50px!important;">-->
+    <!--          <el-tooltip-->
+    <!--              class="box-item"-->
+    <!--              effect="dark"-->
+    <!--              content="修改用户名"-->
+    <!--              placement="bottom"-->
+    <!--          >-->
+    <!--            <el-button style="width: 50px;height: 50px;float: right;border: none;font-size: 20px" :icon="Edit" @click="open" />-->
+    <!--          </el-tooltip>-->
+    <!--        </div>-->
+    <!--        <div class="left-word" style="margin-top: 40px">-->
+    <!--          用户名: <span class="important">{{username}}</span>-->
+    <!--        </div>-->
+    <!--        <div class="left-word" style="margin-top: 20px">-->
+    <!--          用户ID: <span class="important">{{userID}}</span>-->
+    <!--        </div>-->
+    <!--        <el-divider />-->
+    <!--        <div class="left-word" style="margin-top: 20px">-->
+    <!--          我的鸮币: <span class="important">{{coin}}</span>-->
+    <!--        </div>-->
+    <!--        <div class="left-word" style="margin-top: 20px">-->
+    <!--          我的关注: <span class="important">{{follow}}</span>-->
+    <!--        </div>-->
+    <!--        <div class="left-word" style="margin-top: 20px">-->
+    <!--          我的收藏: <span class="important">{{collection}}</span>-->
+    <!--        </div>-->
+    <!--        <div class="left-word" style="margin-top: 20px">-->
+    <!--          我的作品: <span class="important">{{MyWork}}</span>-->
+    <!--        </div>-->
+    <!--        <div class="left-word" style="margin-top: 20px">-->
+    <!--          我的点赞: <span class="important">{{like}}</span>-->
+    <!--        </div>-->
+    <!--      </el-card>-->
+    <!--    </div>-->
+    <!--    <div class="right-info">-->
+    <!--      <el-card style="width: 90%;height: auto;margin: 130px auto">-->
+    <!--        <el-tabs>-->
+    <!--          <el-tab-pane label="我的钱包">-->
+    <!--            <div class="user_card">-->
+    <!--              <div class="card">-->
+    <!--                <img src="https://s1.hdslb.com/bfs/static/jinkela/big/assets/vip_card_bg_3.png" alt="" class="img_1">-->
+    <!--                <div class="user-layer" style="padding-left: 10px">-->
+    <!--                  <div class="user-layer_top">-->
+    <!--                    <div class="user-avatar"><img src="../../assets/user.png" alt=""></div>-->
+    <!--                    <div class="user-name">-->
+    <!--                      <p>{{username}}</p>-->
+    <!--                      <el-tag-->
+    <!--                          type="info"-->
+    <!--                          effect="dark"-->
+    <!--                          round-->
+    <!--                          size="small"-->
+    <!--                          style="background-color: rgb(251, 114, 153)"-->
+    <!--                      >-->
+    <!--                        会员-->
+    <!--                      </el-tag>-->
+    <!--                    </div>-->
+    <!--                  </div>-->
+    <!--                  <div class="user-layer_top">-->
+    <!--                    <div class="user-name">-->
+    <!--                      <p style="color: #808080">会员有效期至2024年7月19日</p>-->
+    <!--                    </div>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--              <el-divider style="background-color: transparent!important;font-size: 10px">我的会员</el-divider>-->
+    <!--              <div class="user-vip">-->
+    <!--                <div v-for="item in vip_element" :key="item" class="vip_element">-->
+    <!--                  <div class="vip-item">{{item.msg}}</div>-->
+    <!--                  <div class="vip-item" style="font-size: 12px">{{item.num}}</div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--              <div class="vip-pay">-->
+    <!--                <el-button round style="background-color: rgb(251, 114, 153);color: #ffffff" @click="openPay">单笔充值</el-button>-->
+    <!--                <el-button round plain @click="renewal">续费</el-button>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="renewal" v-show="renewal_flag">-->
+    <!--              <div class="renewal-box">-->
+    <!--                  <div class="renewal-item" v-for="(item,index) in renewal_list" :key="index" @click="select(index)">-->
+    <!--                    <div class="renewal-top">{{item.msg}}</div>-->
+    <!--                    <div class="renewal-bottom">-->
+    <!--                    </div>-->
+    <!--                  </div>-->
+    <!--              </div>-->
+    <!--              <div class="renewal-box-2">-->
+    <!--                <div class="renewal_item-1">-->
+    <!--                  <el-checkbox size="large" v-model="radio_1">点击同意《会员自动续费条例》</el-checkbox>-->
+    <!--                </div>-->
+    <!--                <div class="renewal_item-1" style="margin-top: 10px">-->
+    <!--                  <el-button round plain @click="Pay">支付</el-button>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </el-tab-pane>-->
+    <!--          <el-tab-pane label="我的发布">-->
+    <!--            <div class="collect">-->
+    <!--              <div class="collect-card">-->
+    <!--                <div class="collect-title">-->
+    <!--                  <h2>我的发布</h2>-->
+    <!--                </div>-->
+    <!--                <div class="collect-body">-->
+    <!--                  <div class="collections" v-for="item in collection_list" :key="item">-->
+    <!--                    <img src="../../assets/img/schooltest.jpg" :alt="item.title" loading="lazy">-->
+    <!--                    <h5 style="text-align: left">{{item.title}}</h5>-->
+    <!--                    <h5 style="text-align: right">{{item.date}}</h5>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--                <div class="collect-title" style="justify-content: space-around">-->
+    <!--                  <el-pagination layout="prev, pager, next" :total="1000" />-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--              <div class="collect-info">-->
+    <!--                <el-card class="quick-submit">-->
+    <!--                  <el-button-group style="display: block;width: 100%">-->
+    <!--                    <el-button size="small" @click="jumpToWork">一键投稿</el-button>-->
+    <!--                    <el-button size="small" @click="jumpToContent">内容管理</el-button>-->
+    <!--                  </el-button-group>-->
+    <!--                </el-card>-->
+    <!--                <el-card class="coll-info">-->
+    <!--                  <img src="../../assets/img/swiper_3.jpg" alt="">-->
+    <!--                </el-card>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </el-tab-pane>-->
+    <!--          <el-tab-pane label="我的收藏">-->
+    <!--            <div class="favourites">-->
+    <!--              <div class="collect-title">-->
+    <!--                <h2>我的收藏</h2>-->
+    <!--              </div>-->
+    <!--              <div class="favourites-box">-->
+    <!--                <div class="collections" v-for="item in collection_list" :key="item" style="float: left;margin-right: 10px">-->
+    <!--                  <img src="../../assets/img/schooltest.jpg" :alt="item.title" loading="lazy">-->
+    <!--                  <h5 style="text-align: left">{{item.title}}</h5>-->
+    <!--                  <h5 style="text-align: right">{{item.date}}</h5>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--              <div class="collect-title" style="justify-content: space-around">-->
+    <!--                <el-pagination layout="prev, pager, next" :total="1000" />-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </el-tab-pane>-->
+    <!--        </el-tabs>-->
+    <!--      </el-card>-->
+    <!--    </div>-->
+    <el-container class="big-box">
+
+      <el-tabs tab-position="left" class="demo-tabs" style=";width: 100%">
+
+        <el-tab-pane label="个人信息">
+          <div>
+            <el-row class="row1-1">
+              <div class="user_avatar">
+                <img src="@/assets/user.png" alt="" loading="lazy">
+              </div>
+              <div style="display: flex;flex-direction: column">
+                <span class="user-name">
+                  {{ username }}
+                  <el-button :icon="Edit" @click="open" class="button1"/>
+                </span>
+                <el-tag type="info" class="tag1">大会员</el-tag>
+              </div>
+            </el-row>
+            <el-row style="margin: 0 0 40px 50px">
+              <span style="color: white;margin-right: 20px">我的签名</span>
+              <el-input
+                  v-model="textarea"
+                  style="width: 300px"
+                  :rows="2"
+                  type="textarea"
+                  resize="none"
+                  placeholder="请输入"
+              />
+            </el-row>
+            <hr class="hr_gradient">
+            <el-row class="row1-2">
+              <div class="user_info">
+                <div class="user_info_top">{{ store.coin }}</div>
+                <div class="user_info_bot">我的鸮币</div>
+              </div>
+              <div class="user_info">
+                <div class="user_info_top">{{ store.follows }}</div>
+                <div class="user_info_bot">我的关注</div>
+              </div>
+              <div class="user_info">
+                <div class="user_info_top">{{ store.collection }}</div>
+                <div class="user_info_bot">我的收藏</div>
+              </div>
+              <div class="user_info">
+                <div class="user_info_top">GPT4：0 | MJ：0 | SD：0</div>
+                <div class="user_info_bot">AI状态</div>
+              </div>
+            </el-row>
+            <hr class="hr_gradient">
+            <el-row class="row1-3"><span>签到日历</span></el-row>
+            <el-row class="row1-4">
+              <div style="width: 400px;height: 400px">
+              <el-calendar v-model="value" >
+                <template #dateCell="{ date, data }" >
+                  <div>
+                    <div v-for="(item, key) in activeday" :key="key" style="position: relative">
+                      <el-badge v-if="data.day === item.dat" is-dot class="item"></el-badge>
                     </div>
+                    <div>{{ data.day.split('-').slice(2).join('-') }}</div>
                   </div>
-                  <div class="user-layer_top">
-                    <div class="user-name">
-                      <p style="color: #808080">会员有效期至2024年7月19日</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <el-divider style="background-color: transparent!important;font-size: 10px">我的会员</el-divider>
-              <div class="user-vip">
-                <div v-for="item in vip_element" :key="item" class="vip_element">
-                  <div class="vip-item">{{item.msg}}</div>
-                  <div class="vip-item" style="font-size: 12px">{{item.num}}</div>
-                </div>
-              </div>
-              <div class="vip-pay">
-                <el-button round style="background-color: rgb(251, 114, 153);color: #ffffff" @click="openPay">单笔充值</el-button>
-                <el-button round plain @click="renewal">续费</el-button>
-              </div>
-            </div>
-            <div class="renewal" v-show="renewal_flag">
-              <div class="renewal-box">
-                  <div class="renewal-item" v-for="(item,index) in renewal_list" :key="index" @click="select(index)">
-                    <div class="renewal-top">{{item.msg}}</div>
-                    <div class="renewal-bottom">
-                    </div>
-                  </div>
-              </div>
-              <div class="renewal-box-2">
-                <div class="renewal_item-1">
-                  <el-checkbox size="large" v-model="radio_1">点击同意《会员自动续费条例》</el-checkbox>
-                </div>
-                <div class="renewal_item-1" style="margin-top: 10px">
-                  <el-button round plain @click="Pay">支付</el-button>
-                </div>
-              </div>
-            </div>
-          </el-tab-pane>
-          <el-tab-pane label="我的发布">
-            <div class="collect">
-              <div class="collect-card">
-                <div class="collect-title">
-                  <h2>我的发布</h2>
-                </div>
-                <div class="collect-body">
-                  <div class="collections" v-for="item in collection_list" :key="item">
-                    <img src="../../assets/img/schooltest.jpg" :alt="item.title" loading="lazy">
-                    <h5 style="text-align: left">{{item.title}}</h5>
-                    <h5 style="text-align: right">{{item.date}}</h5>
-                  </div>
-                </div>
-                <div class="collect-title" style="justify-content: space-around">
-                  <el-pagination layout="prev, pager, next" :total="1000" />
-                </div>
-              </div>
-              <div class="collect-info">
-                <el-card class="quick-submit">
-                  <el-button-group style="display: block;width: 100%">
-                    <el-button size="small" @click="jumpToWork">一键投稿</el-button>
-                    <el-button size="small" @click="jumpToContent">内容管理</el-button>
-                  </el-button-group>
-                </el-card>
-                <el-card class="coll-info">
-                  <img src="../../assets/img/swiper_3.jpg" alt="">
-                </el-card>
-              </div>
-            </div>
-          </el-tab-pane>
-          <el-tab-pane label="我的收藏">
-            <div class="favourites">
-              <div class="collect-title">
-                <h2>我的收藏</h2>
-              </div>
-              <div class="favourites-box">
-                <div class="collections" v-for="item in collection_list" :key="item" style="float: left;margin-right: 10px">
-                  <img src="../../assets/img/schooltest.jpg" :alt="item.title" loading="lazy">
-                  <h5 style="text-align: left">{{item.title}}</h5>
-                  <h5 style="text-align: right">{{item.date}}</h5>
-                </div>
-              </div>
-              <div class="collect-title" style="justify-content: space-around">
-                <el-pagination layout="prev, pager, next" :total="1000" />
-              </div>
-            </div>
-          </el-tab-pane>
-        </el-tabs>
-      </el-card>
-    </div>
+                </template>
+              </el-calendar>
+          </div>
+            </el-row>
+          </div>
+        </el-tab-pane>
+
+        <el-tab-pane label="我的收藏">
+          2
+        </el-tab-pane>
+        <el-tab-pane label="我的课程">
+          3
+        </el-tab-pane>
+        <el-tab-pane label="我的创作">
+          4
+        </el-tab-pane>
+        <el-tab-pane label="我的购买">
+          5
+        </el-tab-pane>
+      </el-tabs>
+
+
+    </el-container>
+
+
   </div>
 </template>
 
 <script lang="ts" setup>
 import {useCounterStore} from "../../stores/counter.js";
-import {Edit} from "@element-plus/icons-vue";
 import {useRouter} from "vue-router";
-import { ref } from "vue";
-import {watchEffect} from "vue";
-import {ElMessage, ElMessageBox,ElIcon } from "element-plus";
+import {h, ref, watchEffect} from "vue";
+//头像上传
+import {ElNotification, UploadProps} from 'element-plus'
+import {ElMessage, ElMessageBox} from "element-plus";
+import {Edit} from "@element-plus/icons-vue";
 //用户个人信息
 const store = useCounterStore()
 const coin = store.coin
@@ -177,6 +263,40 @@ const like = store.like
 const userID = store.userID
 const username = ref()
 const router = useRouter()
+const value = ref(new Date())
+const activeday = ref([
+  { dat: '2024-05-01' },
+  { dat: '2024-05-03' },
+  { dat: '2024-05-15' }
+]);
+const textarea = ref('')
+
+const today_coin = () => {
+  const aDate = new Date().toLocaleDateString();
+  const todayDate = new Date().toLocaleDateString();
+  if (!localStorage.getItem('mark') || localStorage.getItem('mark') !== todayDate) {
+    localStorage.setItem('mark',aDate)
+    ElNotification({
+      title: '签到提醒',
+      message: h('i', { style: 'color: teal' }, '你已完成今日签到，鸮币 +1!'),
+    })
+    store.coin += 1
+  }else{
+    ElNotification({
+      title: '签到提醒',
+      message: h('i', { style: 'color: teal' }, '你今天已经签过了!'),
+    })
+  }
+}
+const getToken = () => {
+  if (store.token !== 'empty') {
+    return true
+  } else {
+    return false
+  }
+}
+
+
 //编辑弹窗
 const isShow = ref(false)
 watchEffect(() => {
@@ -191,14 +311,14 @@ const open = () => {
         /^[a-zA-Z]{4}[0-9a-zA-Z]{4}$/,
     inputErrorMessage: '无效用户名',
   })
-      .then(({ value }) => {
-        if (value){
+      .then(({value}) => {
+        if (value) {
           store.username = value
           ElMessage({
             type: 'success',
             message: `新的用户名是:${value}`,
           })
-        }else{
+        } else {
           console.log('error!')
         }
       })
@@ -209,8 +329,6 @@ const open = () => {
         })
       })
 }
-//头像上传
-import type { UploadProps } from 'element-plus'
 
 const imageUrl = ref('../../assets/user.png')
 
@@ -233,10 +351,10 @@ const beforeAvatarUpload: UploadProps['beforeUpload'] = (rawFile) => {
 }
 //会员元素列表
 const vip_element = ref([
-  {id: 1,msg: '积分',num: 21},
-  {id: 2,msg: '续期',num: 1},
-  {id: 3,msg: '开通',num: 12},
-  {id: 4,msg: '鸮币',num:` ${coin}`}
+  {id: 1, msg: '积分', num: 21},
+  {id: 2, msg: '续期', num: 1},
+  {id: 3, msg: '开通', num: 12},
+  {id: 4, msg: '鸮币', num: ` ${coin}`}
 ])
 //续费模块
 const renewal_flag = ref(false)
@@ -244,9 +362,9 @@ const renewal = () => {
   renewal_flag.value = !renewal_flag.value
 }
 const renewal_list = ref([
-  {id: 1,msg: '包年￥105'},
-  {id: 2,msg: '包季￥45'},
-  {id: 3,msg: '包月￥15'}
+  {id: 1, msg: '包年￥105'},
+  {id: 2, msg: '包季￥45'},
+  {id: 3, msg: '包月￥15'}
 ])
 //const radio = ref('1')
 //单笔充值
@@ -270,7 +388,7 @@ const select = (index) => {
   choice.value = renewal_list.value[index].msg
 }
 const Pay = () => {
-  if (choice.value !== null && radio_1.value == true && tag.value){
+  if (choice.value !== null && radio_1.value == true && tag.value) {
     tag.value = false;
     ElMessageBox.alert(`充值金额:${choice.value}`, '充值', {
       confirmButtonText: '确认',
@@ -281,7 +399,7 @@ const Pay = () => {
         })
       },
     })
-  }else {
+  } else {
     ElMessage({
       type: 'warning',
       message: '充值失败',
@@ -290,10 +408,10 @@ const Pay = () => {
 }
 //我的发布
 const collection_list = ref([
-  {id: 1,title: '校园秋景',date: '2023年5月8日'},
-  {id: 2,title: '校园秋景',date: '2023年5月9日'},
-  {id: 3,title: '校园秋景',date: '2023年5月10日'},
-  {id: 4,title: '校园秋景',date: '2023年5月11日'},
+  {id: 1, title: '校园秋景', date: '2023年5月8日'},
+  {id: 2, title: '校园秋景', date: '2023年5月9日'},
+  {id: 3, title: '校园秋景', date: '2023年5月10日'},
+  {id: 4, title: '校园秋景', date: '2023年5月11日'},
 ])
 //跳转作品管理页面
 const jumpToWork = () => {

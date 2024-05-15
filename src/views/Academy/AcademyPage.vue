@@ -7,10 +7,9 @@
             :default-active="activeIndex"
             class="el-menu-demo"
             mode="horizontal"
-            background-color="rgba(24, 25, 28)"
+            background-color="rgba(24, 24, 24)"
             text-color="#ffffff"
             active-text-color="#F5DB9D"
-            @select="handleSelect"
             style="height: 50px;padding-left: 130px;border-bottom: none"
         >
           <el-sub-menu index="2">
@@ -197,9 +196,7 @@ const input2 = ref('')
 //const input3 = ref('')
 const dialogTableVisible = ref(false)
 //const formLabelWidth = '1200px'
-const handleSelect = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+
 
 const jump = () => {
   router.push('/AcademyChild')
