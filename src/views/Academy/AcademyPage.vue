@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div style="margin-top: 56px">
 
     <el-row>
       <el-col>
@@ -63,10 +63,10 @@
           </el-sub-menu>
           <el-input
               v-model="input2"
-              class="w-50 m-2"
+              class="w-30 m-2"
               placeholder="输入课程或老师名称"
               :suffix-icon="Search"
-              style="margin: 10px 150px 10px 0px;"
+              style="margin: 10px 150px 10px 0px;float: right"
           />
         </el-menu>
       </el-col>

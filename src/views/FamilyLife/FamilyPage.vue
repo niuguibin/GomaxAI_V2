@@ -46,13 +46,6 @@
           </el-row>
           </div>
           <div class="input">
-<!--            <div class="input_4">-->
-<!--              <el-button round class="el-btn" style="width: 40px;height: 40px;background-color: #4361FCE5">-->
-<!--                <el-icon style="color: white">-->
-<!--                  <PictureRounded/>-->
-<!--                </el-icon>-->
-<!--              </el-button>-->
-<!--            </div>-->
             <div class="input-icon">
               <button><el-icon size="20px"><Star /></el-icon></button>
               <button><el-icon size="20px"><Folder /></el-icon></button>

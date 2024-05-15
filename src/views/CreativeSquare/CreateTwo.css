@@ -77,17 +77,13 @@
 }
 
 .carousel-item {
-    height: 100%;
     width: 100%;
-    z-index: 1;
     display: block;
 }
 
 .carousel-img {
-    /*height: 100%;*/
-    /* width: auto;*/
     width: 100%;
-    z-index: -1;
+    object-fit: contain;
 }
 
 /deep/ .el-carousel__item {

@@ -1,7 +1,7 @@
 <template>
   <!--  非tailwind写法，参考css文件（屎山，懒的改）-->
   <div style="margin-top: 60px;padding: 0px 150px 0 150px" class="body-box">
-        <el-row :gutter="50" justify="space-between" style="margin-bottom: 20px">
+        <el-row  justify="space-between" style="margin-bottom: 20px">
           <el-col  :span="15" >
             <div style="height: 300px;">
               <el-carousel
@@ -11,14 +11,14 @@
                   pause-on-hover
                   style="width: 100%;"
               >
-                <el-carousel-item v-for="item in img_url" :key="item">
+                <el-carousel-item v-for="item in img_url" :key="item" >
                   <img :src="item.src" alt="" loading="lazy" class="carousel-img">
                 </el-carousel-item>
               </el-carousel>
             </div>
           </el-col>
           <el-col :span="9">
-            <div>
+            <div style="background-color:#222222;height: 100%;padding: 10px 20px">
               <el-row v-for="item in 3" :key="item" class="info-text">
                 <span>GoMax第二届AI创作大赛时间确认</span>
               </el-row>

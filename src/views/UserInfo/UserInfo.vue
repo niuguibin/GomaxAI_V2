@@ -1,148 +1,3 @@
-<script lang="ts" setup>
-import {useCounterStore} from "../../stores/counter.js";
-import {Edit} from "@element-plus/icons-vue";
-import {useRouter} from "vue-router";
-import { ref } from "vue";
-import {watchEffect} from "vue";
-import {ElMessage, ElMessageBox,ElIcon } from "element-plus";
-//用户个人信息
-const store = useCounterStore()
-const coin = store.coin
-const follow = store.follows
-const collection = store.collection
-const MyWork = store.MyWork
-const like = store.like
-const userID = store.userID
-const username = ref()
-const router = useRouter()
-//编辑弹窗
-const isShow = ref(false)
-watchEffect(() => {
-  username.value = store.username
-})
-const open = () => {
-  isShow.value = !isShow.value
-  ElMessageBox.prompt('请输入新的用户名', '修改用户名', {
-    confirmButtonText: '确定',
-    cancelButtonText: '取消',
-    inputPattern:
-        /^[a-zA-Z]{4}[0-9a-zA-Z]{4}$/,
-    inputErrorMessage: '无效用户名',
-  })
-      .then(({ value }) => {
-        if (value){
-          store.username = value
-          ElMessage({
-            type: 'success',
-            message: `新的用户名是:${value}`,
-          })
-        }else{
-          console.log('error!')
-        }
-      })
-      .catch(() => {
-        ElMessage({
-          type: 'info',
-          message: '输入取消',
-        })
-      })
-}
-//头像上传
-import type { UploadProps } from 'element-plus'
-
-const imageUrl = ref('../../assets/user.png')
-
-const handleAvatarSuccess: UploadProps['onSuccess'] = (
-    response,
-    uploadFile
-) => {
-  imageUrl.value = URL.createObjectURL(uploadFile.raw!)
-}
-
-const beforeAvatarUpload: UploadProps['beforeUpload'] = (rawFile) => {
-  if (rawFile.type !== 'image/jpeg') {
-    ElMessage.error('图片只支持JPG格式！')
-    return false
-  } else if (rawFile.size / 1024 / 1024 > 2) {
-    ElMessage.error('图片最大2M!')
-    return false
-  }
-  return true
-}
-//会员元素列表
-const vip_element = ref([
-  {id: 1,msg: '积分',num: 21},
-  {id: 2,msg: '续期',num: 1},
-  {id: 3,msg: '开通',num: 12},
-  {id: 4,msg: '鸮币',num:` ${coin}`}
-])
-//续费模块
-const renewal_flag = ref(false)
-const renewal = () => {
-  renewal_flag.value = !renewal_flag.value
-}
-const renewal_list = ref([
-  {id: 1,msg: '包年￥105'},
-  {id: 2,msg: '包季￥45'},
-  {id: 3,msg: '包月￥15'}
-])
-//const radio = ref('1')
-//单笔充值
-
-const openPay = () => {
-  ElMessageBox.alert('单笔充值栏', '单笔充值', {
-    confirmButtonText: '确认',
-    callback: () => {
-      ElMessage({
-        type: 'success',
-        message: '充值确认',
-      })
-    },
-  })
-}
-//充值卡片选择
-const radio_1 = ref(false)
-const choice = ref()
-const tag = ref(true)
-const select = (index) => {
-  choice.value = renewal_list.value[index].msg
-}
-const Pay = () => {
-  if (choice.value !== null && radio_1.value == true && tag.value){
-    tag.value = false;
-    ElMessageBox.alert(`充值金额:${choice.value}`, '充值', {
-      confirmButtonText: '确认',
-      callback: () => {
-        ElMessage({
-          type: 'success',
-          message: '充值确认',
-        })
-      },
-    })
-  }else {
-    ElMessage({
-      type: 'warning',
-      message: '充值失败',
-    })
-  }
-}
-//我的发布
-const collection_list = ref([
-  {id: 1,title: '校园秋景',date: '2023年5月8日'},
-  {id: 2,title: '校园秋景',date: '2023年5月9日'},
-  {id: 3,title: '校园秋景',date: '2023年5月10日'},
-  {id: 4,title: '校园秋景',date: '2023年5月11日'},
-])
-//跳转作品管理页面
-const jumpToWork = () => {
-  router.replace('/workManage')
-}
-//跳转内容管理页面
-const jumpToContent = () => {
-  router.replace('/content')
-}
-</script>
-
 <template>
   <div class="background">
     <div class="left-info">
@@ -305,31 +160,151 @@ const jumpToContent = () => {
   </div>
 </template>
 
+<script lang="ts" setup>
+import {useCounterStore} from "../../stores/counter.js";
+import {Edit} from "@element-plus/icons-vue";
+import {useRouter} from "vue-router";
+import { ref } from "vue";
+import {watchEffect} from "vue";
+import {ElMessage, ElMessageBox,ElIcon } from "element-plus";
+//用户个人信息
+const store = useCounterStore()
+const coin = store.coin
+const follow = store.follows
+const collection = store.collection
+const MyWork = store.MyWork
+const like = store.like
+const userID = store.userID
+const username = ref()
+const router = useRouter()
+//编辑弹窗
+const isShow = ref(false)
+watchEffect(() => {
+  username.value = store.username
+})
+const open = () => {
+  isShow.value = !isShow.value
+  ElMessageBox.prompt('请输入新的用户名', '修改用户名', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    inputPattern:
+        /^[a-zA-Z]{4}[0-9a-zA-Z]{4}$/,
+    inputErrorMessage: '无效用户名',
+  })
+      .then(({ value }) => {
+        if (value){
+          store.username = value
+          ElMessage({
+            type: 'success',
+            message: `新的用户名是:${value}`,
+          })
+        }else{
+          console.log('error!')
+        }
+      })
+      .catch(() => {
+        ElMessage({
+          type: 'info',
+          message: '输入取消',
+        })
+      })
+}
+//头像上传
+import type { UploadProps } from 'element-plus'
+
+const imageUrl = ref('../../assets/user.png')
+
+const handleAvatarSuccess: UploadProps['onSuccess'] = (
+    response,
+    uploadFile
+) => {
+  imageUrl.value = URL.createObjectURL(uploadFile.raw!)
+}
+
+const beforeAvatarUpload: UploadProps['beforeUpload'] = (rawFile) => {
+  if (rawFile.type !== 'image/jpeg') {
+    ElMessage.error('图片只支持JPG格式！')
+    return false
+  } else if (rawFile.size / 1024 / 1024 > 2) {
+    ElMessage.error('图片最大2M!')
+    return false
+  }
+  return true
+}
+//会员元素列表
+const vip_element = ref([
+  {id: 1,msg: '积分',num: 21},
+  {id: 2,msg: '续期',num: 1},
+  {id: 3,msg: '开通',num: 12},
+  {id: 4,msg: '鸮币',num:` ${coin}`}
+])
+//续费模块
+const renewal_flag = ref(false)
+const renewal = () => {
+  renewal_flag.value = !renewal_flag.value
+}
+const renewal_list = ref([
+  {id: 1,msg: '包年￥105'},
+  {id: 2,msg: '包季￥45'},
+  {id: 3,msg: '包月￥15'}
+])
+//const radio = ref('1')
+//单笔充值
+
+const openPay = () => {
+  ElMessageBox.alert('单笔充值栏', '单笔充值', {
+    confirmButtonText: '确认',
+    callback: () => {
+      ElMessage({
+        type: 'success',
+        message: '充值确认',
+      })
+    },
+  })
+}
+//充值卡片选择
+const radio_1 = ref(false)
+const choice = ref()
+const tag = ref(true)
+const select = (index) => {
+  choice.value = renewal_list.value[index].msg
+}
+const Pay = () => {
+  if (choice.value !== null && radio_1.value == true && tag.value){
+    tag.value = false;
+    ElMessageBox.alert(`充值金额:${choice.value}`, '充值', {
+      confirmButtonText: '确认',
+      callback: () => {
+        ElMessage({
+          type: 'success',
+          message: '充值确认',
+        })
+      },
+    })
+  }else {
+    ElMessage({
+      type: 'warning',
+      message: '充值失败',
+    })
+  }
+}
+//我的发布
+const collection_list = ref([
+  {id: 1,title: '校园秋景',date: '2023年5月8日'},
+  {id: 2,title: '校园秋景',date: '2023年5月9日'},
+  {id: 3,title: '校园秋景',date: '2023年5月10日'},
+  {id: 4,title: '校园秋景',date: '2023年5月11日'},
+])
+//跳转作品管理页面
+const jumpToWork = () => {
+  router.replace('/workManage')
+}
+//跳转内容管理页面
+const jumpToContent = () => {
+  router.replace('/content')
+}
+</script>
+
 <style scoped>
 @import "user.css";
-</style>
-<style>
-.left-img .el-upload {
-  display: block!important;
-}
-.avatar-uploader .el-upload {
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: var(--el-transition-duration-fast);
-}
-.el-divider__text {
-  background-color: transparent;
-}
-.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 80px;
-  display: block;
-  height: 80px;
-  position: absolute;
-  text-align: center;
-  padding: 26px;
-  margin-top: -80px;
-}
 </style>

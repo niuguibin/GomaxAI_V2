@@ -10,7 +10,7 @@
 
             <div class="slider-wrapper" id="car">
               <el-carousel arrow="always" :autoplay="false" class="carousel">
-                <el-carousel-item v-for="item in img_url" :key="item" class="carousel-item">
+                <el-carousel-item v-for="item in img_url" :key="item" class="carousel-item" style="height: 400px">
                   <img :src="item.src"  alt="" class="carousel-img ">
                 </el-carousel-item>
               </el-carousel>
