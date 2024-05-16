@@ -52,28 +52,24 @@
     background-color: #F5DB9D;
 }
 
-/*tab1---个人信息*/
+/*tab1---个人信息------------------------*/
 .row1-1 {
     display: flex;
     align-items: center;
     margin: 40px 50px;
 }
 
-.user_avatar {
-    width: 70px;
-    height: 70px;
-}
-
 .user_avatar img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .user-name {
     color: white;
     font-weight: 470;
-    margin: 0 20px;
+    margin: 0 30px;
 }
 
 .button1 {
@@ -88,7 +84,7 @@
 .tag1 {
     width: 50px;
     height: 21px;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-top: 8px;
 }
 
@@ -150,391 +146,234 @@
     top: 1px;
 }
 
+/*-----------------我的收藏----------*/
+.row2-1 {
+    margin: 40px 50px;
+}
+.row2-1 span {
+    color: white;
+    font-size: 16px;
+    font-weight: 490;
+    margin-bottom: 10px;
+}
+
+/* ====== 视频列表 ====== */
+
+.main-cont__title {
+    position: relative;
+    height: 88px;
+    margin-top: 40px;
+    border-top: 1px solid #939393;
+    color: white;
+}
+
+.main-cont__title h3 {
+    font-size: 22px;
+    line-height: 88px;
+}
+
+.main-cont__title  {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    background-color: #00a3ef;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.main-cont__title .more:hover {
+    background-color: #1e9ed8;
+}
+a, .green {
+    color: #01b2fe;
+}
+.clearfix {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+}
+
+.item {
+    float: left;
+    width: 200px;
+    /*margin-right: 20px;*/
+    border: 1px solid #dedfe0;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: top 0.2s;
+}
+
+.main-cont__list .item:hover {
+    top: -3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+/* main-album */
+.main-album .main-cont__list .item {
+    height: auto;
+    width: auto;
+    padding: 5px;
+    margin: 10px;
+}
+
+.main-album .pic,
+.main-album .pic img {
+    max-height: 200px;
+    max-width: 250px;
+}
+
+.main-album .info {
+    padding-left: 5px;
+}
 
 
+.pic {
+    position: relative;
+}
+.video-data {
+    line-height: 18px;
+    color: white;
+    position: absolute;
+    top: -5px;
+    right: 140px;
+    display: flex;
+    align-items: center;
+}
+
+.main-album .info .author {
+    display: block;
+    color: #888;
+}
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gap-4 {
+    gap: 1rem
+}
+.mb-3 {
+    margin-bottom: .75rem
+}
+.mb-3 {
+    margin-bottom: 1.25rem;
+}
+.w-full {
+    width: 100%
+}
 
 
+html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    scroll-behavior: smooth
+}
 
-/*.background {*/
-/*    width: 1200px;*/
-/*    height: 735px;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*    margin: 56px auto 0 auto;*/
-/*    color: white;*/
-/*    text-align: center;*/
-/*    line-height: 400px;*/
-/*}*/
-/*.left-info {*/
-/*    width: 400px;*/
-/*    height: 100%;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    box-sizing: border-box;*/
-/*}*/
-/*.left-img {*/
-/*    width: 80px;*/
-/*    height: 80px;*/
-/*    margin-left: 160px;*/
-/*    display: block;*/
-/*    margin-top: 90px;*/
-/*    z-index: 899;*/
-/*    position: absolute;*/
-/*    background-color: whitesmoke;*/
-/*    border-radius: 40px;*/
-/*    overflow: hidden;*/
-/*}*/
-/*.left-img img {*/
-/*    display: block;*/
-/*    width: 80px;*/
-/*    border-radius: 40px;*/
-/*    overflow: hidden;*/
-/*    height: 80px;*/
-/*}*/
-/*.right-info {*/
-/*    width: 800px;*/
-/*    height: 100%;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    box-sizing: border-box;*/
-/*}*/
-/*.left-word {*/
-/*    width: 100%;*/
-/*    height: 30px;*/
-/*    line-height: 30px;*/
-/*    text-align: left;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*}*/
-/*.important {*/
-/*    font-weight: bolder;*/
-/*}*/
-/*.avatar-uploader .avatar {*/
-/*    width: 80px;*/
-/*    height: 80px;*/
-/*    display: block;*/
-/*}*/
-/*.user_card {*/
-/*    background: linear-gradient(2.46deg, hsla(0, 0%, 62%, 0.7) 2.59%, hsla(0, 0%, 82%, 0.94) 51.91%,hsla(0,0%,100%,.2484) 101.3%);*/
-/*    backdrop-filter: blur(8px);*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    width: 250px;*/
-/*    margin-bottom: 10px;*/
-/*    height: 230px;*/
-/*    border-radius: 8px;*/
-/*    box-shadow: 5px 5px 15px rgba(169, 169, 169, 0.3);*/
-/*    overflow: hidden;*/
-/*    border: 1px solid rgba(255,253,253,.69);*/
-/*}*/
-/*.card {*/
-/*    width: 250px;*/
-/*    padding: 8px;*/
-/*    height: 98px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*}*/
-/*.card img {*/
-/*    width: 234px;*/
-/*    height: 82px;*/
-/*    display: block;*/
-/*    border-radius: 8px;*/
-/*    overflow: hidden;*/
-/*    position: relative;*/
-/*}*/
-/*.user_card .el-divider {*/
-/*    margin-top: 4px;*/
-/*    margin-bottom: 4px;*/
-/*}*/
-/*.user-layer {*/
-/*    width: 234px;*/
-/*    height: 82px;*/
-/*    display: block;*/
-/*    margin-top: -82px;*/
-/*    position: absolute;*/
-/*}*/
-/*.user-layer_top {*/
-/*    width: 100%;*/
-/*    height: 50%;*/
-/*    display: flex;*/
-/*    padding-top: 4px;*/
-/*    position: relative;*/
-/*}*/
-/*.user-avatar {*/
-/*    width: 36px;*/
-/*    height: 36px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    border-radius: 18px;*/
-/*    overflow: hidden;*/
-/*}*/
-/*.user-avatar img {*/
-/*    width: 36px;*/
-/*    height: 36px;*/
-/*    display: block;*/
-/*}*/
-/*.img_1 {*/
-/*    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);*/
-/*}*/
-/*.user-name {*/
-/*    width: 165px;*/
-/*    text-overflow: ellipsis;*/
-/*    overflow: hidden;*/
-/*    white-space: nowrap;*/
-/*    height: 40px;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*    padding-left: 10px;*/
-/*    font-size: 12px;*/
-/*}*/
-/*.user-name p {*/
-/*    height: 20px;*/
-/*    color: white;*/
-/*    line-height: 20px;*/
-/*}*/
-/*.user-vip {*/
-/*    width: 100%;*/
-/*    height: 70px;*/
-/*    margin-top: 5px;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*    justify-content: space-between;*/
-/*}*/
-/*.vip_element {*/
-/*    width: 50px;*/
-/*    height: 70px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*}*/
-/*.vip-item {*/
-/*    width: 50px;*/
-/*    height: 50%;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    text-align: center;*/
-/*    text-overflow: ellipsis;*/
-/*    overflow: hidden;*/
-/*    white-space: nowrap;*/
-/*    font-size: 14px;*/
-/*    color: #565656;*/
-/*    line-height: 35px;*/
-/*}*/
-/*.vip-pay {*/
-/*    width: 100%;*/
-/*    height: 50px;*/
-/*    padding-left: 10px;*/
-/*    padding-right: 10px;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*    justify-content: space-between;*/
-/*    margin-top: 5px;*/
-/*}*/
-/*.renewal {*/
-/*    width: 400px;*/
-/*    height: 230px;*/
-/*    display: block;*/
-/*    margin-top: -240px;*/
-/*    position: relative;*/
-/*    background-color: #cccccc;*/
-/*    border-radius: 8px;*/
-/*    overflow: hidden;*/
-/*    margin-left: 270px;*/
-/*}*/
-/*.renewal-box {*/
-/*    padding-right: 10px;*/
-/*    padding-left: 10px;*/
-/*    width: 100%;*/
-/*    height: 50%;*/
-/*    padding-top: 10px;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*    justify-content: space-between;*/
-/*}*/
-/*.renewal-box-2 {*/
-/*    padding: 10px;*/
-/*    width: 100%;*/
-/*    height: 50%;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*}*/
-/*.renewal_item-1 {*/
-/*    width: 100%;*/
-/*    height: 50px;*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    position: relative;*/
-/*}*/
-/*.renewal-item {*/
-/*    width: 110px;*/
-/*    height: 100%;*/
-/*    cursor: pointer;*/
-/*    box-sizing: border-box;*/
-/*    border-radius: 8px;*/
-/*    overflow: hidden;*/
-/*    border: 1px solid rgba(73, 73, 73, 0.2);*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    backdrop-filter: blur(8px);*/
-/*    background-color: #fff;*/
-/*    box-shadow: 5px 5px 10px rgba(77, 77, 77, 0.3);*/
-/*}*/
+/*---------我的课程=------------*/
+.box-card {
+    border: none;
+    margin: 10px 10px;
+}
 
-/*.renewal-top {*/
-/*    width: 110px;*/
-/*    height: 70%;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    line-height: 80px;*/
-/*    text-align: center;*/
-/*    font-size: 20px;*/
-/*    font-weight: bold;*/
-/*}*/
-/*.renewal-bottom {*/
-/*    width: 110px;*/
-/*    height: 30%;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    text-align: center;*/
-/*}*/
-/*.collect-title {*/
-/*    width: 100%;*/
-/*    height: 50px;*/
-/*    vertical-align: middle;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*}*/
-/*.collect-body {*/
-/*    width: 100%;*/
-/*    padding: 10px;*/
-/*    height: 210px;*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    position: relative;*/
-/*}*/
-/*.collections {*/
-/*    width: 100px;*/
-/*    height: 160px;*/
-/*    display: block;*/
-/*    cursor: pointer;*/
-/*    box-sizing: border-box;*/
-/*    border: 1px solid #eee;*/
-/*    position: relative;*/
-/*    border-radius: 10px;*/
-/*    overflow: hidden;*/
-/*}*/
-/*.collections h5 {*/
-/*    width: 100%;*/
-/*    white-space: nowrap;*/
-/*    text-overflow: ellipsis;*/
-/*    height: 30px;*/
-/*    font-size: 10px;*/
-/*    font-weight: lighter;*/
-/*    line-height: 30px;*/
-/*}*/
-/*.collections:hover {*/
-/*    transition: .2s ease-out;*/
-/*    box-shadow: 5px 5px 10px rgba(91, 91, 91, 0.5);*/
-/*}*/
-/*.collections img {*/
-/*    width: 100%;*/
-/*    height: 100px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    object-fit: cover;*/
-/*}*/
-/*.collect-card {*/
-/*    width: 70%;*/
-/*    height: 100%;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*}*/
-/*.collect-info {*/
-/*    width: 30%;*/
-/*    height: 309px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*}*/
-/*.collect {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*}*/
-/*.collect-title h2 {*/
-/*    width: auto;*/
-/*    height: 50px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    line-height: 50px;*/
-/*    font-size: 20px;*/
-/*    font-weight: bold;*/
-/*}*/
-/*.quick-submit {*/
-/*    width: 100%;*/
-/*    height: 70px;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*    justify-content: space-around;*/
-/*    border: 1px solid #eee;*/
-/*    margin-top: 20px;*/
-/*    box-sizing: border-box;*/
-/*    border-radius: 5px;*/
-/*    overflow: hidden;*/
-/*}*/
-/*.coll-info {*/
-/*    width: 100%;*/
-/*    height: 160px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    margin-top: 20px;*/
-/*    border: 1px solid #eee;*/
-/*    box-sizing: border-box;*/
-/*    border-radius: 5px;*/
-/*    overflow: hidden;*/
-/*}*/
-/*.coll-info img {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    display: block;*/
-/*    object-fit: cover;*/
-/*    position: relative;*/
-/*}*/
-/*.favourites {*/
-/*    width: 100%;*/
-/*    height: 400px;*/
-/*    display: block;*/
-/*    position: relative;*/
-/*}*/
-/*.favourites-box {*/
-/*    display: block;*/
-/*    padding: 10px;*/
-/*    position: relative;*/
-/*    width: 100%;*/
-/*    height: 300px;*/
-/*}*/
-/*.left-img .el-upload {*/
-/*    display: block!important;*/
-/*}*/
-/*.avatar-uploader .el-upload {*/
-/*    cursor: pointer;*/
-/*    position: relative;*/
-/*    overflow: hidden;*/
-/*    transition: var(--el-transition-duration-fast);*/
-/*}*/
-/*.el-divider__text {*/
-/*    background-color: transparent;*/
-/*}*/
-/*.avatar-uploader-icon {*/
-/*    font-size: 28px;*/
-/*    color: #8c939d;*/
-/*    width: 80px;*/
-/*    display: block;*/
-/*    height: 80px;*/
-/*    position: absolute;*/
-/*    text-align: center;*/
-/*    padding: 26px;*/
-/*    margin-top: -80px;*/
-/*}*/
+/*------------我的购买------------*/
+.row5-1 {
+    margin: 40px 50px;
+    color: white;
+}
+.renewal {
+    width: 400px;
+    height: 230px;
+    display: block;
+    margin-top: -240px;
+    position: relative;
+    background-color: #cccccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 270px;
+}
+.renewal-box {
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    height: 50%;
+    padding-top: 10px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.renewal-box-2 {
+    padding: 10px;
+    width: 100%;
+    height: 50%;
+    display: block;
+    position: relative;
+}
+.renewal_item-1 {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.renewal-item {
+    width: 110px;
+    height: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(73, 73, 73, 0.2);
+    display: block;
+    position: relative;
+    backdrop-filter: blur(8px);
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(77, 77, 77, 0.3);
+}
 
+
+.renewal-top {
+    width: 110px;
+    height: 70%;
+    display: block;
+    position: relative;
+    line-height: 80px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.renewal-bottom {
+    width: 110px;
+    height: 30%;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+.vip-card {
+    width: 270px;
+    height: 100px;
+    margin: 10px;
+    border: none;
+    transition: all 0.1s linear 0.1s;
+}
+.vip-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(106, 139, 231, 0.8);
+    width: 290px;
+    height: 120px;
+}
 
 
