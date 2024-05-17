@@ -8,21 +8,22 @@
             <el-row class="row1-1">
               <el-upload
                   :show-file-list="false"
-                  :on-success="handleAvatarSuccess"
-                  :before-upload="beforeAvatarUpload"
+                  action="http://localhost:9090/files/upload"
+                  :on-success="handleImgUploadSuccess"
                   class="user_avatar"
               >
-                <img :src="imageUrl" alt="">
+                <img :src="data.user.avatar || 'src/assets/em-user.png'" >
 
               </el-upload>
 
               <div style="display: flex;flex-direction: column">
                 <span class="user-name">
-                  {{ username }}
+<!--                  手机尾号后四位,暂时定!!!!!!!!!!!!!!!!!-->
+                  {{ data.user.name }}
                   <el-button :icon="Edit" @click="open" class="button1"/>
                 </span>
                 <span class="user-name">
-                用户ID: {{userID}}
+                用户ID: {{data.user.id}}
               </span>
                 <el-tag type="warning" class="tag1" style="font-size: 10px">大会员</el-tag>
               </div>
@@ -42,15 +43,15 @@
             <hr class="hr_gradient">
             <el-row class="row1-2">
               <div class="user_info">
-                <div class="user_info_top">{{ store.coin }}</div>
+                <div class="user_info_top">{{  data.user.coin || '无'    }}</div>
                 <div class="user_info_bot">我的鸮币</div>
               </div>
               <div class="user_info">
-                <div class="user_info_top">{{ store.follows }}</div>
+                <div class="user_info_top">{{ data.user.attention  || '无'  }}</div>
                 <div class="user_info_bot">我的关注</div>
               </div>
               <div class="user_info">
-                <div class="user_info_top">{{ store.collection }}</div>
+                <div class="user_info_top">{{ data.user.collect || '无' }}</div>
                 <div class="user_info_bot">我的收藏</div>
               </div>
               <div class="user_info">
@@ -280,7 +281,9 @@
 <script lang="ts" setup>
 import {useCounterStore} from "../../stores/counter.js";
 import {useRouter} from "vue-router";
-import {computed, ref, watchEffect} from "vue";
+import {computed, reactive, ref, watchEffect} from "vue";
+import request from "../../utils/request"
+
 //头像上传
 import {ElMessage, ElMessageBox, UploadProps} from 'element-plus'
 import {Edit} from "@element-plus/icons-vue";
@@ -297,6 +300,47 @@ const router = useRouter()
 const value = ref(new Date())
 
 // -----------------个人信息start-------------------------
+
+//接收后端数据
+const data = reactive({
+  user: JSON.parse(localStorage.getItem('xm-user') || '{}'),
+})
+const handleImgUploadSuccess = (res) => {
+  data.user.avatar = res.data
+}
+
+const update = () => {
+  request.put('/student/update', data.user).then(res => {
+    if (res.code === '200') {
+      ElMessage.success("操作成功")
+      router.push('/login')
+    } else {
+      ElMessage.error(res.msg)
+    }
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const activeday = ref([
   {dat: '2024-05-01'},
   {dat: '2024-05-03'},

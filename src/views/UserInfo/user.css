@@ -23,6 +23,15 @@
     height: 100%;
 
 }
+.row1-4 .el-badge{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: 3px;
+    border: none;
+    background:none;
+}
+
 
 /*每个标签单独的样式调整*/
 /deep/ .el-tabs--left .el-tabs__item.is-left {

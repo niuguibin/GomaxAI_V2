@@ -99,6 +99,10 @@ interface registerForm {
   password: string,
   code: string
 }
+
+
+
+
 const Register = reactive<registerForm>({
   username: '',
   password: '',

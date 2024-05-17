@@ -1,5 +1,5 @@
 <template>
-  <div @click="qqq">测试数据-text</div>
+<!--  <div @click="qqq">测试数据-text</div>-->
   <div class="background_2">
     <div class="background-item">
       <div class="item1">
@@ -157,10 +157,11 @@ const goHome = () => {
     }
   });
 }
-const qqq= () =>{
-  console.log(user,'测试')
-
-}
+// //测试数据
+// const qqq= () =>{
+//   console.log(user,'测试')
+//
+// }
 const openDrawer = () => {
   store.drawer = !store.drawer
 }
@@ -168,6 +169,13 @@ const openDrawer = () => {
 const data = reactive({
   user: JSON.parse(localStorage.getItem('xm-user') || '{}'),
 })
+
+
+
+const logout = () => {
+  localStorage.removeItem('student-user')
+}
+
 //创作管理
 const workManage = () => {
   router.push('/workManage')
@@ -176,10 +184,11 @@ const workManage = () => {
 let userName = ref('')
 let userImg = ref('')
 const user = () => {
-  if (ifIsLogin()) {
-    router.push('/user')
-  } else {
+  console.log(data.user.id)
+  if (!data.user.id) {
     router.push('/login')
+  } else {
+    router.push('/userinfo')
   }
 }
 const ifIsLogin = () => {
