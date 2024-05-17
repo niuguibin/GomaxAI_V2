@@ -241,14 +241,11 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 8px;
-    transition: all 0.2s linear 0.1s;
+    transition: all 0.3s ease;
     z-index: 1;
 }
 .user_avater img:hover {
-   width: 80px;
-    height: 80px;
-    transform: translateY(30px);
-
+    transform: scale(3) translateY(10px);
 }
 .user_avater span {
     color: white;

@@ -30,7 +30,6 @@
         </div>
       </div>
       <div class="item2">
-        <!--        我的鸮币-->
         <el-tooltip
             class="box-item"
             effect="dark"
@@ -63,17 +62,17 @@
 
         <!--        用户登录-->
         <el-popover
-            popper-style=" padding: 30px;min-width:330px;z-index:0"
+            popper-style=" padding: 30px;min-width:270px;z-index:7"
         >
           <template #reference>
             <div class="user_top">
               <div class="user_avater" @click="user">
-                <img :src="data.user.avatar || 'http://localhost:9090/files/1715950224507-user.jpg'" >
+                <img :src="data.user.avatar || 'src/assets/em-user.png'" >
               </div>
             </div>
           </template>
           <template #default>
-            <el-row style="display: flex;justify-content:center;margin: 22px 0 20px 0">
+            <el-row style="display: flex;justify-content:center;margin: 30px 0 20px 0">
               <span class="name">{{ data.user.name || '请登录'  }}</span>
             </el-row>
             <el-row style="display: flex;justify-content:space-between">
@@ -184,7 +183,7 @@ const ifIsLogin = () => {
 
   } else {
     userName.value = '请登录'
-    userImg.value = 'src/assets/img/placeholder.png'
+    userImg.value = 'src/assets/em-user.png'
   }
 }
 const getToken = () => {
