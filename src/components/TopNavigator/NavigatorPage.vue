@@ -107,9 +107,12 @@
               <div class="btn">立即充值</div>
               <el-icon><DArrowRight /></el-icon>
             </el-row>
-            <el-row @click="update" class="btn-row">
+            <el-row @click="jumpToMyPurchases" class="btn-row">
               <div class="btn">大会员</div>
               <el-icon><DArrowRight /></el-icon>
+            </el-row>
+            <el-row style="display: flex;justify-content: center;margin: 5px 0">
+              <button>退出登录</button>
             </el-row>
           </template>
         </el-popover>
@@ -118,7 +121,7 @@
   </div>
   <el-dialog
       v-model="dialogVisible"
-      title="快充值中心"
+      title="立即充值"
       width="30%"
       class="dialog"
   >
@@ -147,6 +150,10 @@ import QrcodeVue from "qrcode.vue";
 import axios from "axios";
 const router = useRouter()
 const store = useCounterStore()
+const jumpToMyPurchases = () => {
+  router.push('/user');
+}
+
 
 const goHome = () => {
   router.push('/')

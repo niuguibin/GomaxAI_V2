@@ -20,7 +20,7 @@
                 <span class="user-name">
 <!--                  手机尾号后四位,暂时定!!!!!!!!!!!!!!!!!-->
                   {{ data.user.name }}
-                  <el-button :icon="Edit" @click="open" class="button1"/>
+                  <el-button :icon="Edit" @click="dialogVisible1 = true" class="button1"/>
                 </span>
                 <span class="user-name">
                 用户ID: {{data.user.id}}
@@ -54,9 +54,10 @@
                 <div class="user_info_top">{{ data.user.collect || '无' }}</div>
                 <div class="user_info_bot">我的收藏</div>
               </div>
-              <div class="user_info">
-                <div class="user_info_top">GPT4：0 | MJ：0 | SD：0</div>
-                <div class="user_info_bot">AI状态</div>
+              <div>
+                <div class="user_info_top">AI状态： GPT4：0 | MJ：0 | SD：0</div>
+
+
               </div>
             </el-row>
             <hr class="hr_gradient">
@@ -171,7 +172,7 @@
 
         <el-tab-pane label="我的创作">
           <el-row class="row2-1">
-            <el-button size="small" @click="jumpToWork">一键投稿</el-button>-->
+            <el-button size="small" @click="jumpToWork">一键投稿</el-button>
             <el-button size="small" @click="jumpToContent">内容管理</el-button>
           </el-row>
           <hr class="hr_gradient">
@@ -214,7 +215,7 @@
             <span style="width: 100%;font-size: 16px">我的会员</span>
             <div style="display: flex;align-items: center">
               <span style="margin-right: 100px">会员有效期至2024年7月19日</span>
-              <el-button round style="background-color: #4062D1;color: #ffffff" @click="openPay">
+              <el-button round style="background-color: #4062D1;color: #ffffff" @click="dialogVisible2 = true">
                 充值
               </el-button>
               <el-button round plain @click="dialogVisible = true">
@@ -250,38 +251,81 @@
           </el-row>
 
 
-          <el-dialog class="renewal" v-model="dialogVisible">
-            <div class="renewal-box">
-              <div class="renewal-item" v-for="(item,index) in renewal_list" :key="index" @click="select(index)"
-                   :style="{ backgroundColor: selected === index ? '#00000019' : 'transparent' }">
-                <div class="renewal-top">{{ item.msg }}</div>
-                <div class="renewal-bottom">
-                </div>
-              </div>
-            </div>
-            <div class="renewal-box-2">
-              <div class="renewal_item-1">
-                <el-checkbox size="large" v-model="radio_1">点击同意《会员自动续费条例》</el-checkbox>
-              </div>
-              <div class="renewal_item-1" style="margin-top: 10px">
-                <el-button round plain @click="Pay">支付</el-button>
-              </div>
-            </div>
-          </el-dialog>
+
         </el-tab-pane>
       </el-tabs>
 
 
     </el-container>
+    <el-dialog
+        v-model="dialogVisible1"
+        title="修改用户名"
+        width="400"
+    >
+      <el-input placeholder="请输入新的用户名"></el-input>
+      <template #footer>
+        <div class="dialog-footer">
+          <el-button @click="dialogVisible1 = false">取消</el-button>
+          <el-button type="primary" @click="dialogVisible1 = false">
+            确认修改
+          </el-button>
+        </div>
+      </template>
+    </el-dialog>
+    <el-dialog class="renewal" v-model="dialogVisible" style="width: 500px">
 
+
+
+<!--  ============================== 缺少逻辑！！！！！在支付成功之后需要关闭dialog===============================================-->
+
+
+
+
+    <div class="renewal-box">
+      <div class="renewal-item" v-for="(item,index) in renewal_list" :key="index" @click="select(index)"
+           :style="{ backgroundColor: selected === index ? '#00000019' : 'transparent' }">
+        <div class="renewal-top">{{ item.msg }}</div>
+        <div class="renewal-bottom">
+        </div>
+      </div>
+    </div>
+    <div class="renewal-box-2">
+      <div class="renewal_item-1">
+        <el-checkbox size="large" v-model="radio_1">点击同意《会员自动续费条例》</el-checkbox>
+      </div>
+      <div class="renewal_item-1" style="margin-top: 10px">
+        <el-button round plain @click="Pay" >支付</el-button>
+      </div>
+    </div>
+  </el-dialog>
+    <el-dialog
+        v-model="dialogVisible2"
+        title="立即充值"
+        width="500"
+    >
+      <div style="display: flex;flex-direction: row;justify-content: space-around">
+      <div class="renewal-item1" v-for="(item,index) in pay_list" :key="index" @click="select(index)"
+           :style="{ backgroundColor: selected === index ? '#00000019' : 'transparent' }">
+        <div class="renewal-top1">{{ item.msg }}</div>
+      </div>
+      </div>
+      <template #footer>
+        <div class="dialog-footer">
+          <el-button @click="dialogVisible2 = false">取消</el-button>
+          <el-button type="primary" @click="dialogVisible2 = false">
+            确认充值
+          </el-button>
+        </div>
+      </template>
+    </el-dialog>
 
   </div>
 </template>
 
 <script lang="ts" setup>
 import {useCounterStore} from "../../stores/counter.js";
-import {useRouter} from "vue-router";
-import {computed, reactive, ref, watchEffect} from "vue";
+import {useRoute, useRouter} from "vue-router";
+import {computed, reactive, ref, watchEffect,} from "vue";
 import request from "../../utils/request"
 
 //头像上传
@@ -299,7 +343,10 @@ const username = ref()
 const router = useRouter()
 const value = ref(new Date())
 
+
 // -----------------个人信息start-------------------------
+
+const dialogVisible1 = ref(false)
 
 //接收后端数据
 const data = reactive({
@@ -319,25 +366,6 @@ const update = () => {
     }
   })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -448,7 +476,7 @@ const jumpToContent = () => {
 
 //-----------------我的购买start-----------------
 const dialogVisible = ref(false)
-
+const dialogVisible2 = ref(false)
 //续费模块
 const renewal_flag = ref(false)
 
@@ -460,9 +488,14 @@ const renewal_list = ref([
   {id: 2, msg: '包季￥45'},
   {id: 3, msg: '包月￥15'}
 ])
+
 //const radio = ref('1')
 //单笔充值
-
+const pay_list = ref([
+  {id: 1, msg: '￥648'},
+  {id: 2, msg: '￥68'},
+  {id: 3, msg: '￥6'}
+])
 const openPay = () => {
   ElMessageBox.alert('单笔充值栏', '单笔充值', {
     confirmButtonText: '确认',
