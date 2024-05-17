@@ -1,81 +1,28 @@
 <template>
-  <div class="background">
-    <div class="ad-item">
+  <div style="margin-top: 56px">
+    <div style="height: 300px;">
       <el-carousel
           class="swiper"
-          width="100%"
+          indicator-position="none"
           autoplay
-          arrow="always"
+          pause-on-hover
       >
-        <el-carousel-item v-for="item in img_url" :key="item" style="height: 550px">
+        <el-carousel-item v-for="item in img_url" :key="item" >
           <img :src="item.src" alt="" loading="lazy" class="carousel-img">
         </el-carousel-item>
       </el-carousel>
     </div>
-<!--    <div class="ad-item_2">-->
-<!--      <div class="advertise">-->
-<!--        <div class="item_1" style="margin-bottom: 20px">-->
-<!--          <img src="@/assets/img/schooltest.jpg" alt="" loading="lazy">-->
-<!--        </div>-->
-<!--        <div class="item_1">-->
-<!--          <img src="@/assets/img/schooltest.jpg" alt="" loading="lazy">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="advertise">-->
-<!--        <div class="login-entry">-->
-<!--          <div class="user_top">-->
-<!--            <div class="user_avater" @click="user">-->
-<!--              <img :src="userImg" alt="" loading="lazy">-->
-<!--              <span>{{userName}}</span>-->
-<!--            </div>-->
-<!--            <div class="user_logo"></div>-->
-<!--          </div>-->
-<!--          <div class="user_center">-->
-<!--            <div class="user_info">-->
-<!--              <div class="user_info_top">{{store.coin}}</div>-->
-<!--              <div class="user_info_bot">我的鸮币</div>-->
-<!--            </div>-->
-<!--            <div class="user_info">-->
-<!--              <div class="user_info_top">{{store.follows}}</div>-->
-<!--              <div class="user_info_bot">我的关注</div>-->
-<!--            </div>-->
-<!--            <div class="user_info">-->
-<!--              <div class="user_info_top">{{store.collection}}</div>-->
-<!--              <div class="user_info_bot">我的收藏</div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="user_btns">-->
-<!--            <el-button class="btn user_btn_1" @click="today_coin">鸮币签到</el-button>-->
-<!--            <el-button class="btn user_btn_2" @click="pay">立即充值</el-button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-    <!-- 充值入口弹窗 -->
-<!--    <el-dialog-->
-<!--        v-model="dialogVisible"-->
-<!--        title="快充值中心"-->
-<!--        width="30%"-->
-<!--        class="dialog"-->
-<!--    >-->
-<!--      <span>扫描二维码</span>-->
-<!--      <div class="QR-code">-->
-<!--        <qrcode-vue :value="value" :size="size"></qrcode-vue>-->
-<!--      </div>-->
-<!--      <template #footer>-->
-<!--      <span class="dialog-footer">-->
-<!--        <el-button @click="dialogVisible = false">取消</el-button>-->
-<!--        <el-button type="primary" @click="dialogVisible = false">-->
-<!--          确定-->
-<!--        </el-button>-->
-<!--      </span>-->
-<!--      </template>-->
-<!--    </el-dialog>-->
   </div>
 </template>
 
 <script setup>
-import { ref,h } from "vue";
+import { ref, } from "vue";
+
+const img_url = ref([
+  {id:1,src: '/src/assets/img/swiper_1.jpg'},
+  {id:2,src: '/src/assets/img/swiper_2.jpg'},
+  {id:3,src: '/src/assets/img/swiper_3.jpg'}
+])
 // import {useCounterStore} from "@/stores/counter.js";
 // import {ElNotification} from "element-plus";
 // import {useRouter} from "vue-router";
@@ -96,11 +43,7 @@ import { ref,h } from "vue";
 // //校验token
 //
 // const dialogVisible = ref(false)
-const img_url = ref([
-  {id:1,src: '/src/assets/img/swiper_1.jpg'},
-  {id:2,src: '/src/assets/img/swiper_2.jpg'},
-  {id:3,src: '/src/assets/img/swiper_3.jpg'}
-])
+
 // //签到判断
 // //该方法用于实现在没有对接接口的情况下，模拟实现签到行为，
 // //当首次签到后，在本地存储一个签到的日期文件，下次调用时先 提取文件判断是否为同一天

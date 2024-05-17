@@ -7,50 +7,60 @@
           <span class="head-page">共 5 页</span>
         </div>
         <div class="banner">
-
-            <div class="slider-wrapper" id="car">
-              <el-carousel arrow="always" :autoplay="false" class="carousel">
-                <el-carousel-item v-for="item in img_url" :key="item" class="carousel-item" style="height: 400px">
-                  <img :src="item.src"  alt="" class="carousel-img ">
-                </el-carousel-item>
-              </el-carousel>
-            </div>
-
-          <div class="banner-info">
-            <div class="news">
-              <el-row style="display: flex;align-items: center">
-                <el-col style="display: flex;align-items: center;margin-top: 20px">
-                  <div>
-                    <span style="margin: 5px 30px">
-                      <el-avatar style=" border: 2px solid black; border-radius:50%; " :size="80"
-                                 src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="user-name">牛老师</div>
-                    <div class="user-name-two">
-                      <span style="color: #bec0c5"> 粉丝：</span>
-                      <span> 1000万 </span>
-                      <span style="margin-left: 8px;color: #bec0c5"> 关注：</span>
-                      <span>10000</span>
-                    </div>
-                  </div>
-                </el-col>
-                <el-col style="margin: 10px 30px">
-                  <div class="user-name-two">
-                    <span style="color: #bec0c5">简介：</span>
-                    <span>一个爱摄影爱编程的男大学生</span>
-                  </div>
-                </el-col>
-                <el-col style="position: absolute;right:30px; top:250px">
-                  <div>
-                    <el-button class="button" round>关注</el-button>
-                    <el-button class="button" round>私信</el-button>
-                  </div>
-                </el-col>
-              </el-row>
-            </div>
-          </div>
+          <el-row justify="space-between" style="margin-bottom: 20px">
+            <el-col :span="15">
+              <div style="height: 300px;">
+                <el-carousel
+                    class="swiper"
+                    indicator-position="none"
+                    autoplay
+                    pause-on-hover
+                    style="width: 100%;"
+                >
+                  <el-carousel-item v-for="item in img_url" :key="item">
+                    <img :src="item.src" alt="" loading="lazy" class="carousel-img">
+                  </el-carousel-item>
+                </el-carousel>
+              </div>
+            </el-col>
+            <el-col :span="9">
+              <div class="banner-info">
+                <div class="news">
+                  <el-row style="display: flex;align-items: center">
+                    <el-col style="display: flex;align-items: center;margin-top: 20px">
+                      <div>
+                        <span style="margin: 5px 30px">
+                          <el-avatar style=" border: 2px solid black; border-radius:50%; " :size="80"
+                                     src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
+                        </span>
+                      </div>
+                      <div>
+                        <div class="user-name">牛老师</div>
+                        <div class="user-name-two">
+                          <span style="color: #bec0c5"> 粉丝：</span>
+                          <span> 1000万 </span>
+                          <span style="margin-left: 8px;color: #bec0c5"> 关注：</span>
+                          <span>10000</span>
+                        </div>
+                      </div>
+                    </el-col>
+                    <el-col style="margin: 10px 30px">
+                      <div class="user-name-two">
+                        <span style="color: #bec0c5">简介：</span>
+                        <span>一个爱摄影爱编程的男大学生</span>
+                      </div>
+                    </el-col>
+                    <el-col style="position: absolute;right:30px; top:230px">
+                      <div>
+                        <el-button class="button" round>关注</el-button>
+                        <el-button class="button" round>私信</el-button>
+                      </div>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+            </el-col>
+          </el-row>
         </div>
 
         <div class="main-cont main-album">
@@ -140,9 +150,6 @@ const img_url = ref([
   {id: 4, src: '/src/assets/img/img4.jpg'},
   {id: 5, src: '/src/assets/img/img5.jpg'},
 ])
-
-
-
 
 
 </script>

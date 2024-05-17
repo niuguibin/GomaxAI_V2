@@ -62,44 +62,55 @@
 
 /*轮播图*/
 
-.slider-wrapper {
-    /*overflow: hidden;*/
-    float: left;
-    width: 680px;
-    height: 400px;
+.swiper {
+    height:100%;
 }
-
-.carousel {
-    width: 100%;
-    height: 100%;
-    background: white;
-
-}
-
-.carousel-item {
-    width: 100%;
-    display: block;
-}
-
 .carousel-img {
     width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
     object-fit: contain;
 }
 
-/deep/ .el-carousel__item {
-    height: 100%;
-}
+/*.slider-wrapper {*/
+/*    !*overflow: hidden;*!*/
+/*    float: left;*/
+/*    width: 680px;*/
+/*    height: 400px;*/
+/*}*/
+
+/*.carousel {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background: white;*/
+
+/*}*/
+
+/*.carousel-item {*/
+/*    width: 100%;*/
+/*    display: block;*/
+/*}*/
+
+/*.carousel-img {*/
+/*    width: 100%;*/
+/*    object-fit: contain;*/
+/*}*/
+
+/*/deep/ .el-carousel__item {*/
+/*    height: 100%;*/
+/*}*/
 
 /*用户详情*/
 .banner {
     position: relative;
-    height: 400px;
+    height: 300px;
 }
 
 .banner-info {
     position: relative;
     float: right;
-    height: 400px;
+    height: 100%;
     background-color: #2F3233;
     border-radius: 10px;
 }
@@ -109,7 +120,7 @@
 }
 
 .banner-info .news {
-    width: 466px;
+    width: 430px;
     height: 100%;
     margin-bottom: 20px;
     position: relative;

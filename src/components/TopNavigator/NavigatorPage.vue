@@ -62,7 +62,7 @@
 
         <!--        用户登录-->
         <el-popover
-            popper-style=" padding: 30px;min-width:270px;z-index:7"
+            popper-style=" padding: 30px;min-width:330px;z-index:7"
         >
           <template #reference>
             <div class="user_top">
@@ -150,6 +150,12 @@ const store = useCounterStore()
 
 const goHome = () => {
   router.push('/')
+  const menuItems = document.querySelectorAll('.el-menu-item');
+  menuItems.forEach(item => {
+    if (item.classList.contains('is-active')) {
+      item.classList.remove('is-active');
+    }
+  });
 }
 const qqq= () =>{
   console.log(user,'测试')
