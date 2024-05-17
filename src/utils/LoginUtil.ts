@@ -14,7 +14,7 @@ class LoginUtil {
     public username = ''
     public password = ''
     submit = () => {
-        requestInstance.post(`http://localhost:9090/user/login`,{
+        requestInstance.post(`http://localhost:9090/login`,{
             phone: this.username,
             password: this.password
         }).then((res) => {

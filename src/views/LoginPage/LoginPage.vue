@@ -5,49 +5,86 @@ import registerUtil from '../../utils/RegisterUtil.js'
 import type { FormInstance, FormRules } from 'element-plus'
 import {ElMessage, ElNotification} from "element-plus";
 import loginUtil from "../../utils/LoginUtil";
+import request from "../../utils/request"
 const ruleFormRef = ref<FormInstance>()
 const router = useRouter()
+
 interface RuleForm {
   username: string,
   password: string,
 }
-
-const login = reactive<RuleForm>({
-  username: '',
-  password: '',
+//登录
+const data = reactive({
+  form: {}
 })
+
+const rules = reactive({
+  username: [
+    { required: true, message: '请输入账号', trigger: 'blur' },
+  ],
+  password: [
+    { required: true, message: '请输入密码', trigger: 'blur' },
+  ],
+})
+// const login_rules = reactive<FormRules<RuleForm>>({
+//   username: [
+//     {
+//       required: true,message: '请输入用户名',trigger: 'blur'
+//     },
+//     {
+//       min: 5,max: 15,message: '用户名长度是5到15',trigger: 'blur'
+//     }
+//   ],
+//   password: [
+//     {
+//       required: true,message: '请输入密码',trigger: 'blur'
+//     },
+//     {
+//       min: 4,max: 6,message: '密码的长度是4到6',trigger: 'blur'
+//     }
+//   ],
+// })
+const formRef = ref()
 //登录函数
-const submitForm = async (formEl: FormInstance | undefined) => {
-  if (!formEl) return
-  await formEl.validate((valid, fields) => {
+const logins = () => {
+  formRef.value.validate((valid) => {
     if (valid) {
-      loginUtil.username = login.username
-      loginUtil.password = login.password
-      loginUtil.submit()
-      router.push('/')
-    } else {
-      console.log('error submit!', fields)
+      request.post('http://localhost:9090/user/login',data.form).then(res => {
+        if (res.code === '200') {
+          localStorage.setItem('xm-user', JSON.stringify(res.data))
+          ElMessage.success('登录成功')
+          console.log(res.data)
+          router.push('/') // 跳转到主页
+        } else {
+          console.log(res)
+          ElMessage.error(res.msg)
+        }
+      })
     }
   })
 }
-const login_rules = reactive<FormRules<RuleForm>>({
-  username: [
-    {
-      required: true,message: '请输入用户名',trigger: 'blur'
-    },
-    {
-      min: 5,max: 15,message: '用户名长度是5到15',trigger: 'blur'
-    }
-  ],
-  password: [
-    {
-      required: true,message: '请输入密码',trigger: 'blur'
-    },
-    {
-      min: 4,max: 6,message: '密码的长度是4到6',trigger: 'blur'
-    }
-  ],
-})
+// const submitForm = async (formEl: FormInstance | undefined) => {
+//   if (!formEl) return
+//   await formEl.validate((valid, fields) => {
+//     if (valid) {
+//       // 验证通过
+//       request.post('/login', this.login).then(res => {
+//         if (res.code === '200') {
+//           localStorage.setItem("xm-user", JSON.stringify(res.data))  // 存储用户数据
+//           this.$router.push('/')  // 跳转主页
+//           this.$message.success('登录成功')
+//         } else {
+//           this.$message.error(res.msg)
+//         }
+//       })
+//     } else {
+//       console.log('error submit!', fields)
+//     }
+//   })
+// }
+
+
+
 
 
 //注册
@@ -167,20 +204,20 @@ const captcha = () => {
       <el-divider/>
       <div class="main">
         <el-form
-            ref="ruleFormRef"
+            ref="formRef"
             label-width="80px"
-            :rules="login_rules"
-            :model="login"
+            :rules="rules"
+            :model="data.form"
             status-icon
             label-position="left"
         >
-          <el-form-item label="手机号:" prop="username">
-            <el-input clearable placeholder="请输入手机号" v-model="login.username"/>
+          <el-form-item label="用户名:" prop="username">
+            <el-input clearable placeholder="请输入用户名" v-model="data.form.username"/>
           </el-form-item>
           <el-form-item label="密码:" prop="password">
-            <el-input type="password" clearable show-password v-model="login.password" placeholder="请输入密码"/>
+            <el-input type="password" clearable show-password v-model="data.form.password" placeholder="请输入密码"/>
           </el-form-item>
-          <el-button round @click="submitForm(ruleFormRef)" class="el-button-1" style="margin-bottom: 20px">登录</el-button>
+          <el-button round @click="logins" class="el-button-1" style="margin-bottom: 20px">登录</el-button>
           <el-button type="info" round @click="register">注册</el-button>
         </el-form>
       </div>

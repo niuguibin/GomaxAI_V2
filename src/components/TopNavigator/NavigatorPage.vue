@@ -1,4 +1,5 @@
 <template>
+  <div @click="qqq">测试数据-text</div>
   <div class="background_2">
     <div class="background-item">
       <div class="item1">
@@ -67,26 +68,26 @@
           <template #reference>
             <div class="user_top">
               <div class="user_avater" @click="user">
-                <img :src="userImg" alt="" loading="lazy">
+                <img :src="data.user.avatar || 'http://localhost:9090/files/1715950224507-user.jpg'" >
               </div>
             </div>
           </template>
           <template #default>
             <el-row style="display: flex;justify-content:center;margin: 22px 0 20px 0">
-              <span class="name">{{ userName }}</span>
+              <span class="name">{{ data.user.name || '请登录'  }}</span>
             </el-row>
             <el-row style="display: flex;justify-content:space-between">
               <div class="user_info">
-                <div class="user_info_top">{{ store.coin }}</div>
                 <div class="user_info_bot">我的鸮币</div>
+                <div class="user_info_top">{{  data.user.coin || '无'    }}</div>
               </div>
               <div class="user_info">
-                <div class="user_info_top">{{ store.follows }}</div>
                 <div class="user_info_bot">我的关注</div>
+                <div class="user_info_top">{{ data.user.attention  || '无'  }}</div>
               </div>
               <div class="user_info">
-                <div class="user_info_top">{{ store.collection }}</div>
                 <div class="user_info_bot">我的收藏</div>
+                <div class="user_info_top">{{ data.user.collect || '无' }}</div>
               </div>
             </el-row>
 
@@ -139,6 +140,7 @@
 
 <script setup>
 import {useCounterStore} from "@/stores/counter.js";
+import {reactive} from "vue"
 import {useRouter} from "vue-router";
 import {h, onMounted, ref, watchEffect} from "vue";
 import {ElNotification} from "element-plus";
@@ -150,9 +152,17 @@ const store = useCounterStore()
 const goHome = () => {
   router.push('/')
 }
+const qqq= () =>{
+  console.log(user,'测试')
+
+}
 const openDrawer = () => {
   store.drawer = !store.drawer
 }
+//接收后端数据
+const data = reactive({
+  user: JSON.parse(localStorage.getItem('xm-user') || '{}'),
+})
 //创作管理
 const workManage = () => {
   router.push('/workManage')

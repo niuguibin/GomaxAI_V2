@@ -305,3 +305,28 @@
     width: 90px;
     font-size: 14px;
 }
+
+
+
+/* 头像样式 */
+.manager-header-right {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.manager-header-right .avatar {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    color: #fff;
+    cursor: default
+}
+
+.manager-header-right .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px
+}
