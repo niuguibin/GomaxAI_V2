@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import  { provide } from "vue";
 import { useCounterStore } from "@/stores/counter.js";
-import MyWork from "@/components/MyWork/MyWork.vue";
+import MyWork from "../MyWork/MyWork.vue";
 const store = useCounterStore()
 //暂时接受搜索参数
 const search_data = ref()

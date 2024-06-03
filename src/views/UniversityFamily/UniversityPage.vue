@@ -45,7 +45,7 @@
 
 <script lang="ts" setup>
 
-//import FooterPage from "@/components/BottomFooter/FooterPage.vue";
+//import FooterPage from "@/LayOut/BottomFooter/FooterPage.vue";
 import {computed, ref} from "vue";
 
 

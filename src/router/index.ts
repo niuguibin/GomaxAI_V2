@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LayoutPage from "@/views/LayOut/LayoutPage.vue";
+import LayoutPage from "@/LayOut/LayoutPage.vue";
 import HomePage from "@/views/HomePage/HomePage.vue";
 import LoginPage from "@/views/LoginPage/LoginPage.vue";
 import UniversityPage from "@/views/UniversityFamily/UniversityPage.vue";
@@ -13,14 +13,15 @@ import Academytable from "@/views/Academy/Academytable.vue";
 import Academyvideo from "@/views/Academy/Academyvideo.vue";
 import UserInfo from "@/views/UserInfo/UserInfo.vue";
 import WorkManage from "@/views/WorkManage/WorkManage.vue";
-import ContributeCom from "@/components/Contribute/ContributeCom.vue";
-import ContentManage from "@/components/ContentManange/ContentManage.vue";
-import DataManage from "@/components/DataManage/DataManage.vue";
+import ContributeCom from "@/views/ContributeManagement/Contribute/ContributeCom.vue";
+import ContentManage from "@/views/ContributeManagement/ContentManange/ContentManage.vue";
+import DataManage from "@/views/ContributeManagement/DataManage/DataManage.vue";
 import CreativeTwo from "@/views/CreativeSquare/CreativeTwo.vue";
 import CreativePage from "@/views/CreativeSquare/CreativePage.vue";
 
 
 const router = createRouter({
+  // @ts-ignore
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {

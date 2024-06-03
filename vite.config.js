@@ -49,5 +49,14 @@ export default defineConfig({
         '^/abc': ''
       }
     }
-  }
+  },
+  // use custom server, default value 5173
+  server: {
+    // host: '0.0.0.0',
+    // port: 8080,
+    // auto open browser when first start project    
+    open: true,
+    // use hmr
+    hmr: true,
+  },
 })
