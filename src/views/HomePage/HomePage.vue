@@ -1,9 +1,9 @@
 <script setup>
 
-import TopAd from "@/components/TopAD/TopAd.vue";
-import AIDrawing from "@/components/AIDrawing/AIDrawing.vue";
-import SoldPage from "@/components/SoldClass/SoldPage.vue";
-import FooterPage from "@/components/BottomFooter/FooterPage.vue";
+import TopAd from "@/LayOut/TopAD/TopAd.vue";
+import AIDrawing from "./AIDrawing/AIDrawing.vue";
+import SoldPage from "./SoldClass/SoldPage.vue";
+import FooterPage from "@/LayOut/BottomFooter/FooterPage.vue";
 </script>
 
 <template>

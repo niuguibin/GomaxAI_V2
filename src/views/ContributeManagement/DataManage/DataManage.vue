@@ -2,7 +2,7 @@
 import * as echarts from 'echarts';
 import { ref } from "vue";
 import { onMounted } from "vue";
-import { useCounterStore} from "../../stores/counter.js";
+import { useCounterStore } from "@/stores/counter.js";
 import {CaretBottom, CaretTop, DCaret} from "@element-plus/icons-vue";
 const store = useCounterStore()
 const value = ref('')

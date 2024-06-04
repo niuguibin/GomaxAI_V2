@@ -76,7 +76,7 @@
 import {h, ref} from "vue";
 
 import {ElMessage, ElNotification} from "element-plus";
-// import FooterPage from "@/components/BottomFooter/FooterPage.vue";
+// import FooterPage from "@/LayOut/BottomFooter/FooterPage.vue";
 const ai_info = ref([
   {id: '祖父',info:'我是你的祖父哦，哈喽'},
   {id: '祖母',info:'我是你的祖母哦，哈喽'},

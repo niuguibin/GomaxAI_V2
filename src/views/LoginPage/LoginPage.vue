@@ -2,7 +2,7 @@
 import { reactive,ref,h } from "vue";
 import {useRouter} from "vue-router";
 import registerUtil from '../../utils/RegisterUtil.js'
-import type { FormInstance, FormRules } from 'element-plus'
+import { FormInstance, FormRules } from 'element-plus'
 import {ElMessage, ElNotification} from "element-plus";
 import loginUtil from "../../utils/LoginUtil";
 import request from "../../utils/request"

@@ -1,6 +1,6 @@
 <script setup>
 
-import FooterPage from "@/components/BottomFooter/FooterPage.vue";
+import FooterPage from "@/LayOut/BottomFooter/FooterPage.vue";
 import {Bell, Plus, Setting} from "@element-plus/icons-vue";
 import {RouterView} from "vue-router";
 </script>
