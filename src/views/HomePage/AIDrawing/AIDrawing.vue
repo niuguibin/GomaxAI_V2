@@ -1,6 +1,6 @@
 <template>
 <!--  非tailwind写法，参考css文件（屎山，懒的改）-->
-  <div class="background">
+  <div class="picture-view">
 
     <div class="main-cont__list" v-for="image in images" :key="image.id">
       <div class="w-80 p-3 picture-item ">

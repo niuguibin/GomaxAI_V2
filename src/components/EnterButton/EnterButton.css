@@ -1,0 +1,46 @@
+.enter_btn {
+    cursor: pointer;
+    padding: 0 24px;
+    position: relative;
+    width: 320px;
+    height: 132px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 24px;
+}
+
+.btn_left {
+    overflow: hidden;
+}
+
+.btn_title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #fff;
+}
+
+.btn_des {
+    margin-top: 2px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ccc;
+}
+
+.btn_hover {
+    margin-top: 8px;
+    display: none;
+}
+
+.enter_btn:hover .btn_hover {
+    display: block;
+
+}
+
+.enter_btn:hover .btn_right {
+    color: #9270ff;
+}
