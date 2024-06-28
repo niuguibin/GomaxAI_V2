@@ -1,28 +1,35 @@
 <template>
-  <div style="margin-top: 56px">
-    <div style="height: 300px;">
-      <el-carousel
-          class="swiper"
-          indicator-position="none"
-          autoplay
-          pause-on-hover
-      >
-        <el-carousel-item v-for="item in img_url" :key="item" >
-          <img :src="item.src" alt="" loading="lazy" class="carousel-img">
-        </el-carousel-item>
-      </el-carousel>
-    </div>
+  <div class="carousel-container">
+    <el-carousel class="swiper1" indicator-position="none" autoplay pause-on-hover height="490px">
+      <el-carousel-item v-for="item in img_url" :key="item.id">
+        <img :src="item.src" alt="" loading="lazy" class="carousel-img">
+      </el-carousel-item>
+      <div class="enterButton_list">
+        <EnterButton v-for="(buttonInfo, index) in iconInfo" @onClick="buttonInfo.onClick" :text=buttonInfo.text
+          :description=buttonInfo.description :iconType=buttonInfo.iconType :key="index" />
+      </div>
+    </el-carousel>
   </div>
 </template>
 
 <script setup>
-import { ref, } from "vue";
-
+import { ref } from "vue";
+import EnterButton from "@/components/EnterButton/EnterButton.vue";
+import { iconInfo } from "./iconInfo"
 const img_url = ref([
-  {id:1,src: '/src/assets/img/swiper_1.jpg'},
-  {id:2,src: '/src/assets/img/swiper_2.jpg'},
-  {id:3,src: '/src/assets/img/swiper_3.jpg'}
+  { id: 1, src: '/src/assets/img/swiper_2.jpg' },
+  { id: 2, src: '/src/assets/img/swiper_1.jpg' },
+  { id: 3, src: '/src/assets/img/swiper_3.jpg' }
 ])
+
+// const buttonInfo = {
+//   text: "ai 绘图",
+//   description: "测试内容",
+//   iconType: "Calendar"
+// }
+// const onClick = () => {
+
+// }
 // import {useCounterStore} from "@/stores/counter.js";
 // import {ElNotification} from "element-plus";
 // import {useRouter} from "vue-router";

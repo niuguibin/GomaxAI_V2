@@ -1,9 +1,8 @@
 <template>
 <!--  <div @click="qqq">测试数据-text</div>-->
   <div class="background_2">
-    <div class="background-item">
-      <div class="item1">
-        <el-tooltip
+      <div class="nav-left">
+        <el-tooltip     
             class="box-item"
             effect="dark"
             content="返回首页"
@@ -11,14 +10,14 @@
         >
           <div class="left-logo" @click="goHome"></div>
         </el-tooltip>
-        <div class="menu-part">
+        <!-- <div class="menu-part"> -->
           <el-menu
               class="el-menu-demo"
               mode="horizontal"
               text-color="#E3E3E3"
               active-text-color="#F5DB9D"
               background-color="transparent"
-              style="border-bottom: none"
+              style="--el-menu-hover-bg-color: transparent; --el-menu-hover-text-color: #ccc;" 
               router
           >
             <el-menu-item index="/university">启蒙学院</el-menu-item>
@@ -27,9 +26,9 @@
             <el-menu-item index="/academy">宇宙家庭</el-menu-item>
             <el-menu-item index="/creative">创作广场</el-menu-item>
           </el-menu>
-        </div>
+        <!-- </div> -->
       </div>
-      <div class="item2">
+      <div class="nav-right">
         <el-tooltip
             class="box-item"
             effect="dark"
@@ -62,7 +61,7 @@
 
         <!--        用户登录-->
         <el-popover
-            popper-style=" padding: 30px;min-width:330px;z-index:7"
+            popper-style=" padding:30px; min-width:330px"
         >
           <template #reference>
             <div class="user_top">
@@ -117,7 +116,6 @@
           </template>
         </el-popover>
       </div>
-    </div>
   </div>
   <el-dialog
       v-model="dialogVisible"

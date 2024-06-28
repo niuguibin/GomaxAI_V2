@@ -1,0 +1,15 @@
+.scroll-container {
+    overflow: hidden;
+    cursor: pointer;
+
+    .scroll-wrap {
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+    }
+}
+
+.scroll-slide {
+    list-style: none;
+    display: inline-block;
+}

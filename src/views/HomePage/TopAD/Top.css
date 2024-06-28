@@ -18,9 +18,21 @@
 }
 
 
+.carousel-container {
+    /* margin-top: 56px !important; */
+    height: 500px;
+}
 
-
-
+.enterButton_list {
+    width: 1300px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    z-index: 9;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 26px;
+}
 
 /*.ad-item_2 {*/
 /*    width: 60%;*/
